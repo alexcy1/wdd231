@@ -1,3 +1,163 @@
+/* Mobile Styles */
+@media (max-width: 992px) {
+    .navbar {
+        background-color: transparent !important; 
+    }
+
+    .navbar-nav {
+        background-color: #000 !important;
+        width: 100vw;
+        margin: 0;
+        padding: 0; 
+        left: 0; 
+        top: 0; 
+        position: absolute; 
+        z-index: 1000; 
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box; 
+    }
+
+    .collapse {
+        width: 100vw; 
+        max-width: none; 
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box; 
+    }
+
+    .top-banner {
+        padding: 10px 15px; 
+    }
+
+    .navbar-toggler {
+        display: block; 
+        position: absolute;
+        top: -55px; 
+        right: 15px;
+        border: none !important; /* Remove any border */
+        border-radius: 0 !important; /* Remove rounded corners */
+        outline: none !important; /* Remove outline */
+        box-shadow: none !important; /* Remove shadow */
+        background: transparent; /* Ensure background is transparent */
+    }
+
+    /* Custom toggler icon */
+    .navbar-toggler .custom-toggler-icon {
+        display: inline-block;
+        width: 30px;
+        height: 22px;
+        position: relative;
+        cursor: pointer;
+    }
+
+    .navbar-toggler .custom-toggler-icon::before,
+    .navbar-toggler .custom-toggler-icon::after,
+    .navbar-toggler .custom-toggler-icon span {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background-color: white;
+        transition: all 0.3s ease;
+    }
+
+    .navbar-toggler .custom-toggler-icon::before {
+        top: 0;
+    }
+
+    .navbar-toggler .custom-toggler-icon::after {
+        bottom: 0;
+    }
+
+    .navbar-toggler .custom-toggler-icon span {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    /* When the menu is open, change to 'X' */
+    .navbar-toggler.open .custom-toggler-icon {
+        background-color: transparent; /* Make the middle bar disappear */
+    }
+
+    /* Rotate the before and after elements to form the 'X' */
+    .navbar-toggler.open .custom-toggler-icon::before {
+        transform: rotate(45deg);
+        top: 50%;
+        margin-top: -1.5px; /* Adjust vertical positioning */
+    }
+
+    .navbar-toggler.open .custom-toggler-icon::after {
+        transform: rotate(-45deg);
+        top: 50%;
+        margin-top: -1.5px; /* Adjust vertical positioning */
+    }
+
+    .navbar-toggler.open .custom-toggler-icon span {
+        background-color: transparent;
+    }
+
+    .top-banner h1 {
+        font-size: 2rem;
+    }
+
+    /* Target the first .nav-link */
+    .navbar-nav li:first-child .nav-link {
+        margin-top: 20px;
+    }
+
+    /* Target the last .nav-link */
+    .navbar-nav li:last-child .nav-link {
+        margin-bottom: 20px;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+// Toggle Menu
+document.addEventListener("DOMContentLoaded", function() {
+    const toggler = document.querySelector(".navbar-toggler");
+    const navCollapse = document.querySelector("#navbarNav");
+
+    toggler.addEventListener("click", function() {
+        // Toggle the 'open' class to show 'X' when clicked
+        toggler.classList.toggle("open");
+    });
+
+    navCollapse.addEventListener('shown.bs.collapse', function () {
+        toggler.classList.add('open'); // Add class 'open' when menu is open
+    });
+
+    navCollapse.addEventListener('hidden.bs.collapse', function () {
+        toggler.classList.remove('open'); // Remove class 'open' when menu is closed
+    });
+});
+
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,10 +186,9 @@
 </header>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    
     <div class="container">
         <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+            <span class="custom-toggler-icon"></span>
         </button>
        
         <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
@@ -50,6 +209,7 @@
         </div>
     </div>
 </nav>
+
 
 
     <!-- Navigation Bar -->
@@ -154,45 +314,11 @@
 
 
 
-.top-banner {
-    background-color: #4b0082; 
-    color: #fff; 
-    padding: 20px 0; 
-    text-align: center; 
-    position: relative; 
-}
-
-.top-banner h1 {
-    font-size: 2.5rem; 
-    margin: 0;
-}
-
-.navbar {
-    margin-top: 0;
-    z-index: 10; 
-}
-
-/* Navbar Toggler */
-.navbar-toggler {
-    position: absolute; 
-    top: 10px; 
-    right: 10px; 
-    z-index: 20; 
-}
-
-/* Navbar Links Customizations */
-.navbar-nav {
-    text-align: center;
-}
-
-.navbar .navbar-nav .nav-link {
-    font-size: 1.1rem; 
-    padding: 10px 15px; 
-}
 
 
 
-/* Mobile Styles */
+
+
 @media (max-width: 992px) {
     .navbar {
         background-color: transparent !important; 
@@ -230,7 +356,61 @@
         display: block; 
         position: absolute;
         top: -55px; 
-        right: 15px; 
+        right: 15px;
+        border: none !important; /* Remove any border */
+        border-radius: 0 !important; /* Remove rounded corners */
+        outline: none !important; /* Remove outline */
+        box-shadow: none !important; /* Remove shadow */
+    }
+
+    /* Default hamburger icon */
+    .navbar-toggler .navbar-toggler-icon {
+        display: inline-block;
+        width: 24px;
+        height: 3px;
+        background-color: white;
+        position: relative;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .navbar-toggler .navbar-toggler-icon::before,
+    .navbar-toggler .navbar-toggler-icon::after {
+        content: '';
+        width: 24px;
+        height: 3px;
+        background-color: white;
+        position: absolute;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .navbar-toggler .navbar-toggler-icon::before {
+        top: -7px;
+    }
+
+    .navbar-toggler .navbar-toggler-icon::after {
+        top: 7px;
+    }
+
+    /* When the menu is open, change to 'X' */
+    .navbar-toggler.open .navbar-toggler-icon {
+        background-color: transparent; /* Make the middle bar disappear */
+    }
+
+    /* Rotate the before and after elements to form the 'X' */
+    .navbar-toggler.open .navbar-toggler-icon::before {
+        transform: rotate(45deg);
+        top: 0; /* Center it */
+    }
+
+    .navbar-toggler.open .navbar-toggler-icon::after {
+        transform: rotate(-45deg);
+        top: 0; /* Center it */
+    }
+
+    .navbar-toggler:focus, .navbar-toggler:active {
+        outline: none !important;
+        border: none !important;
+        box-shadow: none !important; /* Remove focus/active shadow or border */
     }
 
     .top-banner h1 {
@@ -239,36 +419,15 @@
 
     /* Target the first .nav-link */
     .navbar-nav li:first-child .nav-link {
-        margin-top: 20px; /* or use padding-top if needed */
+        margin-top: 20px;
     }
 
     /* Target the last .nav-link */
     .navbar-nav li:last-child .nav-link {
-        margin-bottom: 20px; /* or use padding-bottom if needed */
+        margin-bottom: 20px;
     }
-
 
     body {
-        overflow-x: hidden; 
+        overflow-x: hidden;
     }
-}
-
-
-
-
-
-
-
-
-/* Footer */
-footer {
-    background-color: #4b0082;
-    color: #fff;
-    text-align: center;
-    padding-top: 1.5rem;
-    padding-bottom: 1rem;
-    margin-top: 1rem;
-    flex-shrink: 0;
-    margin-bottom: 0px;
-    line-height: 25px;
 }
