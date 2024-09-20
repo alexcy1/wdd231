@@ -3,7 +3,7 @@
     document.addEventListener('DOMContentLoaded', function() {
         function addLogoImage() {
             const logoData = {
-                src: 'images/Alexander.webp', // Update to the new image path
+                src: 'images/Alexander.webp', 
                 alt: 'Alexander Cyril Logo',
                 class: 'logo'
             };
@@ -14,10 +14,8 @@
             image.alt = logoData.alt;
             image.className = logoData.class;
     
-            // Create a container for the image and text
             const bannerContent = document.querySelector('.top-banner .container');
             if (bannerContent) {
-                // Insert the image before the heading
                 bannerContent.insertBefore(image, bannerContent.firstChild);
             }
         }
@@ -54,12 +52,11 @@ document.addEventListener('DOMContentLoaded', function () {
     document.addEventListener('DOMContentLoaded', function() {
         function addFooterFlag() {
             const flagData = {
-                src: 'images/Flag.png', // Update to the path of the flag image
+                src: 'images/Flag.png', 
                 alt: 'Country Flag',
                 class: 'footer-flag'
             };
     
-            // Create the image element
             const flagImage = document.createElement('img');
             flagImage.src = flagData.src;
             flagImage.alt = flagData.alt;
@@ -68,11 +65,9 @@ document.addEventListener('DOMContentLoaded', function () {
             // Find the footer element
             const footerContent = document.querySelector('footer div');
             if (footerContent) {
-                // Add some space after "Nigeria"
                 const textNode = document.createTextNode(' ');
                 footerContent.appendChild(textNode);
     
-                // Append the flag image
                 footerContent.appendChild(flagImage);
             }
         }
@@ -155,21 +150,17 @@ courses.forEach(course => {
         course.completed = true;
     }
 });
-
-// Select the course button container
 const courseButtons = document.getElementById('courseButtons');
 
 
 // Function to display courses as buttons
 function displayCourseButtons(coursesToDisplay) {
-    courseButtons.innerHTML = '';  // Clear previous buttons
+    courseButtons.innerHTML = ''; 
 
     coursesToDisplay.forEach(course => {
         const btn = document.createElement('button');
-        btn.classList.add('btn', 'm-1', 'mb-3', 'mx-2', 'btn-block'); // Use btn-block for full width
-
-        // Set button text
-        btn.innerText = `${course.subject} ${course.number}`; // Display subject and number
+        btn.classList.add('btn', 'm-1', 'mb-3', 'mx-2', 'btn-block');
+        btn.innerText = `${course.subject} ${course.number}`;
 
         // Apply different styles based on completion status
         if (course.completed) {
@@ -177,8 +168,6 @@ function displayCourseButtons(coursesToDisplay) {
         } else {
             btn.classList.add('btn-dark');
         }
-        
-        // Append the button to the container
         courseButtons.appendChild(btn);
     });
 }
@@ -197,16 +186,14 @@ document.getElementById('showWDD').addEventListener('click', () => {
     const wddCourses = courses.filter(course => course.subject === 'WDD');
     displayCourseButtons(wddCourses);
 });
-
-// Initially display all courses
 displayCourseButtons(courses);
 
 
 //  Display Total Credits Dynamically:
 function displayTotalCredits() {
     const totalCredits = courses.reduce((sum, course) => sum + course.credits, 0);
-    const creditsElement = document.getElementById('totalCredits'); // Get the existing element
-    creditsElement.innerHTML = totalCredits; // Update the inner HTML with total credits
+    const creditsElement = document.getElementById('totalCredits');
+    creditsElement.innerHTML = totalCredits;
 }
 displayTotalCredits();
  
