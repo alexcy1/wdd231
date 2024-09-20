@@ -1,3 +1,4 @@
+
 body {
     display: flex;
     flex-direction: column;
@@ -16,6 +17,7 @@ body {
     display: inline-block;
     margin: 0;
     vertical-align: middle;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 .top-banner .logo {
@@ -68,6 +70,9 @@ body {
     color: #dfdcdc;
     border-radius: 0;
     margin: 0;
+    font-family: "Lato", sans-serif;
+    font-weight: 100;
+    font-style: normal;
 }
 
 /* Active state for nav links */
@@ -201,8 +206,16 @@ footer {
     margin-bottom: 0;
 }
 
+footer a {
+    color: inherit;
+    text-decoration: none; 
+}
 
-/* Footer flag image */
+footer a:hover {
+    text-decoration: none;
+    color: inherit; 
+}
+
 .footer-flag {
     height: 20px; 
     width: auto; 
@@ -311,7 +324,7 @@ footer {
     }
 
     .card-single {
-        border: none; /* Remove border on mobile */
+        border: none;
         background: transparent !important;
         box-shadow: none;
     }
