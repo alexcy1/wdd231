@@ -24,9 +24,6 @@
 </head>
 <body>
 
-<!-- Main Content -->
-<main role="main">
-    
     <!-- Full Name Banner -->
     <header class="top-banner py-3">
         <div class="container text-center">
@@ -34,12 +31,13 @@
         </div>
     </header>
 
-    <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    
         <div class="container">
             <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+           
             <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
@@ -59,11 +57,15 @@
         </div>
     </nav>
 
-    <!-- Parent Section to Contain the Remaining Content -->
-    <section class="container mt-4">
-        
-        <!-- Subsection: Course Work Card -->
-        <section class="row">
+ 
+    
+<!-- Main Content -->
+<main role="main" class="container mt-4">
+
+    <section id="courseWorkSection">
+        <div class="row">
+            
+            <!-- Course Work Card -->
             <div class="col-lg-8 col-md-12 mb-4">
                 <div class="card h-100">
                     <div class="card-header bg-purple text-white">
@@ -78,8 +80,8 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Subsection: Lagos, Nigeria Card -->
+            
+            <!-- Lagos, Nigeria Card -->
             <div class="col-lg-4 col-md-12 mb-4">
                 <div class="card h-100">
                     <div class="card-header bg-purple text-white">
@@ -90,10 +92,11 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Subsection: Web and Computer Programming Certificate -->
-        <section class="col-12 mb-4">
+    <section id="webProgrammingSection">
+        <div class="col-12 mb-4">
             <div class="card h-100 card-single">
                 <div class="card-header bg-purple text-white">
                     <h5 class="mb-0">Web and Computer Programming Certificate</h5>
@@ -109,34 +112,38 @@
                         </div>
                     </div>
                 </div>
-        
+                
                 <!-- Courses Buttons Section -->
                 <div class="card-footer">
                     <div class="btn-group course-code" id="courseButtons">
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
 
-                <!-- Total Credits Card -->
-                <div class="card my-0">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">
-                            <strong>Total Number of Credits: </strong>
-                            <span id="totalCredits">0</span> <!-- Placeholder for total credits -->
-                        </h5>
-                    </div>
+    <section id="creditsSection">
+        <div class="col-12 mb-4">
+            <!-- Total Credits Card -->
+            <div class="card my-0">
+                <div class="card-body text-center">
+                    <h5 class="card-title">
+                        <strong>Total Number of Credits: </strong>
+                        <span id="totalCredits">0</span> <!-- Placeholder for total credits -->
+                    </h5>
                 </div>
             </div>
-        </section>
-
-    </section> <!-- End of Parent Section -->
-
+        </div>
+    </section>
+    
 </main>
+
 
 
     <!-- Footer -->
     <footer>
-        <div><span id="year"></span> 🌺 Alexander Cyril 🌺 Lagos, Nigeria</div>
-        <div>Last modified: <span id="lastModified"></span></div>
+        <div><a href="index.html"> <span id="year"></span> 🌺 Alexander Cyril 🌺 Lagos, Nigeria</a></div>
+        <div><a href="index.html"> Last modified: <span id="lastModified"></span></a></div>
     </footer>
 
 
