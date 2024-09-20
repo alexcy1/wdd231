@@ -375,3 +375,8 @@ footer a:hover {
     font-weight: bold;
     color: #000; 
 }
+
+.lagos h5{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+}
