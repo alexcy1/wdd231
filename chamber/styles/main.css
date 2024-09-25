@@ -53,6 +53,7 @@
         display: flex;
         justify-content: space-between; 
         align-items: center; 
+        margin-left: -25px !important;
     }
 
     .navbar-collapse {
@@ -73,6 +74,7 @@
     .navbar-toggler {
         margin-left: auto; 
         z-index: 1; 
+        margin-right: -48px !important;
     }
 
     .d-flex {
@@ -203,8 +205,8 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    padding-left: 37px; 
-    padding-right: 37px;
+    /* padding-left: 37px; 
+    padding-right: 37px; */
 }
 
 /* Left Section */
@@ -247,11 +249,12 @@ main {
 }
 
 /* Responsive Design for Mobile */
-@media (max-width: 768px) {
+@media (max-width: 992px) {
     .footer-container {
         flex-direction: column;
         align-items: flex-start; 
         text-align: left; 
+        margin-left: -42px;
     }
 
     .footer-left,
@@ -276,9 +279,22 @@ main {
         margin: 0 10px;
     }
 
-    .footer-container {
-        padding-left: 0px; 
-        padding-right:07px;
+    .footer-center{
+        margin-left: 80px !important;
     }
 }
 
+
+/* Navbar Container */
+.container {
+    max-width: 1200px; 
+    margin: 0 auto;  
+    padding-left: 37px; 
+    padding-right: 37px;
+}
+
+/* Footer Container */
+.footer-container {
+    padding-left: 37px; 
+    padding-right: 37px;
+}
