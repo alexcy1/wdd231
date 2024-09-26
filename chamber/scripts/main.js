@@ -90,3 +90,31 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
+
+// Hero Image and Text Adjustment
+document.addEventListener('DOMContentLoaded', function () {
+    function adjustHeroElements() {
+        const heroImage = document.querySelector('.hero-image');
+        const heroTextOverlay = document.querySelector('.card-img-overlay'); // Targeting the overlay containing text
+
+        if (window.innerWidth < 576) {
+            heroImage.style.marginLeft = '12.1px'; 
+            heroTextOverlay.style.marginLeft = '12.1px'; 
+
+        } else if (window.innerWidth < 992) {
+            heroImage.style.marginLeft = '5px';
+            heroTextOverlay.style.marginLeft = '5px';
+
+        } else {
+            heroImage.style.marginLeft = '0'; // Reset margin for larger screens
+            heroTextOverlay.style.marginLeft = '0'; // Reset text overlay margin for larger screens
+        }
+    }
+
+    // Adjust on load
+    adjustHeroElements();
+
+    // Adjust on window resize
+    window.addEventListener('resize', adjustHeroElements);
+});
+
