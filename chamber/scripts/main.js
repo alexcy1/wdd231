@@ -109,6 +109,10 @@ document.addEventListener('DOMContentLoaded', function () {
             heroImage.style.marginLeft = '0'; // Reset margin for larger screens
             heroTextOverlay.style.marginLeft = '0'; // Reset text overlay margin for larger screens
         }
+
+        // Set overlay background width to match the hero image
+        heroTextOverlay.style.width = `${heroImage.clientWidth}px`; // Adjust overlay width to match image width
+        heroTextOverlay.style.background = 'rgba(0, 0, 0, 0.4)'; // Ensure background is set
     }
 
     // Adjust on load
