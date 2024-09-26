@@ -102,8 +102,8 @@ document.addEventListener('DOMContentLoaded', function () {
             heroTextOverlay.style.marginLeft = '12.1px'; 
 
         } else if (window.innerWidth < 992) {
-            heroImage.style.marginLeft = '10px';
-            heroTextOverlay.style.marginLeft = '10px';
+            heroImage.style.marginLeft = '11.5px';
+            heroTextOverlay.style.marginLeft = '11.5px';
 
         } else {
             heroImage.style.marginLeft = '0'; // Reset margin for larger screens
