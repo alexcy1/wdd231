@@ -122,3 +122,51 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('resize', adjustHeroElements);
 });
 
+
+
+// Members
+document.addEventListener('DOMContentLoaded', async function() {
+    // Function to fetch the JSON data
+    async function fetchBusinesses() {
+        try {
+            const response = await fetch('./data/members.json'); // Adjust path if needed
+            const businesses = await response.json();
+            return businesses;
+        } catch (error) {
+            console.error('Error fetching JSON:', error);
+            return [];
+        }
+    }
+
+    // Function to display the membership cards
+    function displayMembershipCards(businesses) {
+        const cardContainer = document.getElementById('membership-cards');
+
+        businesses.forEach(business => {
+            const card = document.createElement('div');
+            card.classList.add('business-card');
+
+            // Create the card content dynamically
+            card.innerHTML = `
+                <h2 class="business-name">${business.name}</h2>
+                <p class="business-tagline">${business.other_info.industry}</p>
+                <hr>
+                <div class="card-content">
+                    <img src="${business.image}" alt="${business.name}" class="business-logo">
+                    <div class="business-info">
+                        <div><strong>Email:</strong> ${business.email}</div>
+                        <div><strong>Phone:</strong> ${business.phone}</div>
+                        <div><strong>URL:</strong> <a href="${business.website}" target="_blank">${business.website}</a></div>
+                    </div>
+                </div>
+            `;
+
+            // Append the card to the container
+            cardContainer.appendChild(card);
+        });
+    }
+
+    // Fetch and display the data
+    const businesses = await fetchBusinesses();
+    displayMembershipCards(businesses);
+});

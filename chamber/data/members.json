@@ -4,8 +4,9 @@
       "description": "A leading tech company that specializes in cutting-edge innovations and digital transformation.",
       "address": "123 Innovation Drive, Tech City, TX 75001",
       "phone": "+1-800-555-1234",
-      "website": "https://www.techinnovators.com",
-      "image": "tech_innovators_logo.png",
+      "email": "tect.inno@gmail.com",
+      "website": "techinnovators.com",
+      "image": "images/tech_innovators.jpg",
       "membership_level": 3,
       "other_info": {
         "industry": "Technology",
@@ -18,8 +19,9 @@
       "description": "A pioneer in renewable energy solutions, offering sustainable energy products and services.",
       "address": "456 Renewable Ave, Eco Town, CA 90210",
       "phone": "+1-800-555-5678",
-      "website": "https://www.greenenergy.com",
-      "image": "green_energy_icon.png",
+      "email": "greenenergy@aol.com",
+      "website": "greenenergy.com",
+      "image": "images/green_energy_icon.jpg",
       "membership_level": 2,
       "other_info": {
         "industry": "Renewable Energy",
@@ -32,8 +34,9 @@
       "description": "A health-conscious food company offering organic and fresh meal options.",
       "address": "789 Organic St, Food City, NY 10001",
       "phone": "+1-800-555-9876",
-      "website": "https://www.healthyeats.com",
-      "image": "healthy_eats_logo.jpg",
+      "email": "healthy@hotmail.com",
+      "website": "healthyeats.com",
+      "image": "images/healthy_eats.jpg",
       "membership_level": 1,
       "other_info": {
         "industry": "Food & Beverage",
@@ -46,8 +49,9 @@
       "description": "A home automation company providing smart home devices and innovative solutions.",
       "address": "321 Home Tech Blvd, Smart City, FL 33101",
       "phone": "+1-800-555-4567",
-      "website": "https://www.smarthomes.com",
-      "image": "smart_homes_logo.png",
+      "email": "smart.hms@gmail.com",
+      "website": "smarthomes.com",
+      "image": "images/smart_homes.jpg",
       "membership_level": 3,
       "other_info": {
         "industry": "Home Automation",
@@ -60,8 +64,9 @@
       "description": "An educational technology company focused on creating tools for modern learning environments.",
       "address": "654 Knowledge Dr, Learning Town, WA 98101",
       "phone": "+1-800-555-6789",
-      "website": "https://www.brighteducation.com",
-      "image": "bright_education_icon.jpg",
+      "email": "bright_edu@yahoo.com",
+      "website": "brighteducation.com",
+      "image": "images/bright_education.jpg",
       "membership_level": 2,
       "other_info": {
         "industry": "Education",
@@ -74,8 +79,9 @@
       "description": "A financial technology company that develops secure and efficient financial software solutions.",
       "address": "987 Finance Blvd, Money City, IL 60601",
       "phone": "+1-800-555-7890",
-      "website": "https://www.fintechinnovations.com",
-      "image": "fintech_logo.png",
+      "email": "fintech@gmail.com",
+      "website": "fintechinnovations.com",
+      "image": "images/fintech.jpg",
       "membership_level": 1,
       "other_info": {
         "industry": "Financial Technology",
@@ -84,12 +90,43 @@
       }
     },
     {
+      "name": "AgroGrow Technologies",
+      "description": "An agricultural technology company specializing in smart farming solutions, including automated irrigation and crop monitoring systems.",
+      "address": "789 Harvest Lane, AgriTown, IA 50321",
+      "phone": "+1-800-555-9876",
+      "email": "info@agrogrow.com",
+      "website": "agrogrow.com",
+      "image": "images/agrogrow.jpg",
+      "membership_level": 2,
+      "other_info": {
+        "industry": "Agricultural Technology",
+        "founded": "2010",
+        "CEO": "Mark Stevens"
+      }
+    },
+    {
+      "name": "GreenField Organics",
+      "description": "A leader in organic farming, producing high-quality, sustainable crops while promoting eco-friendly agricultural practices.",
+      "address": "234 Organic Blvd, Farmville, KS 66044",
+      "phone": "+1-800-555-6543",
+      "email": "greenfiel@aol.com",
+      "website": "greenfield.com",
+      "image": "images/greenfield.jpg",
+      "membership_level": 1,
+      "other_info": {
+        "industry": "Organic Agriculture",
+        "founded": "2005",
+        "CEO": "Emily Larson"
+      }
+    },
+    {
       "name": "Creative Design Studio",
       "description": "A creative agency specializing in graphic design and digital marketing solutions.",
       "address": "159 Art Avenue, Design Town, TX 75201",
       "phone": "+1-800-555-6543",
-      "website": "https://www.creativedesign.com",
-      "image": "creative_design_icon.jpg",
+      "email": "creative@outlook.com",
+      "website": "creativedesign.com",
+      "image": "images/creative_design.jpg",
       "membership_level": 3,
       "other_info": {
         "industry": "Graphic Design",
