@@ -75,6 +75,7 @@
         margin-left: auto; 
         z-index: 1; 
         margin-right: -48px !important;
+        margin-left: 7px;
     }
 
     .d-flex {
@@ -195,6 +196,7 @@ main {
     padding: 20px;
     width: 100%;
     bottom: 0;
+    margin-top: 50px;
 }
 
 /* Footer container */
@@ -205,8 +207,6 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    /* padding-left: 37px; 
-    padding-right: 37px; */
 }
 
 /* Left Section */
@@ -311,19 +311,19 @@ main {
     width: 100%;
     height: auto;
     display: flex;
-    justify-content: center; /* Horizontally center the content */
-    align-items: center;     /* Vertically center the content */
+    justify-content: center; 
+    align-items: center;    
 }
 
 .hero-image {
     object-fit: cover; 
-    width: 100%; /* Ensure the image takes the full width of the container */
-    height: 400px; /* Set a default height */
+    width: 100%; 
+    height: 400px; 
     max-width: 100%;
 }
 
 .card-img-overlay {
-    background: rgba(0, 0, 0, 0.4); /* Dark overlay with transparency */
+    background: rgba(0, 0, 0, 0.4); 
     position: absolute;
     top: 0;
     left: 0;
@@ -421,19 +421,19 @@ main {
 
 @media (max-width: 1080px) {
     .title-section {
-        padding-left: 43px; /* Adjust padding for tablets */
+        padding-left: 43px; 
     }
 } 
 
 @media (max-width: 1250px) {
     .title-section {
-        padding-left: 44px; /* Adjust padding for tablets */
+        padding-left: 44px; 
     }
 }
 
 @media (max-width: 992px) {
     .title-section {
-        padding-left: 40px; /* Adjust padding for tablets */
+        padding-left: 40px; 
     }
 }
 
@@ -451,7 +451,7 @@ main {
 }
 
 .title-section h1 {
-    font-size: 1.6em;
+    font-size: 1.5rem;
     font-weight: bold;
     margin: 0;
     margin-top: 20px;
@@ -495,8 +495,8 @@ main {
 /* Business tagline */
 .business-tagline {
     text-align: center;
-    font-size: 0.9em;
-    color: gray;
+    font-size: 0.8em;
+    color: #333333;
     margin-bottom: 8px;
     margin-top: -10px;
 }
@@ -513,6 +513,7 @@ main {
 .business-info {
     float: left;
     max-width: 70%;
+    font-size: 15px;
 }
 
 .business-card hr {
@@ -557,8 +558,8 @@ main {
     }
 
     .business-logo {
-        width: 200px; /* Adjust this value to make the image larger */
-        height: auto; /* Maintain aspect ratio */
+        width: 200px; 
+        height: auto; 
     }
 
     .business-info {
@@ -607,8 +608,8 @@ main {
     }
 
     .business-logo {
-        width: 200px; /* Adjust this value to make the image larger */
-        height: auto; /* Maintain aspect ratio */
+        width: 200px; 
+        height: auto; 
     }
 
     .business-info {
@@ -630,11 +631,158 @@ main {
     }
 
     .business-logo {
-        width: 70px; /* Adjust this value to make the image larger */
-        height: auto; /* Maintain aspect ratio */
+        width: 70px;
+        height: 70px; 
     }
 
     .business-info {
         max-width: 100%;
     }
+}
+
+
+
+/* List View */
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+/* Style the table */
+.table {
+    width: 98.5%;
+    border-collapse: collapse; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for table header */
+.table thead th {
+    background-color: #f0f4f8; 
+    color: #333; 
+    padding: 12px;
+    text-align: left;
+    border-bottom: 2px solid #ccc; 
+}
+
+/* Alternating row colors */
+.table tbody tr:nth-child(odd) {
+    background-color: #e0f7fa; 
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+/* Style for table data */
+.table tbody td {
+    padding: 12px;
+    font-size: 0.95rem;
+    color: #333;
+    text-align: left;
+    border-bottom: 1px solid #ddd; 
+}
+
+/* Hyperlink styling */
+.table a {
+    color: #000; 
+    cursor: pointer; 
+}
+
+.table a:hover {
+    text-decoration: underline; 
+}
+
+.table a:hover {
+    text-decoration: none;
+}
+
+/* Responsive adjustments for tablets and small screens */
+@media (max-width: 768px) {
+    .table-container {
+        overflow-x: auto;
+    }
+
+    .table thead th, 
+    .table tbody td {
+        font-size: 0.85rem;
+        padding: 8px; 
+    }
+}
+
+/* Additional adjustments for smaller mobile screens */
+@media (max-width: 576px) {
+    .table-container {
+        overflow-x: hidden; 
+        width: 100%;        
+    }
+
+    .table {
+        table-layout: fixed; 
+        width: 100%;        
+    }
+
+    .table thead th, 
+    .table tbody td {
+        word-wrap: break-word;   
+        white-space: normal;     
+        overflow-wrap: break-word; 
+        font-size: 0.8rem;       
+        padding: 6px;            
+    }
+
+    .table tbody td a {
+        word-wrap: break-word;    
+        white-space: normal;      
+        overflow-wrap: break-word; 
+        word-break: break-all;   
+    }
+}
+
+
+
+
+/* Toggle Icons */
+.center-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;        
+    padding: 10px 0;    
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+.center-icon .container {
+    display: flex;
+    justify-content: center; 
+    align-items: center;   
+    flex-direction: column;  
+    width: 100%;           
+    padding: 0;             
+    margin: 0 auto;         
+}
+
+.center-icon img {
+    max-width: 100px;   
+    height: auto;       
+    margin: 0;          
+}
+
+@media (max-width: 768px) {
+    .center-icon img {
+        max-width: 80px; 
+        margin-left: 80px;
+    }
+}
+
+#grid-list-toggle {
+    width: 30px;
+    height: auto;
+}
+
+#grid-list-toggle.large-icon {
+    width: 45px;  
+    height: auto;
+    margin-top: -5px;
 }
