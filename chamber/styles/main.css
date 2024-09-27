@@ -161,11 +161,37 @@
     
 }
 
+
+
+
 /* Dark Mode Styling */
 body.dark-mode {
-    background-color: #121212;
-    color: #000;
+    background-color: #000000; /* Set body background to black */
+    color: #ffffff;            /* Set text color to white */
 }
+
+/* Apply to member cards */
+body.dark-mode .business-card {
+    background-color: #000000; 
+    color: #ffffff;            
+    border-color: #333333;     
+}
+
+/* Exclude the menu and footer from dark mode */
+header, footer {
+    background-color: initial; 
+    color: initial;           
+}
+
+/* Dark Mode Styling */
+body.dark-mode .business-tagline {
+    color: lightgray;  
+}
+
+body.dark-mode hr {
+    border-color: lightgray; 
+}
+
 
 #theme-toggle {
     width: 30px;       

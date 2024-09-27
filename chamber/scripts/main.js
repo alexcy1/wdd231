@@ -16,10 +16,10 @@ themeToggle.addEventListener('click', function () {
 });
 
 // Toggle Navbar Toggler
-const navbarToggler = document.querySelector('.navbar-toggler');
-navbarToggler.addEventListener('click', function () {
-    navbarToggler.classList.toggle('open');
-});
+// const navbarToggler = document.querySelector('.navbar-toggler');
+// navbarToggler.addEventListener('click', function () {
+//     navbarToggler.classList.toggle('open');
+// });
 
 
 
@@ -111,8 +111,8 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         // Set overlay background width to match the hero image
-        heroTextOverlay.style.width = `${heroImage.clientWidth}px`; // Adjust overlay width to match image width
-        heroTextOverlay.style.background = 'rgba(0, 0, 0, 0.4)'; // Ensure background is set
+        heroTextOverlay.style.width = `${heroImage.clientWidth}px`; 
+        heroTextOverlay.style.background = 'rgba(0, 0, 0, 0.4)'; 
     }
 
     // Adjust on load
@@ -125,57 +125,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 // Members
-// document.addEventListener('DOMContentLoaded', async function() {
-//     // Function to fetch the JSON data
-//     async function fetchBusinesses() {
-//         try {
-//             const response = await fetch('./data/members.json'); // Adjust path if needed
-//             const businesses = await response.json();
-//             return businesses;
-//         } catch (error) {
-//             console.error('Error fetching JSON:', error);
-//             return [];
-//         }
-//     }
-
-//     // Function to display the membership cards
-//     function displayMembershipCards(businesses) {
-//         const cardContainer = document.getElementById('membership-cards');
-
-//         businesses.forEach(business => {
-//             const card = document.createElement('div');
-//             card.classList.add('business-card');
-
-//             // Create the card content dynamically
-//             card.innerHTML = `
-//                 <h2 class="business-name">${business.name}</h2>
-//                 <p class="business-tagline">${business.other_info.industry}</p>
-//                 <hr>
-//                 <div class="card-content">
-//                     <img src="${business.image}" alt="${business.name}" class="business-logo">
-//                     <div class="business-info">
-//                         <div><strong>Email:</strong> ${business.email}</div>
-//                         <div><strong>Phone:</strong> ${business.phone}</div>
-//                         <div><strong>URL:</strong> <a href="${business.website}" target="_blank">${business.website}</a></div>
-//                     </div>
-//                 </div>
-//             `;
-
-//             // Append the card to the container
-//             cardContainer.appendChild(card);
-//         });
-//     }
-
-//     // Fetch and display the data
-//     const businesses = await fetchBusinesses();
-//     displayMembershipCards(businesses);
-// });
-
-
-
-
-
-
 document.addEventListener('DOMContentLoaded', async function() {
     // Function to fetch the JSON data
     async function fetchBusinesses() {
@@ -259,7 +208,6 @@ document.addEventListener('DOMContentLoaded', async function() {
         // Append the table to the container
         cardContainer.appendChild(table);
     }
-
 
     // Fetch and display the data
     const businesses = await fetchBusinesses();
