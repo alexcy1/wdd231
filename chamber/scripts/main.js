@@ -15,39 +15,88 @@ themeToggle.addEventListener('click', function () {
     localStorage.setItem('theme', theme);
 });
 
-// Toggle Navbar Toggler
-// const navbarToggler = document.querySelector('.navbar-toggler');
-// navbarToggler.addEventListener('click', function () {
-//     navbarToggler.classList.toggle('open');
-// });
-
 
 
 // LOGO ------------------------------------------------------------------------
+// LOGO AND COMPANY NAME INJECTION ------------------------------------------------
 document.addEventListener('DOMContentLoaded', function() {
-    function addLogoImage() {
+    function addLogoAndCompanyName() {
         const logoData = {
             src: 'images/logo.png',  
             alt: 'Logo',
             class: 'navbar-brand-img'
         };
 
-        // Create the image element
+        const companyNameData = {
+            nameTop: 'Lagos',
+            nameBottom: 'Chamber of Commerce'
+        };
+
+        // Create the image element for the logo
         const image = document.createElement('img');
         image.src = logoData.src;
         image.alt = logoData.alt;
         image.className = logoData.class;
 
-        // Find the navbar brand element
+        // Find the logo container and inject the logo
+        const logoContainer = document.querySelector('.logo-container');
+        if (logoContainer) {
+            logoContainer.innerHTML = ''; 
+            logoContainer.appendChild(image); 
+        }
+
+        // Create company name elements
+        const companyNameContainer = document.createElement('div');
+        companyNameContainer.classList.add('company-name', 'ms-2');
+        
+        const nameTop = document.createElement('span');
+        nameTop.classList.add('company-name-top');
+        nameTop.textContent = companyNameData.nameTop;
+
+        const nameBottom = document.createElement('span');
+        nameBottom.classList.add('company-name-bottom');
+        nameBottom.textContent = companyNameData.nameBottom;
+
+        // Append nameTop and nameBottom to the container
+        companyNameContainer.appendChild(nameTop);
+        companyNameContainer.appendChild(document.createElement('br')); // Line break between top and bottom name
+        companyNameContainer.appendChild(nameBottom);
+
+        // Inject the company name next to the logo
         const navbarBrand = document.querySelector('.navbar-brand');
         if (navbarBrand) {
-            navbarBrand.innerHTML = ''; 
-            navbarBrand.appendChild(image); 
+            navbarBrand.appendChild(companyNameContainer);
         }
     }
 
-    addLogoImage();
+    addLogoAndCompanyName(); // Call the function when DOM content is loaded
 });
+
+
+// document.addEventListener('DOMContentLoaded', function() {
+//     function addLogoImage() {
+//         const logoData = {
+//             src: 'images/logo.png',  
+//             alt: 'Logo',
+//             class: 'navbar-brand-img'
+//         };
+
+//         // Create the image element
+//         const image = document.createElement('img');
+//         image.src = logoData.src;
+//         image.alt = logoData.alt;
+//         image.className = logoData.class;
+
+//         // Find the navbar brand element
+//         const navbarBrand = document.querySelector('.navbar-brand');
+//         if (navbarBrand) {
+//             navbarBrand.innerHTML = ''; 
+//             navbarBrand.appendChild(image); 
+//         }
+//     }
+
+//     addLogoImage();
+// });
 
 
 
