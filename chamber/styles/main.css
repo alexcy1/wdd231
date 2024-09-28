@@ -1,5 +1,5 @@
 body {
-    padding-top: 70px; /* Adjust based on the height of your navbar */
+    padding-top: 70px;
 }
 
 .navbar-brand img {
@@ -162,7 +162,7 @@ body {
     }
 
     body {
-        padding-top: 75px; /* Adjust if necessary for mobile */
+        padding-top: 75px;
     }
 
 }
@@ -183,8 +183,8 @@ body {
 
 /* Dark Mode Styling */
 body.dark-mode {
-    background-color: #000000; /* Set body background to black */
-    color: #ffffff;            /* Set text color to white */
+    background-color: #000000; 
+    color: #ffffff;         
 }
 
 /* Apply to member cards */
@@ -319,7 +319,7 @@ main {
     }
 
     .social-icon {
-        max-width: 100%; /* Prevent overflow */
+        max-width: 100%; 
         height: auto;
         margin: 0 10px;
     }
@@ -377,13 +377,13 @@ main {
     bottom: 0;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Vertically center the text */
-    align-items: center; /* Horizontally center the text */
-    text-align: center; /* Ensure text is centered */
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
 }
 
 .card-title {
-    font-size: 3rem; /* Larger font for hero title */
+    font-size: 3rem; 
     font-weight: bold;
     color: #fff;
 }
@@ -513,7 +513,7 @@ main {
     justify-content: space-around;
     width: 90.5%; 
     margin: 0 auto; 
-    align-items: stretch; /* Make all cards stretch to the same height */
+    align-items: stretch; 
     box-sizing: border-box;
 }
 

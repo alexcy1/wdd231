@@ -1,8 +1,8 @@
-// Hero Image and Text Adjustment
+// Hero Image
 document.addEventListener('DOMContentLoaded', function () {
     function adjustHeroElements() {
         const heroImage = document.querySelector('.hero-image');
-        const heroTextOverlay = document.querySelector('.card-img-overlay'); // Targeting the overlay containing text
+        const heroTextOverlay = document.querySelector('.card-img-overlay');
 
         if (window.innerWidth < 576) {
             heroImage.style.marginLeft = '12.1px'; 
@@ -33,10 +33,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Members
 document.addEventListener('DOMContentLoaded', async function() {
-    // Function to fetch the JSON data
     async function fetchBusinesses() {
         try {
-            const response = await fetch('./data/members.json'); // Adjust path if needed
+            const response = await fetch('./data/members.json'); 
             const businesses = await response.json();
             return businesses;
         } catch (error) {
@@ -48,8 +47,8 @@ document.addEventListener('DOMContentLoaded', async function() {
     // Function to display membership cards in Grid view
     function displayMembershipCards(businesses) {
         const cardContainer = document.getElementById('membership-cards');
-        cardContainer.innerHTML = ''; // Clear existing content
-        cardContainer.classList.add('card-container'); // Add the class to the container
+        cardContainer.innerHTML = ''; 
+        cardContainer.classList.add('card-container');
         cardContainer.classList.remove('list-view');
 
         businesses.forEach(business => {
@@ -79,12 +78,12 @@ document.addEventListener('DOMContentLoaded', async function() {
     // Function to display membership data in List (Table) view
     function displayMembershipTable(businesses) {
         const cardContainer = document.getElementById('membership-cards');
-        cardContainer.innerHTML = ''; // Clear existing content
-        cardContainer.classList.add('list-view'); // Add list-view class for styling
+        cardContainer.innerHTML = ''; 
+        cardContainer.classList.add('list-view'); 
 
         // Create the table element with Bootstrap classes
         const table = document.createElement('table');
-        table.classList.add('table', 'table-striped', 'table-responsive'); // Add Bootstrap classes
+        table.classList.add('table', 'table-striped', 'table-responsive'); 
 
         // Create table headers
         const tableHead = document.createElement('thead');
@@ -118,7 +117,7 @@ document.addEventListener('DOMContentLoaded', async function() {
 
     // Fetch and display the data
     const businesses = await fetchBusinesses();
-    displayMembershipCards(businesses); // Default view: grid
+    displayMembershipCards(businesses); 
 
     // Toggle between grid and list views
     const toggleButton = document.getElementById('grid-list-toggle');
@@ -126,12 +125,12 @@ document.addEventListener('DOMContentLoaded', async function() {
 
     toggleButton.addEventListener('click', function() {
         if (cardContainer.classList.contains('list-view')) {
-            displayMembershipCards(businesses); // Switch to grid view
+            displayMembershipCards(businesses); 
         } else {
-            displayMembershipTable(businesses); // Switch to list view (table)
+            displayMembershipTable(businesses); 
         }
 
-        // Optionally, you can change the icon when toggling
+        // Change the icon when toggling
         if (cardContainer.classList.contains('list-view')) {
             toggleButton.src = 'images/list.png'; 
             toggleButton.classList.add('large-icon');
