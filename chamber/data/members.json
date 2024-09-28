@@ -6,7 +6,7 @@
       "phone": "+1-800-555-1234",
       "email": "tect.inno@gmail.com",
       "website": "techinnovators.com",
-      "image": "images/tech_innovators.jpg",
+      "image": "images/tech_innovators.webp",
       "membership_level": 3,
       "other_info": {
         "industry": "Technology",
@@ -21,7 +21,7 @@
       "phone": "+1-800-555-5678",
       "email": "greenenergy@aol.com",
       "website": "greenenergy.com",
-      "image": "images/green_energy_icon.jpg",
+      "image": "images/green_energy_icon.webp",
       "membership_level": 2,
       "other_info": {
         "industry": "Renewable Energy",
@@ -36,7 +36,7 @@
       "phone": "+1-800-555-9876",
       "email": "healthy@hotmail.com",
       "website": "healthyeats.com",
-      "image": "images/healthy_eats.jpg",
+      "image": "images/healthy_eats.webp",
       "membership_level": 1,
       "other_info": {
         "industry": "Food & Beverage",
@@ -51,7 +51,7 @@
       "phone": "+1-800-555-4567",
       "email": "smart.hms@gmail.com",
       "website": "smarthomes.com",
-      "image": "images/smart_homes.jpg",
+      "image": "images/smart_homes.webp",
       "membership_level": 3,
       "other_info": {
         "industry": "Home Automation",
@@ -66,7 +66,7 @@
       "phone": "+1-800-555-6789",
       "email": "bright_edu@yahoo.com",
       "website": "brighteducation.com",
-      "image": "images/bright_education.jpg",
+      "image": "images/bright_education.webp",
       "membership_level": 2,
       "other_info": {
         "industry": "Education",
@@ -81,7 +81,7 @@
       "phone": "+1-800-555-7890",
       "email": "fintech@gmail.com",
       "website": "fintechinnovations.com",
-      "image": "images/fintech.jpg",
+      "image": "images/fintech.webp",
       "membership_level": 1,
       "other_info": {
         "industry": "Financial Technology",
@@ -96,7 +96,7 @@
       "phone": "+1-800-555-9876",
       "email": "info@agrogrow.com",
       "website": "agrogrow.com",
-      "image": "images/agrogrow.jpg",
+      "image": "images/agrogrow.webp",
       "membership_level": 2,
       "other_info": {
         "industry": "Agricultural Technology",
@@ -111,7 +111,7 @@
       "phone": "+1-800-555-6543",
       "email": "greenfiel@aol.com",
       "website": "greenfield.com",
-      "image": "images/greenfield.jpg",
+      "image": "images/greenfield.webp",
       "membership_level": 1,
       "other_info": {
         "industry": "Organic Agriculture",
@@ -126,7 +126,7 @@
       "phone": "+1-800-555-6543",
       "email": "creative@outlook.com",
       "website": "creativedesign.com",
-      "image": "images/creative_design.jpg",
+      "image": "images/creative_design.webp",
       "membership_level": 3,
       "other_info": {
         "industry": "Graphic Design",

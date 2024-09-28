@@ -268,7 +268,8 @@ main {
 }
 
 .social-icon {
-    width: 40px;
+    max-width: 100%;
+    height: auto;
     margin: 0 10px;
 }
 
@@ -318,7 +319,8 @@ main {
     }
 
     .social-icon {
-        width: 50px;
+        max-width: 100%; /* Prevent overflow */
+        height: auto;
         margin: 0 10px;
     }
 
@@ -813,6 +815,7 @@ main {
 
 /* Styling for 'Lagos' (upper text) */
 .company-name-top {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
     font-size: 1.5rem;
     text-transform: uppercase; 
@@ -824,6 +827,7 @@ main {
 
 /* Styling for 'Chamber of Commerce' (lower text) */
 .company-name-bottom {
+    font-family: "Lato", sans-serif;
     font-size: 0.8rem;
     color: #333333;
     margin-top: -8px; 
