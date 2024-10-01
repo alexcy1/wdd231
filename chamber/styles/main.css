@@ -187,6 +187,10 @@ body.dark-mode {
     color: #ffffff;         
 }
 
+body.dark-mode .title-section h1 {
+    color: #ffffff;
+}
+
 /* Apply to member cards */
 body.dark-mode .business-card {
     background-color: #000000; 
@@ -346,11 +350,23 @@ main {
 
 
 
-
-
-
-
 /* Hero Banner */
+.hero-banner .btn {
+    padding: 12px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none !important;
+    background-color: #f0f4f8; 
+    color: #000;
+}
+
+.hero-banner .btn:hover {
+    background-color: #000;
+    color: #fff;
+    border: none !important;
+    transition: 0.7s;
+}
+
 .hero-banner {
     position: relative;
     width: 100%;
@@ -386,6 +402,7 @@ main {
     font-size: 3rem; 
     font-weight: bold;
     color: #fff;
+    margin-top: 80px;
 }
 
 .card-text {
@@ -413,6 +430,7 @@ main {
 
     .card-title {
         font-size: 2.5rem; 
+        margin-top: 70px;
     }
 
     .card-text {
@@ -479,19 +497,19 @@ main {
 
 @media (max-width: 992px) {
     .title-section {
-        padding-left: 40px; 
+        padding-left: 22px; 
     }
 }
 
 @media (max-width: 768px) {
     .title-section {
-        padding-left: 40px; 
+        padding-left: 22px; 
     }
 }
 
 @media (max-width: 576px) {
     .title-section {
-        padding-left: 25px; 
+        padding-left: 20px; 
         text-align: left; 
     }
 }
@@ -505,7 +523,7 @@ main {
 }
 
 
-
+/* MEMBERS */
 /* Card container - ensure equal height cards */
 .card-container {
     display: flex;
@@ -840,5 +858,361 @@ main {
     flex-direction: column;
     align-items: flex-start; 
 }
+
+
+
+
+/* HOME PAGE SPECIFIC ================================================================= */
+
+
+/* Renamed container to avoid conflict */
+.events-container {
+    width: 100%;
+    max-width: 1150px; 
+    margin: 0 auto; 
+    padding-left: 15px; 
+    padding-right: 15px;
+}
+
+/* Card styles */
+.events-card {
+    background-color: #f0f0f0;
+    color: #fff;
+    border: none;
+    width: 100%; /* Full width on mobile */
+    margin: 0 auto; /* Centering the card horizontally */
+    min-height: 310px;
+}
+
+.events-card-header {
+    background-color: #333333;
+    color: #fff;
+    font-size: 1.5rem;
+    padding: 10px;
+    text-align: center;
+}
+
+.events-card-body {
+    background-color: #f0f0f0;
+    color: #333;
+    padding: 20px;
+    border-top: 3px solid #333;
+}
+
+/* Specific styles for the weather card content */
+.weather-body {
+    display: flex;
+    align-items: center;
+}
+
+.weather-icon {
+    width: 70px;
+    height: 70px;
+    margin-right: 10px;
+    margin-top: -140px;
+}
+
+.weather-details p {
+    margin: 5px 0;
+}
+
+/* Responsive Layout for smaller screens */
+@media (max-width: 1200px) {
+    .events-section {
+        width: 100%;
+        max-width: 1097px; /* Set the max-width for smaller screens */
+        margin: 0 auto; /* Center the section */
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .events-section .col-lg-6, .events-section .col-lg-3 {
+        width: 100%;
+        padding: 0;
+        margin-bottom: 20px;
+    }
+
+    .events-card {
+        width: 100%;
+        margin: 0 auto; /* Ensure the card is centered */
+    }
+}
+
+@media (max-width: 1180px) {
+    .events-section {
+        width: 100%;
+        max-width: 1080px; /* Set the max-width for smaller screens */
+        margin: 0 auto; /* Center the section */
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .events-section .col-lg-6, .events-section .col-lg-3 {
+        width: 100%;
+        padding: 0;
+        margin-bottom: 20px;
+    }
+
+    .events-card {
+        width: 100%;
+        margin: 0 auto; /* Ensure the card is centered */
+    }
+}
+
+@media (max-width: 1175px) {
+    .events-section {
+        width: 100%;
+        max-width: 1074px; /* Set the max-width for smaller screens */
+        margin: 0 auto; /* Center the section */
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .events-section .col-lg-6, .events-section .col-lg-3 {
+        width: 100%;
+        padding: 0;
+        margin-bottom: 20px;
+    }
+
+    .events-card {
+        width: 100%;
+        margin: 0 auto; /* Ensure the card is centered */
+    }
+}
+
+@media (max-width: 1170px) {
+    .events-section {
+        width: 100%;
+        max-width: 1060px; /* Set the max-width for smaller screens */
+        margin: 0 auto; /* Center the section */
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .events-section .col-lg-6, .events-section .col-lg-3 {
+        width: 100%;
+        padding: 0;
+        margin-bottom: 20px;
+    }
+
+    .events-card {
+        width: 100%;
+        margin: 0 auto; /* Ensure the card is centered */
+    }
+}
+
+@media (max-width: 1165px) {
+    .events-section {
+        width: 100%;
+        max-width: 1070px; /* Set the max-width for smaller screens */
+        margin: 0 auto; /* Center the section */
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .events-section .col-lg-6, .events-section .col-lg-3 {
+        width: 100%;
+        padding: 0;
+        margin-bottom: 20px;
+    }
+
+    .events-card {
+        width: 100%;
+        margin: 0 auto; /* Ensure the card is centered */
+    }
+}
+
+@media (max-width: 1155px) {
+    .events-section {
+        width: 100%;
+        max-width: 1058px; /* Set the max-width for smaller screens */
+        margin: 0 auto; /* Center the section */
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .events-section .col-lg-6, .events-section .col-lg-3 {
+        width: 100%;
+        padding: 0;
+        margin-bottom: 20px;
+    }
+
+    .events-card {
+        width: 100%;
+        margin: 0 auto; /* Ensure the card is centered */
+    }
+}
+
+@media (max-width: 1150px) {
+    .events-section {
+        width: 100%;
+        max-width: 1054px; /* Set the max-width for smaller screens */
+        margin: 0 auto; /* Center the section */
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .events-section .col-lg-6, .events-section .col-lg-3 {
+        width: 100%;
+        padding: 0;
+        margin-bottom: 20px;
+    }
+
+    .events-card {
+        width: 100%;
+        margin: 0 auto; /* Ensure the card is centered */
+    }
+}
+
+@media (max-width: 1140px) {
+    .events-section {
+        width: 100%;
+        max-width: 1040px; /* Set the max-width for smaller screens */
+        margin: 0 auto; /* Center the section */
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .events-section .col-lg-6, .events-section .col-lg-3 {
+        width: 100%;
+        padding: 0;
+        margin-bottom: 20px;
+    }
+
+    .events-card {
+        width: 100%;
+        margin: 0 auto; /* Ensure the card is centered */
+    }
+}
+
+@media (max-width: 1130px) {
+    .events-section {
+        width: 100%;
+        max-width: 1010px; /* Set the max-width for smaller screens */
+        margin: 0 auto; /* Center the section */
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .events-section .col-lg-6, .events-section .col-lg-3 {
+        width: 100%;
+        padding: 0;
+        margin-bottom: 20px;
+    }
+
+    .events-card {
+        width: 100%;
+        margin: 0 auto; /* Ensure the card is centered */
+    }
+}
+
+@media (max-width: 1120px) {
+    .events-section {
+        width: 100%;
+        max-width: 1017px; /* Set the max-width for smaller screens */
+        margin: 0 auto; /* Center the section */
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .events-section .col-lg-6, .events-section .col-lg-3 {
+        width: 100%;
+        padding: 0;
+        margin-bottom: 20px;
+    }
+
+    .events-card {
+        width: 100%;
+        margin: 0 auto; /* Ensure the card is centered */
+    }
+}
+
+@media (max-width: 1110px) {
+    .events-section {
+        width: 100%;
+        max-width: 1005px; /* Set the max-width for smaller screens */
+        margin: 0 auto; /* Center the section */
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .events-section .col-lg-6, .events-section .col-lg-3 {
+        width: 100%;
+        padding: 0;
+        margin-bottom: 20px;
+    }
+
+    .events-card {
+        width: 100%;
+        margin: 0 auto; /* Ensure the card is centered */
+    }
+}
+
+
+
+/* @media (max-width: 1100px) {
+    .events-section {
+        width: 100%;
+        max-width: 1000px;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .events-section .col-lg-6, .events-section .col-lg-3 {
+        width: 100%;
+        padding: 0;
+        margin-bottom: 20px;
+    }
+
+    .events-card {
+        width: 100%;
+        margin: 0 auto;
+    }
+} */
+
+/* Layout for larger screens */
+/* @media (min-width: 1100px) {
+    .col-lg-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    .col-lg-3 {
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+} */
+
+
+/* SPOTLIGHT */
+.spotlight{
+    margin-top: 15px;
+} 
+
 
 
