@@ -213,14 +213,68 @@ body.dark-mode hr {
     border-color: lightgray; 
 }
 
+/* Card styles for dark mode */
+body.dark-mode .events-card {
+    background-color: #1a1a1a; 
+    color: #ffffff; 
+    border: none;
+    width: 100%; 
+    margin: 0 auto; 
+    min-height: 310px;
+}
+
+/* Card header styles for dark mode */
+body.dark-mode .events-card-header {
+    background-color: #333333; 
+    color: #ffffff; 
+    font-size: 1.5rem;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Card body styles for dark mode */
+body.dark-mode .events-card-body {
+    background-color: #1a1a1a; 
+    color: #ffffff; 
+    padding: 20px;
+    border-top: 3px solid #333;
+}
+
+/* Weather card body styles for dark mode */
+body.dark-mode .weather-body {
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+}
+
+body.dark-mode .weather-icon {
+    width: 70px;
+    height: 70px;
+    margin-right: 10px;
+    margin-top: -140px;
+    filter: brightness(0) invert(1); 
+}
+
+/* Weather details text styles for dark mode */
+body.dark-mode .weather-details p {
+    margin: 5px 0;
+    color: #ffffff; 
+}
+
+/* Forecast section text styles for dark mode */
+body.dark-mode .forecast-body p,
+body.dark-mode #location-name {
+    color: #ffffff;
+}
+
+
+
 
 #theme-toggle {
     width: 30px;       
     height: 30px;  
 }
 
-
-/* Ensure the entire page takes at least 100% height */
 html, body {
     height: 100%;
     margin: 0;
@@ -229,7 +283,6 @@ html, body {
     flex-direction: column;
 }
 
-/* Main content area needs to grow to fill available space */
 main {
     flex: 1;
     width: 100%;
@@ -524,7 +577,14 @@ main {
 
 
 /* MEMBERS */
-/* Card container - ensure equal height cards */
+.card-container :hover{
+    background: #f0f4f8;
+    cursor: pointer;
+    transition: 0.7s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0);
+    border-radius: 0px;
+}
+
 .card-container {
     display: flex;
     flex-wrap: wrap;
@@ -879,8 +939,8 @@ main {
     background-color: #f0f0f0;
     color: #fff;
     border: none;
-    width: 100%; /* Full width on mobile */
-    margin: 0 auto; /* Centering the card horizontally */
+    width: 100%; 
+    margin: 0 auto; 
     min-height: 310px;
 }
 
@@ -920,8 +980,8 @@ main {
 @media (max-width: 1200px) {
     .events-section {
         width: 100%;
-        max-width: 1097px; /* Set the max-width for smaller screens */
-        margin: 0 auto; /* Center the section */
+        max-width: 1097px; 
+        margin: 0 auto; 
         padding: 0;
         display: flex;
         flex-direction: column;
@@ -936,15 +996,15 @@ main {
 
     .events-card {
         width: 100%;
-        margin: 0 auto; /* Ensure the card is centered */
+        margin: 0 auto; 
     }
 }
 
 @media (max-width: 1180px) {
     .events-section {
         width: 100%;
-        max-width: 1080px; /* Set the max-width for smaller screens */
-        margin: 0 auto; /* Center the section */
+        max-width: 1080px; 
+        margin: 0 auto; 
         padding: 0;
         display: flex;
         flex-direction: column;
@@ -959,15 +1019,15 @@ main {
 
     .events-card {
         width: 100%;
-        margin: 0 auto; /* Ensure the card is centered */
+        margin: 0 auto; 
     }
 }
 
 @media (max-width: 1175px) {
     .events-section {
         width: 100%;
-        max-width: 1074px; /* Set the max-width for smaller screens */
-        margin: 0 auto; /* Center the section */
+        max-width: 1074px; 
+        margin: 0 auto; 
         padding: 0;
         display: flex;
         flex-direction: column;
@@ -982,15 +1042,15 @@ main {
 
     .events-card {
         width: 100%;
-        margin: 0 auto; /* Ensure the card is centered */
+        margin: 0 auto; 
     }
 }
 
 @media (max-width: 1170px) {
     .events-section {
         width: 100%;
-        max-width: 1060px; /* Set the max-width for smaller screens */
-        margin: 0 auto; /* Center the section */
+        max-width: 1060px; 
+        margin: 0 auto;
         padding: 0;
         display: flex;
         flex-direction: column;
@@ -1005,15 +1065,15 @@ main {
 
     .events-card {
         width: 100%;
-        margin: 0 auto; /* Ensure the card is centered */
+        margin: 0 auto; 
     }
 }
 
 @media (max-width: 1165px) {
     .events-section {
         width: 100%;
-        max-width: 1070px; /* Set the max-width for smaller screens */
-        margin: 0 auto; /* Center the section */
+        max-width: 1070px; 
+        margin: 0 auto; 
         padding: 0;
         display: flex;
         flex-direction: column;
@@ -1028,15 +1088,15 @@ main {
 
     .events-card {
         width: 100%;
-        margin: 0 auto; /* Ensure the card is centered */
+        margin: 0 auto; 
     }
 }
 
 @media (max-width: 1155px) {
     .events-section {
         width: 100%;
-        max-width: 1058px; /* Set the max-width for smaller screens */
-        margin: 0 auto; /* Center the section */
+        max-width: 1058px; 
+        margin: 0 auto; 
         padding: 0;
         display: flex;
         flex-direction: column;
@@ -1051,132 +1111,15 @@ main {
 
     .events-card {
         width: 100%;
-        margin: 0 auto; /* Ensure the card is centered */
+        margin: 0 auto; 
     }
 }
 
 @media (max-width: 1150px) {
     .events-section {
         width: 100%;
-        max-width: 1054px; /* Set the max-width for smaller screens */
-        margin: 0 auto; /* Center the section */
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .events-section .col-lg-6, .events-section .col-lg-3 {
-        width: 100%;
-        padding: 0;
-        margin-bottom: 20px;
-    }
-
-    .events-card {
-        width: 100%;
-        margin: 0 auto; /* Ensure the card is centered */
-    }
-}
-
-@media (max-width: 1140px) {
-    .events-section {
-        width: 100%;
-        max-width: 1040px; /* Set the max-width for smaller screens */
-        margin: 0 auto; /* Center the section */
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .events-section .col-lg-6, .events-section .col-lg-3 {
-        width: 100%;
-        padding: 0;
-        margin-bottom: 20px;
-    }
-
-    .events-card {
-        width: 100%;
-        margin: 0 auto; /* Ensure the card is centered */
-    }
-}
-
-@media (max-width: 1130px) {
-    .events-section {
-        width: 100%;
-        max-width: 1010px; /* Set the max-width for smaller screens */
-        margin: 0 auto; /* Center the section */
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .events-section .col-lg-6, .events-section .col-lg-3 {
-        width: 100%;
-        padding: 0;
-        margin-bottom: 20px;
-    }
-
-    .events-card {
-        width: 100%;
-        margin: 0 auto; /* Ensure the card is centered */
-    }
-}
-
-@media (max-width: 1120px) {
-    .events-section {
-        width: 100%;
-        max-width: 1017px; /* Set the max-width for smaller screens */
-        margin: 0 auto; /* Center the section */
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .events-section .col-lg-6, .events-section .col-lg-3 {
-        width: 100%;
-        padding: 0;
-        margin-bottom: 20px;
-    }
-
-    .events-card {
-        width: 100%;
-        margin: 0 auto; /* Ensure the card is centered */
-    }
-}
-
-@media (max-width: 1110px) {
-    .events-section {
-        width: 100%;
-        max-width: 1005px; /* Set the max-width for smaller screens */
-        margin: 0 auto; /* Center the section */
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .events-section .col-lg-6, .events-section .col-lg-3 {
-        width: 100%;
-        padding: 0;
-        margin-bottom: 20px;
-    }
-
-    .events-card {
-        width: 100%;
-        margin: 0 auto; /* Ensure the card is centered */
-    }
-}
-
-
-
-/* @media (max-width: 1100px) {
-    .events-section {
-        width: 100%;
-        max-width: 1000px;
-        margin: 0;
+        max-width: 1054px; 
+        margin: 0 auto; 
         padding: 0;
         display: flex;
         flex-direction: column;
@@ -1193,26 +1136,126 @@ main {
         width: 100%;
         margin: 0 auto;
     }
-} */
+}
 
-/* Layout for larger screens */
-/* @media (min-width: 1100px) {
-    .col-lg-6 {
-        flex: 0 0 50%;
-        max-width: 50%;
+@media (max-width: 1140px) {
+    .events-section {
+        width: 100%;
+        max-width: 1040px; 
+        margin: 0 auto; 
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
-    .col-lg-3 {
-        flex: 0 0 25%;
-        max-width: 25%;
+    .events-section .col-lg-6, .events-section .col-lg-3 {
+        width: 100%;
+        padding: 0;
+        margin-bottom: 20px;
     }
-} */
+
+    .events-card {
+        width: 100%;
+        margin: 0 auto; 
+    }
+}
+
+@media (max-width: 1130px) {
+    .events-section {
+        width: 100%;
+        max-width: 1010px; 
+        margin: 0 auto; 
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .events-section .col-lg-6, .events-section .col-lg-3 {
+        width: 100%;
+        padding: 0;
+        margin-bottom: 20px;
+    }
+
+    .events-card {
+        width: 100%;
+        margin: 0 auto; 
+    }
+}
+
+@media (max-width: 1120px) {
+    .events-section {
+        width: 100%;
+        max-width: 1017px; 
+        margin: 0 auto;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .events-section .col-lg-6, .events-section .col-lg-3 {
+        width: 100%;
+        padding: 0;
+        margin-bottom: 20px;
+    }
+
+    .events-card {
+        width: 100%;
+        margin: 0 auto; 
+    }
+}
+
+@media (max-width: 1110px) {
+    .events-section {
+        width: 100%;
+        max-width: 1005px; 
+        margin: 0 auto; 
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .events-section .col-lg-6, .events-section .col-lg-3 {
+        width: 100%;
+        padding: 0;
+        margin-bottom: 20px;
+    }
+
+    .events-card {
+        width: 100%;
+        margin: 0 auto; 
+    }
+}
+
+
+@media (max-width: 1100px) {
+    .events-section {
+        width: 100%;
+        max-width: 998px; 
+        margin: 0 auto; 
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .events-section .col-lg-6, .events-section .col-lg-3 {
+        width: 100%;
+        padding: 0;
+        margin-bottom: 20px;
+    }
+
+    .events-card {
+        width: 100%;
+        margin: 0 auto; 
+    }
+} 
 
 
 /* SPOTLIGHT */
 .spotlight{
     margin-top: 15px;
 } 
-
-
-

@@ -45,7 +45,8 @@
     <link rel="stylesheet" href="styles/main.css">
     <script src="scripts/main.js" defer></script>
     <script src="scripts/utility.js" defer></script>
-    <script src="scripts/spotlight.js" defer></script>
+    <script type="module" src="scripts/home.js" defer></script>
+    <!-- <script src="scripts/gen.js" defer></script> -->
 
 </head>
 <body>
@@ -101,7 +102,6 @@
                 <div class="card-img-overlay d-flex flex-column justify-content-center align-items-center">
                     <h1 class="card-title">Welcome to Lagos <br>Chamber of Commerce</h1>
                     <h3 class="card-text">Fostering business growth and opportunities</h3>
-                    <!-- Call to Action Button -->
                     <a href="#contact" class="btn btn-primary mt-4">Join Us Now</a>
                 </div>
             </div>
@@ -113,66 +113,63 @@
         <h1>Home</h1>
     </div>
 
-    <!-- EVENTS -->
-<div class="events-container">
-    <div class="row events-section">
-        <!-- Events Card -->
-        <div class="col-lg-6 col-md-12 mb-4">
-            <div class="card events-card">
-                <div class="events-card-header">
-                    Events
-                </div>
-                <div class="events-card-body">
-                    <!-- Body content for Events will be added here -->
-                </div>
-            </div>
-        </div>
+   <!-- EVENTS -->
+    <section class="events-container">
+        <div class="row events-section">
 
-        <!-- Current Weather Card -->
-        <div class="col-lg-3 col-md-12 mb-4">
-            <div class="card events-card">
-                <div class="events-card-header">
-                    Current Weather
-                </div>
-                <div class="events-card-body weather-body">
-                    <img src="images/weather-icon.webp" class="weather-icon" alt="Weather Icon">
-                    <div class="weather-details">
-                        <p>75 degrees F</p>
-                        <p>Partly cloudy</p>
-                        <p>High: 85 degrees</p>
-                        <p>Low: 52 degrees</p>
-                        <p>Humidity: 34%</p>
-                        <p>Sunrise: 7:30 AM</p>
-                        <p>Sunset: 9:49 PM</p>
+            <!-- Events Card -->
+            <section class="col-lg-6 col-md-12 mb-4">
+                <div class="card events-card">
+                    <div class="events-card-header">
+                        Events
+                    </div>
+                    <div class="events-card-body">
                     </div>
                 </div>
-            </div>
-        </div>
+            </section>
 
-        <!-- Weather Forecast Card -->
-        <div class="col-lg-3 col-md-12 mb-4">
-            <div class="card events-card">
-                <div class="events-card-header">
-                    Weather Forecast
+            <!-- Current Weather Card -->
+            <section class="col-lg-3 col-md-12 mb-4">
+                <div class="card events-card">
+                    <div class="events-card-header">
+                        Current Weather
+                    </div>
+                    <div class="events-card-body weather-body">
+                        <img id="weather-icon" class="weather-icon" alt="Weather Icon">
+                        <div class="weather-details">
+                            <p id="current-temp"></p>
+                            <p id="current-condition"></p>
+                            <p id="current-high"></p>
+                            <p id="current-low"></p>
+                            <p id="current-humidity"></p>
+                            <p id="current-sunrise"></p>
+                            <p id="current-sunset"></p>
+                        </div>
+                    </div>
                 </div>
-                <div class="events-card-body forecast-body">
-                    <p>Today: 90 degrees F</p>
-                    <p>Wednesday: 89 degrees F</p>
-                    <p>Thursday: 68 degrees F</p>
+            </section>
+
+            <!-- Weather Forecast Card -->
+            <section class="col-lg-3 col-md-12 mb-4">
+                <div class="card events-card">
+                    <div class="events-card-header">
+                        Weather Forecast
+                    </div>
+                    <div class="events-card-body forecast-body">
+                        <p id="forecast-day1"></p>
+                        <p id="forecast-day2"></p>
+                        <p id="forecast-day3"></p>
+                        <p id="location-name" style="font-weight: bold;"></p>
+                    </div>
                 </div>
-            </div>
+            </section>
         </div>
-    </div>
-</div>
+    </section>
 
 <!-- SPOTLIGHT -->
 <section id="membership-cards" class="card-container spotlight">
     <h2 class="visually-hidden">Membership Cards</h2> 
 </section>
-
-
-
-    
     
 </main>
 
