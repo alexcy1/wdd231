@@ -1,0 +1,4 @@
+
+https://weatherapi-com.p.rapidapi.com/forecast.json?q=6.5244,3.3792&days=3&rapidapi-key=e2f2a0785bmsh99c39524ed0016ep12963ejsn3b96e13a4f74
+
+https://api.opencagedata.com/geocode/v1/json?q=Ikeja,+Lagos&key=070be96bc5b24ac0b8b4649cb16e373e&language=en&pretty=1

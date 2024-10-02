@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Lagos, Nigeria Chamber of Commerce">
+    <meta name="author" content="Alexander Cyril">
+
+    <!-- Social Media Meta Tags -->
+    <!-- Essential META Tags -->
+    <meta property="og:title" content="Lagos, Nigeria Chamber of Commerce">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://alexcy1.github.io/wdd231/chamber/images/nigeria.png"> <!-- Ensure this path is correct -->
+    <meta property="og:url" content="https://alexcy1.github.io/wdd231/chamber/directory.html">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Non-Essential, But Recommended -->
+    <meta property="og:description" content="Welcome to the Chamber of Commerce of Lagos, Nigeria, showcasing local businesses and community development.">
+    <meta property="og:site_name" content="Commerce, Inc.">
+    <meta name="twitter:image:alt" content="Map of Nigeria representing the Chamber of Commerce">
+    <meta name="twitter:image" content="https://alexcy1.github.io/wdd231/chamber/nigeria.png"> 
+
+    <!-- Non-Essential, But Required for Analytics (Facebook and Twitter ID) -->
+    <meta property="fb:profile_id" content="61550933037221"> 
+    <meta property="fb:app_id" content="YOUR_ACTUAL_APP_ID">
+    <meta name="twitter:site" content="@Sanchez02300690">
+    <meta name="twitter:title" content="Lagos, Nigeria Chamber of Commerce"> 
+    <meta name="twitter:description" content="Welcome to the Chamber of Commerce of Nigeria, showcasing local businesses and community development.">
+
+    <!-- Title -->
+    <title>Lagos Chamber of Commerce</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon_io/apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" href="images/favicon_io/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" href="images/favicon_io/favicon-16x16.png" sizes="16x16">
+
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="scripts/main.js" defer></script>
+    <script src="scripts/utility.js" defer></script>
+    <script src="scripts/spotlight.js" defer></script>
+    <script src="scripts/weather.js" defer></script>
+
+</head>
+<body>
+
+   <nav class="navbar navbar-expand-lg">
+    <div class="container d-flex justify-content-between align-items-center">
+        
+        <a class="navbar-brand" href="#">
+            <div class="logo-container"></div>
+        </a>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="directory.html">Directory</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Join</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Discover</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Theme and Grid Toggle Icons -->
+        <div class="d-flex align-items-center">
+            <img src="images/theme.webp" alt="Theme Toggle" id="theme-toggle" class="nav-icon me-3" width="40" height="40">
+            
+            <!-- Hamburger Menu -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </button>
+            
+        </div>
+    </div>
+</nav>
+
+
+<!-- Main Content -->
+<main>
+    
+    <!-- Hero Image -->
+    <section class="hero-banner">
+        <div class="container text-center">
+            <div class="card bg-dark text-white border-0">
+                <img src="images/banner.webp" class="card-img hero-image" alt="Commerce Image">
+                <div class="card-img-overlay d-flex flex-column justify-content-center align-items-center">
+                    <h1 class="card-title">Welcome to Lagos <br>Chamber of Commerce</h1>
+                    <h3 class="card-text">Fostering business growth and opportunities</h3>
+                    <!-- Call to Action Button -->
+                    <a href="#contact" class="btn btn-primary mt-4">Join Us Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Title Section -->
+    <div class="title-section">
+        <h1>Home</h1>
+    </div>
+
+   <!-- EVENTS -->
+    <div class="events-container">
+        <div class="row events-section">
+            <!-- Events Card -->
+            <div class="col-lg-6 col-md-12 mb-4">
+                <div class="card events-card">
+                    <div class="events-card-header">
+                        Events
+                    </div>
+                    <div class="events-card-body">
+                        <!-- Body content for Events will be added here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Current Weather Card -->
+            <div class="col-lg-3 col-md-12 mb-4">
+                <div class="card events-card">
+                    <div class="events-card-header">
+                        Current Weather
+                    </div>
+                    <div class="events-card-body weather-body">
+                        <img src="images/weather-icon.webp" class="weather-icon" alt="Weather Icon">
+                        <div class="weather-details">
+                            <p id="current-temp"></p>
+                            <p id="current-condition"></p>
+                            <p id="current-high"></p>
+                            <p id="current-low"></p>
+                            <p id="current-humidity"></p>
+                            <p id="current-sunrise"></p>
+                            <p id="current-sunset"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Weather Forecast Card -->
+            <div class="col-lg-3 col-md-12 mb-4">
+                <div class="card events-card">
+                    <div class="events-card-header">
+                        Weather Forecast
+                    </div>
+                    <div class="events-card-body forecast-body">
+                        <p id="forecast-day1"></p>
+                        <p id="forecast-day2"></p>
+                        <p id="forecast-day3"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- SPOTLIGHT -->
+<section id="membership-cards" class="card-container spotlight">
+    <h2 class="visually-hidden">Membership Cards</h2> 
+</section>
+
+
+
+    
+    
+</main>
+
+
+<!-- Footer -->
+<footer class="footer">
+    <br>
+    <div class="footer-container d-flex justify-content-between align-items-center">
+        <!-- Left Section -->
+        <div class="footer-left">
+            <p><b>Lagos Chamber of Commerce</b></p>
+            <p>103, CMD Road, Magodo</p>
+            <p>Ikeja, Lagos</p>
+            <p><a href="mailto:info@lagoscc.org">info@lagoscc.org</a></p>
+            <p>(234) 902-216-2214</p>
+        </div>
+
+        <!-- Center Section (Social Icons) -->
+        <div class="footer-center">
+            <a href="#"><img src="images/youtube.webp" alt="YouTube" class="social-icon" width="40" height="40"></a>
+            <a href="#"><img src="images/twitter.webp" alt="Twitter" class="social-icon" width="40" height="40"></a>
+            <a href="#"><img src="images/linkedin.webp" alt="LinkedIn" class="social-icon" width="40" height="40"></a>
+        </div>
+
+        <!-- Right Section -->
+        <div class="footer-right">
+            <p>WDD231 Class Project</p>
+            <p>Alexander Cyril</p>
+            <p>© <span id="year"></span> Lagos Chamber of Commerce</p>
+            <p>Last modified: <span id="lastModified"></span></p>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// async function fetchWeatherData(latitude, longitude) {
+//     const apiUrl = 'https://weatherapi-com.p.rapidapi.com/forecast.json';
+//     const apiKey = 'e2f2a0785bmsh99c39524ed0016ep12963ejsn3b96e13a4f74'; // Replace with your actual RapidAPI key
+
+//     const options = {
+//         method: 'GET',
+//         headers: {
+//             'x-rapidapi-host': 'weatherapi-com.p.rapidapi.com',
+//             'x-rapidapi-key': apiKey
+//         }
+//     };
+
+//     try {
+//         // Use user's coordinates (latitude and longitude)
+//         const response = await fetch(`${apiUrl}?q=${latitude},${longitude}&days=3`, options);
+//         const data = await response.json();
+
+//         console.log('Weather data fetched:', data); // Log fetched data
+
+//         // Extract current weather details and bold only the temperature
+//         const currentTemp = `<strong>${data.current.temp_f}°F</strong>`;
+//         const condition = data.current.condition.text;
+//         const highTemp = `High: <strong>${data.forecast.forecastday[0].day.maxtemp_f}°F</strong>`;
+//         const lowTemp = `Low: <strong>${data.forecast.forecastday[0].day.mintemp_f}°F</strong>`;
+//         const humidity = `${data.current.humidity}%`;
+//         const sunrise = data.forecast.forecastday[0].astro.sunrise;
+//         const sunset = data.forecast.forecastday[0].astro.sunset;
+//         const weatherIconUrl = data.current.condition.icon; // Get weather icon URL
+
+//         // Update current weather in the DOM (bold current temperature)
+//         document.getElementById('current-temp').innerHTML = currentTemp;
+//         document.getElementById('current-condition').textContent = condition;
+//         document.getElementById('current-high').innerHTML = highTemp;
+//         document.getElementById('current-low').innerHTML = lowTemp;
+//         document.getElementById('current-humidity').textContent = `Humidity: ${humidity}`;
+//         document.getElementById('current-sunrise').textContent = `Sunrise: ${sunrise}`;
+//         document.getElementById('current-sunset').textContent = `Sunset: ${sunset}`;
+
+//         // Update the weather icon in the DOM
+//         document.getElementById('weather-icon').src = weatherIconUrl;
+
+//         // Get day names for forecast
+//         const getDayName = (dateStr) => {
+//             const date = new Date(dateStr);
+//             const options = { weekday: 'long' }; // Display full weekday name
+//             return date.toLocaleDateString('en-US', options);
+//         };
+
+//         // Extract forecast details and bold the temperature
+//         const forecastToday = `Today: <strong>${data.forecast.forecastday[0].day.avgtemp_f}°F</strong>`;
+//         const forecastDay1 = `${getDayName(data.forecast.forecastday[1].date)}: <strong>${data.forecast.forecastday[1].day.avgtemp_f}°F</strong>`;
+//         const forecastDay2 = `${getDayName(data.forecast.forecastday[2].date)}: <strong>${data.forecast.forecastday[2].day.avgtemp_f}°F</strong>`;
+
+//         // Update forecast in the DOM
+//         document.getElementById('forecast-day1').innerHTML = forecastToday;
+//         document.getElementById('forecast-day2').innerHTML = forecastDay1;
+//         document.getElementById('forecast-day3').innerHTML = forecastDay2;
+
+//         // Update the location name in the DOM
+//         const locationName = `${data.location.name}, ${data.location.region}, ${data.location.country}`;
+//         document.getElementById('location-name').textContent = `Location: ${locationName}`;
+
+//     } catch (error) {
+//         console.error('Error fetching weather data:', error);
+//     }
+// }
+
+// // Function to get user's current location using Geolocation API
+// function getUserLocation() {
+//     if (navigator.geolocation) {
+//         navigator.geolocation.getCurrentPosition(
+//             position => {
+//                 const latitude = position.coords.latitude;
+//                 const longitude = position.coords.longitude;
+//                 console.log(`User's location - Latitude: ${latitude}, Longitude: ${longitude}`); // Log location
+//                 fetchWeatherData(latitude, longitude);
+//             },
+//             error => {
+//                 console.error('Error getting location:', error);
+//                 alert('Unable to retrieve your location for weather data.');
+//             }
+//         );
+//     } else {
+//         alert('Geolocation is not supported by this browser.');
+//     }
+// }
+
+// // Call the function to get user location and display weather data
+// getUserLocation();
+
+
+
+
+
+
+
+
+
+// document.addEventListener('DOMContentLoaded', async function() {
+//     async function fetchBusinesses() {
+//         try {
+//             const response = await fetch('./data/members.json'); 
+//             const businesses = await response.json();
+//             return businesses;
+//         } catch (error) {
+//             console.error('Error fetching JSON:', error);
+//             return [];
+//         }
+//     }
+
+//     // Function to display spotlight members (Gold & Silver)
+//     function displaySpotlightMembers(businesses) {
+//         const cardContainer = document.getElementById('membership-cards'); // Reusing membership-cards container
+//         cardContainer.innerHTML = ''; 
+
+//         // Filter businesses by Gold and Silver membership
+//         const spotlightMembers = businesses.filter(business => business.membership_level === 2 || business.membership_level === 3);
+
+//         // Shuffle and select 2 or 3 random spotlight members
+//         const shuffledMembers = spotlightMembers.sort(() => 0.5 - Math.random());
+//         const selectedMembers = shuffledMembers.slice(0, 3);
+
+//         // Display the spotlight members in the same format as membership cards
+//         selectedMembers.forEach(business => {
+//             const card = document.createElement('div');
+//             card.classList.add('business-card');
+
+//             // Create card content dynamically
+//             card.innerHTML = `
+//                 <h2 class="business-name">${business.name}</h2>
+//                 <p class="business-tagline">${business.other_info.industry}</p>
+//                 <hr>
+//                 <div class="card-content">
+//                     <img src="${business.image}" alt="${business.name}" class="business-logo">
+//                     <div class="business-info">
+//                         <div><strong>Membership Level:</strong> ${business.membership_level === 3 ? 'Gold' : 'Silver'}</div>
+//                        <div><strong>Email:</strong> ${business.email}</div>
+//                         <div><strong>Phone:</strong> ${business.phone}</div>
+//                         <div><strong>URL:</strong> <a href="${business.website}" target="_blank">${business.website}</a></div>
+//                     </div>
+//                 </div>
+//             `;
+//             cardContainer.appendChild(card);
+//         });
+//     }
+
+//     // Fetch the businesses and display spotlights
+//     const businesses = await fetchBusinesses();
+//     displaySpotlightMembers(businesses);
+// });
