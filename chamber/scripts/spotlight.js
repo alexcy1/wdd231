@@ -1,6 +1,4 @@
 
-// spotlight.js
-
 // Function to fetch businesses from JSON
 async function fetchBusinesses() {
     try {
