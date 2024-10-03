@@ -1,9 +1,9 @@
 
-import { getUserLocation } from './weather.js'; 
+import { fetchWeatherData } from './weather.js'; 
 import { initSpotlight } from './spotlight.js';
 
-// Call the function to get the user's location and fetch weather data
-getUserLocation();
+// Call the function to fetch weather data
+fetchWeatherData();
 
 document.addEventListener('DOMContentLoaded', async function() {
     // Call the function to initialize spotlight members

@@ -1,8 +1,8 @@
 
-
 // Function to fetch weather data using async/await
-export async function fetchWeatherData(latitude, longitude) {
+export async function fetchWeatherData() {
     const apiUrl = 'https://weatherapi-com.p.rapidapi.com/forecast.json';
+    const query = '6.5530,3.3510'; // Coordinates for Ikeja
     const apiKey = 'e2f2a0785bmsh99c39524ed0016ep12963ejsn3b96e13a4f74';
 
     const options = {
@@ -14,20 +14,17 @@ export async function fetchWeatherData(latitude, longitude) {
     };
 
     try {
-        // Use user's coordinates (latitude and longitude)
-        const response = await fetch(`${apiUrl}?q=${latitude},${longitude}&days=3`, options);
+        const response = await fetch(`${apiUrl}?q=${query}&days=3`, options);
         const data = await response.json();
-
-        console.log('Weather data fetched:', data);
 
         // Extract current weather details
         const currentTemp = `<strong>${data.current.temp_f}°F</strong>`;
         const condition = data.current.condition.text;
         const highTemp = `High: <strong>${data.forecast.forecastday[0].day.maxtemp_f}°F</strong>`;
         const lowTemp = `Low: <strong>${data.forecast.forecastday[0].day.mintemp_f}°F</strong>`;
-        const humidity = `${data.current.humidity}%`;
-        const sunrise = data.forecast.forecastday[0].astro.sunrise;
-        const sunset = data.forecast.forecastday[0].astro.sunset;
+        const humidity = `Humidity: ${data.current.humidity}%`;
+        const sunrise = `Sunrise: ${data.forecast.forecastday[0].astro.sunrise}`;
+        const sunset = `Sunset: ${data.forecast.forecastday[0].astro.sunset}`;
         let weatherIconUrl = data.current.condition.icon; // Get weather icon URL
 
         // Ensure weather icon URL uses HTTPS
@@ -36,21 +33,19 @@ export async function fetchWeatherData(latitude, longitude) {
         }
 
         // Update current weather in the DOM
+        document.getElementById('weather-icon').src = weatherIconUrl; // Set weather icon
         document.getElementById('current-temp').innerHTML = currentTemp;
         document.getElementById('current-condition').textContent = condition;
         document.getElementById('current-high').innerHTML = highTemp;
         document.getElementById('current-low').innerHTML = lowTemp;
-        document.getElementById('current-humidity').textContent = `Humidity: ${humidity}`;
-        document.getElementById('current-sunrise').textContent = `Sunrise: ${sunrise}`;
-        document.getElementById('current-sunset').textContent = `Sunset: ${sunset}`;
-
-        // Update the weather icon in the DOM
-        document.getElementById('weather-icon').src = weatherIconUrl;
+        document.getElementById('current-humidity').innerHTML = humidity; // Updated to use innerHTML
+        document.getElementById('current-sunrise').innerHTML = sunrise; // Updated to use innerHTML
+        document.getElementById('current-sunset').innerHTML = sunset; // Updated to use innerHTML
 
         // Get day names for forecast
         const getDayName = (dateStr) => {
             const date = new Date(dateStr);
-            const options = { weekday: 'long' };
+            const options = { weekday: 'long' }; // Display full weekday name
             return date.toLocaleDateString('en-US', options);
         };
 
@@ -65,30 +60,10 @@ export async function fetchWeatherData(latitude, longitude) {
         document.getElementById('forecast-day3').innerHTML = forecastDay2;
 
         // Update the location name in the DOM
-        // Update the location name in the DOM
         const locationName = `<strong>${data.location.name}, ${data.location.region}, ${data.location.country}</strong>`;
         document.getElementById('location-name').innerHTML = `Location: ${locationName}`;
+
     } catch (error) {
         console.error('Error fetching weather data:', error);
-    }
-}
-
-// Function to get user's current location using Geolocation API
-export function getUserLocation() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(
-            position => {
-                const latitude = position.coords.latitude;
-                const longitude = position.coords.longitude;
-                console.log(`User's location - Latitude: ${latitude}, Longitude: ${longitude}`); // Log location
-                fetchWeatherData(latitude, longitude);
-            },
-            error => {
-                console.error('Error getting location:', error);
-                alert('Unable to retrieve your location for weather data.');
-            }
-        );
-    } else {
-        alert('Geolocation is not supported by this browser.');
     }
 }
