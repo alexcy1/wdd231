@@ -1,18 +1,22 @@
 
-// Theme toggle functionality ------------------------------------------------------------------------
-const themeToggle = document.getElementById('theme-toggle');
-const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+// Theme toggle functionality --------------------------------------------------
+document.addEventListener('DOMContentLoaded', function () {
+    const themeToggle = document.getElementById('theme-toggle');
+    const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
 
-if (currentTheme) {
-    document.body.classList.add(currentTheme);
-}
+    // If a theme is saved in localStorage, apply it to the body
+    if (currentTheme) {
+        document.body.classList.add(currentTheme);
+    }
 
-themeToggle.addEventListener('click', function () {
-    document.body.classList.toggle('dark-mode');
+    themeToggle.addEventListener('click', function () {
+        // Toggle the dark-mode class on the body
+        document.body.classList.toggle('dark-mode');
 
-    // Save the theme to localStorage
-    let theme = document.body.classList.contains('dark-mode') ? 'dark-mode' : '';
-    localStorage.setItem('theme', theme);
+        // Save the theme to localStorage
+        const theme = document.body.classList.contains('dark-mode') ? 'dark-mode' : '';
+        localStorage.setItem('theme', theme);
+    });
 });
 
 
@@ -38,6 +42,8 @@ document.addEventListener('DOMContentLoaded', function() {
         image.src = logoData.src;
         image.alt = logoData.alt;
         image.className = logoData.class;
+        image.width = logoData.width; // Set width
+        image.height = logoData.height; // Set height
 
         // Find the logo container and inject the logo
         const logoContainer = document.querySelector('.logo-container');
@@ -60,7 +66,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Append nameTop and nameBottom to the container
         companyNameContainer.appendChild(nameTop);
-        companyNameContainer.appendChild(document.createElement('br')); // Line break between top and bottom name
         companyNameContainer.appendChild(nameBottom);
 
         // Inject the company name next to the logo
@@ -75,25 +80,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-// Toggle Menu
+// Toggle Menu without Bootstrap
 document.addEventListener("DOMContentLoaded", function() {
     const toggler = document.querySelector(".navbar-toggler");
     const navCollapse = document.querySelector("#navbarNav");
 
     // Add event listener for toggler button click
     toggler.addEventListener("click", function() {
-        // Toggle 'open' class on the button when clicked
+        // Toggle 'open' class on the button when clicked (for hamburger icon animation)
         toggler.classList.toggle("open");
-    });
 
-    // Listen to the Bootstrap collapse show event
-    navCollapse.addEventListener('shown.bs.collapse', function() {
-        toggler.classList.add('open'); // Add 'open' class when the menu is open
-    });
-
-    // Listen to the Bootstrap collapse hide event
-    navCollapse.addEventListener('hidden.bs.collapse', function() {
-        toggler.classList.remove('open'); // Remove 'open' class when the menu is closed
+        // Toggle 'show' class on the navbar menu to show/hide it
+        navCollapse.classList.toggle("show");
     });
 });
 

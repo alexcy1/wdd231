@@ -1,0 +1,1163 @@
+
+body {
+    padding-top: 70px; 
+}
+
+body {
+    padding-top: 70px; 
+}
+
+/* Navbar Container */
+.custom-navbar {
+    background: #E6E6E6;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    padding: 0.2rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Navbar Inner Container */
+.container {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    width: 90%;
+    max-width: 1100px; 
+    margin: 0 auto; 
+}
+
+/* Navbar Brand (Logo) */
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    flex-grow: 1; 
+}
+
+/* Adjust logo container size */
+.logo-container {
+    width: 60px; 
+    height: auto;
+    margin-right: 10px;
+}
+
+.logo-container img {
+    max-width: 100%;
+    height: auto; 
+}
+
+/* Navbar Menu and Links */
+.navbar-menu {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: flex-end;
+}
+
+.navbar-items {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar-item {
+    margin-left: 20px;
+}
+
+.nav-icon {
+    margin-left: 30px;
+    width: 28px !important;       
+    height: 28px !important; 
+}
+
+.navbar-link {
+    font-size: 17px;
+    color: #000;
+    text-decoration: none;
+}
+
+.navbar-link:hover {
+    text-decoration: underline;
+    color: #333;
+}
+
+.navbar-link.active {
+    text-decoration: underline;
+    color: #333;
+}
+
+.navbar-icons {
+    display: flex;
+    align-items: center;
+    margin-left: auto; 
+}
+
+.nav-icon {
+    margin-right: 10px;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+/* Hamburger Menu Button */
+.navbar-toggler {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: none; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+/* Toggler Line Styles */
+.navbar-toggler .line {
+    display: block;
+    width: 30px;
+    height: 3px;
+    margin: 5px 0;
+    background-color: #000;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Toggler Animation (for open/close effect) */
+.navbar-toggler.open .line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.navbar-toggler.open .line:nth-child(2) {
+    opacity: 0;
+}
+
+.navbar-toggler.open .line:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Show Hamburger Toggler on Mobile Only */
+@media (max-width: 992px) {
+    .navbar-toggler {
+        display: flex; 
+        margin-right: 10px; 
+    }
+
+    .navbar-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%; 
+        left: 0;
+        right: 0;
+        background-color: #333;
+        z-index: 1000;
+    }
+
+    .navbar-menu.show {
+        display: flex;
+    }
+
+    .navbar-items {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar-item {
+        margin: 10px 0;
+    }
+
+    .navbar-link {
+        color: #fff;
+    }
+
+    .navbar-link.active {
+        color: #dfdcdc;
+    }
+
+    .navbar-items{
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-between; 
+        align-items: center;
+        width: 100%;
+        /* max-width: 380px;  */
+        margin: 0 auto; 
+        }
+    }
+
+@media (max-width: 576px) {
+    .container {
+        display: flex;
+        justify-content: space-between; 
+        align-items: center;
+        width: 100%;
+        max-width: 550px; 
+        margin: 0 auto; 
+    }
+}
+
+/* Styling for 'Lagos' (upper text) */
+.company-name-top {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-transform: uppercase; 
+    text-decoration: none;
+    letter-spacing: 0.2em; 
+    color: #333; 
+    margin-bottom: 0.2rem;
+    line-height: normal; 
+}
+
+/* Styling for 'Chamber of Commerce' (lower text) */
+.company-name-bottom {
+    font-family: "Lato", sans-serif;
+    font-size: 0.8rem;
+    color: #333333;
+    text-decoration: none; 
+    margin-top: 0.0rem; 
+    line-height: normal; 
+}
+
+/* Additional styling for the container */
+.company-name {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+}
+
+/* Ensuring no underline for any links within the company name */
+.company-name a {
+    text-decoration: none; 
+}
+
+@media (max-width: 992px) {
+    .nav-icon {
+        margin-right: 16px;
+        width: 28px !important;       
+        height: 28px !important; 
+    }
+}
+
+
+
+
+
+
+
+/* Footer =====================================================================*/
+.footer {
+    background-color: #E6E6E6; 
+    color: #000;
+    padding: 20px 0;
+    width: 100%; 
+    position: relative; 
+    left: 0;
+    right: 0; 
+    margin-top: 30px;
+}
+
+/* Footer container */
+.footer-container {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: flex-start; 
+    width: 90%; 
+    max-width: 1100px; 
+    margin: 0 auto; 
+}
+
+/* Left Section */
+.footer-left {
+    text-align: left;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif; 
+}
+
+.footer-left p {
+    margin: 5px 0;
+}
+
+/* Center Section (Social Icons) */
+.footer-center {
+    text-align: center;
+    display: flex; 
+    justify-content: center;
+}
+
+.social-icon {
+    width: 40px; 
+    height: 40px; 
+    margin: 0 10px; 
+    margin-top: 20px;
+}
+
+/* Right Section */
+.footer-right {
+    text-align: left;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif; 
+}
+
+.footer-right p {
+    margin: 5px 0;
+}
+
+.footer a {
+    text-decoration: none;
+    color: inherit; 
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 992px) {
+    .footer-container {
+        flex-direction: column; 
+        align-items: flex-start; 
+        text-align: left; 
+    }
+
+    .footer-left,
+    .footer-right {
+        margin-bottom: 20px; 
+        width: 100%; 
+    }
+
+    .footer-center {
+        width: 100%;
+        text-align: center; 
+        margin-bottom: 25px; 
+    }
+
+    .footer-left p,
+    .footer-right p {
+        text-align: left; 
+    }
+
+    .footer-center {
+        margin-left: 0; 
+    }
+}
+
+
+
+
+/* Hero Banner ===============================================================*/
+.hero-banner {
+    position: relative;
+    width: 90%; 
+    max-width: 1100px; 
+    height: auto;
+    margin: 0 auto; 
+    overflow: hidden; 
+    margin-top: -7px;
+}
+
+/* Hero Image */
+.hero-image {
+    object-fit: cover; 
+    width: 100%; 
+    height: 420px; 
+    margin-top: 70px; 
+}
+
+/* Card Overlay */
+.card-img-overlay {
+    background: rgba(0, 0, 0, 0.4); 
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100%; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
+}
+
+/* Text Styles */
+.card-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #fff;
+    margin-top: 80px; 
+    font-family: "Lato", sans-serif;
+}
+
+.card-text {
+    font-size: 1.25rem;
+    color: #fff;
+    margin-top: -10px; 
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* Button Styles */
+.btn {
+    padding: 12px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none; 
+    border-radius: 30px;
+    background-color: #e4edf7; 
+    color: #000;
+    text-decoration: none;
+    font-family: "Lato", sans-serif;
+    margin-top: 20px;
+}
+
+.btn:hover {
+    background-color: #000;
+    color: #fff;
+    border: none; 
+    transition: 0.7s;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 992px) {
+    .hero-image {
+        height: 350px; 
+        object-fit: cover;
+        width: 100vw; 
+        margin: 0; 
+    }
+
+    .hero-banner {
+        width: 100vw; 
+        margin: 0; 
+        padding: 0; 
+    }
+
+    .card-title {
+        font-size: 2.5rem;
+    }
+
+    .card-text {
+        font-size: 1.25rem;
+    }
+
+    .btn {
+        margin-top: 0px;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-image {
+        height: 350px; 
+        object-fit: cover; 
+        width: 100vw;
+        margin: 0; 
+    }
+
+    .hero-banner {
+        width: 100vw;
+        margin: 0; 
+        padding: 0; 
+    }
+
+    .card-title {
+        font-size: 2.0rem; /* Adjusted font size */
+    }
+
+    .card-text {
+        font-size: 1.1rem; /* Adjusted font size */
+    }
+}
+
+
+
+
+
+
+/* HOME ========================================================================*/
+.title-section {
+    width: 90%; 
+    max-width: 1100px; 
+    margin: 0 auto; 
+    padding: 25px 0;
+    text-align: center; 
+}
+
+/* Title text styling */
+.title-section h1 {
+    font-size: 1.5rem;
+    font-family: "Lato", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 992px) {
+    .title-section {
+        width: 100%;
+        padding: 15px 0; 
+    }
+
+    .title-section h1 {
+        font-size: 2rem; 
+    }
+}
+
+@media (max-width: 576px) {
+    .title-section {
+        width: 100%; 
+        padding: 10px 0;
+    }
+
+    .title-section h1 {
+        font-size: 1.5rem;
+    }
+}
+
+
+
+
+
+
+
+
+/* EVENTS ===========================================================================*/
+/* Container styling */
+.events-container {
+    max-width: 1100px;
+    margin: 0 auto; 
+    padding: 0 15px;
+}
+
+/* Layout for cards with equal alignment */
+.events-section {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 20px;
+    width: 100%;
+}
+
+/* Card layout */
+.events-col {
+    margin-bottom: 20px;
+}
+
+/* Card styling */
+.events-card {
+    background-color: #f0f0f0;
+    color: #333;
+    border: none;
+    min-height: 340px;
+    padding: 0; 
+    display: flex;
+    flex-direction: column; 
+}
+
+/* Full-width header with padding adjustments */
+.events-card-header {
+    background-color: #333;
+    color: #fff;
+    font-size: 1.5rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 10px 20px; 
+    text-align: center;
+    width: 100%; 
+    box-sizing: border-box; 
+}
+
+/* Body content spacing */
+.events-card-body {
+    background-color: #f0f0f0;
+    color: #333;
+    padding: 20px;
+    flex-grow: 1;
+    border-top: 3px solid #333;
+}
+
+/* Weather-specific styles */
+.weather-body {
+    display: flex;
+    align-items: center;
+    padding-top: 20px; 
+}
+
+.weather-icon {
+    width: 70px;
+    height: 70px;
+    margin-right: 10px;
+    margin-left: -10px;
+    margin-top: -150px;
+
+}
+
+.weather-details p {
+    margin: 5px 0;
+}
+
+.weather-details{
+    margin-top: -20px;
+    font-size: 1.05rem;
+    font-family: "Lato", sans-serif;
+}
+
+.forecast-body {
+    font-size: 1.05rem;
+    font-family: "Lato", sans-serif;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 1200px) {
+    .events-section {
+        display: grid;
+        gap: 20px;
+        width: 100%; 
+        max-width: 1050px;
+        margin: 0 auto; 
+    }
+}
+
+@media (max-width: 1180px) {
+    .events-section {
+        display: grid;
+        gap: 20px;
+        width: 100%; 
+        max-width: 1030px;
+        margin: 0 auto; 
+    }
+}
+
+@media (max-width: 1160px) {
+    .events-section {
+        display: grid;
+        gap: 20px;
+        width: 100%; 
+        max-width: 1022px;
+        margin: 0 auto; 
+    }
+}
+
+@media (max-width: 1140px) {
+    .events-section {
+        display: grid;
+        gap: 20px;
+        width: 100%; 
+        max-width: 1012px;
+        margin: 0 auto; 
+    }
+}
+
+@media (max-width: 1120px) {
+    .events-section {
+        display: grid;
+        gap: 20px;
+        width: 100%; 
+        max-width: 990px;
+        margin: 0 auto; 
+    }
+}
+
+@media (max-width: 1100px) {
+    .events-section {
+        display: grid;
+        gap: 20px;
+        width: 100%; 
+        max-width: 972px;
+        margin: 0 auto; 
+    }
+}
+
+@media (max-width: 1080px) {
+    .events-section {
+        display: grid;
+        gap: 20px;
+        width: 100%; 
+        max-width: 945px;
+        margin: 0 auto; 
+    }
+}
+
+@media (max-width: 1070px) {
+    .events-section {
+        display: grid;
+        gap: 20px;
+        width: 100%; 
+        max-width: 940px;
+        margin: 0 auto; 
+    }
+}
+
+@media (max-width: 1060px) {
+    .events-section {
+        display: grid;
+        gap: 20px;
+        width: 100%; 
+        max-width: 940px;
+        margin: 0 auto; 
+    }
+}
+
+@media (max-width: 1055px) {
+    .events-section {
+        display: grid;
+        gap: 20px;
+        width: 100%; 
+        max-width: 930px;
+        margin: 0 auto; 
+    }
+}
+
+@media (max-width: 1050px) {
+    .events-section {
+        display: grid;
+        gap: 20px;
+        width: 100%; 
+        max-width: 925px;
+        margin: 0 auto; 
+    }
+}
+
+@media (max-width: 1040px) {
+    .events-section {
+        display: grid;
+        gap: 20px;
+        width: 100%; 
+        max-width: 920px;
+        margin: 0 auto; 
+    }
+}
+
+@media (max-width: 1030px) {
+    .events-section {
+        display: grid;
+        gap: 20px;
+        width: 100%; 
+        max-width: 910px;
+        margin: 0 auto; 
+    }
+}
+
+@media (max-width: 1020px) {
+    .events-section {
+        display: grid;
+        gap: 20px;
+        width: 100%; 
+        max-width: 900px;
+        margin: 0 auto; 
+    }
+}
+
+
+@media (max-width: 1010px) {
+    .events-section {
+        display: grid;
+        gap: 20px;
+        width: 100%; 
+        max-width: 890px;
+        margin: 0 auto; 
+    }
+}
+
+@media (max-width: 992px) {
+    .events-section {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+
+
+
+/* SPOTLIGHT ========================================================================*/
+/* MEMBERSHIP CARD CONTAINER */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; 
+    width: 90%;
+    max-width: 1100px; 
+    margin: 0 auto;
+    align-items: stretch;
+    box-sizing: border-box;
+    margin-top: 30px;
+}
+
+.business-card {
+    background-color: #F5F5F5;
+    border-radius: 8px;
+    padding: 15px;
+    width: 31.7%; 
+    margin-bottom: 20px; 
+    margin-right: 1%; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100px;
+    box-sizing: border-box;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.business-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+/* Business Name */
+.business-name {
+    font-size: 1.5em;
+    text-align: center;
+    margin-bottom: 8px;
+    font-family: "Lato", sans-serif;
+}
+
+/* Business Tagline */
+.business-tagline {
+    font-size: 0.85em;
+    text-align: center;
+    color: #333333;
+    margin-top: -5px;
+    margin-bottom: 8px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Business Info Section */
+.card-content {
+    display: flex;
+    align-items: center;
+    font-family: "Lato", sans-serif;
+}
+
+.business-logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    margin-right: 15px;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.business-info {
+    flex-grow: 1;
+    font-size: 0.9em;
+    color: #333;
+}
+
+.business-info a {
+    text-decoration: none; 
+    color: #333;
+    cursor: pointer; 
+}
+
+.business-info a:hover {
+    color: rgb(5, 173, 239);
+    text-decoration: underline; 
+}
+
+.business-info div {
+    margin-bottom: 6px;
+}
+
+/* Business Website Link */
+.business-link {
+    text-decoration: none;
+    color: #000;
+}
+
+.business-link:hover {
+    text-decoration: underline;
+    color: rgb(5, 173, 239);
+}
+
+/* Horizontal Line */
+hr {
+    border: 0; 
+    border-top: 1px solid rgb(199, 199, 199);
+    width: calc(100% + 30px); 
+    margin-left: -15px;
+    margin-top: 10px; 
+    margin-bottom: 10px; 
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .business-card {
+        width: 48%; 
+        margin-right: 0; 
+    }
+
+    .business-logo {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media (max-width: 768px) {
+    .business-card {
+        width: 100%; 
+        margin-bottom: 25px; 
+    }
+
+    .business-logo {
+        width: 200px;
+        height: 150px;
+    }
+}
+
+@media (max-width: 576px) {
+    .business-card {
+        width: 100%;
+    }
+
+    .business-logo {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+
+
+
+/* TOGGLE DARK THEME ==================================================================*/
+
+
+/* Dark Mode Styling */
+body.dark-mode {
+    background-color: #000000; 
+    color: #ffffff;         
+}
+
+body.dark-mode .title-section h1 {
+    color: #ffffff;
+}
+
+body.dark-mode .business-card {
+    background-color: #000000; 
+    color: #ffffff;            
+    border-color: #333333;     
+}
+
+body.dark-mode .business-tagline {
+    color: lightgray;  
+}
+
+body.dark-mode hr {
+    border-color: lightgray; 
+}
+
+body.dark-mode .business-info {
+    color: #F5F5F5; 
+}
+
+
+/* Card styles for dark mode */
+body.dark-mode .events-card {
+    background-color: #1a1a1a; 
+    color: #ffffff; 
+    border: none;
+    width: 100%; 
+    margin: 0 auto; 
+    min-height: 310px;
+}
+
+/* Card header styles for dark mode */
+body.dark-mode .events-card-header {
+    background-color: #333333; 
+    color: #ffffff; 
+    font-size: 1.5rem;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Card body styles for dark mode */
+body.dark-mode .events-card-body {
+    background-color: #1a1a1a; 
+    color: #ffffff; 
+    padding: 20px;
+    border-top: 3px solid #333;
+}
+
+/* Weather card body styles for dark mode */
+body.dark-mode .weather-body {
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+}
+
+body.dark-mode .weather-icon {
+    width: 70px;
+    height: 70px;
+    margin-right: 10px;
+    margin-top: -140px;
+    filter: brightness(0) invert(1); 
+}
+
+/* Weather details text styles for dark mode */
+body.dark-mode .weather-details p {
+    margin: 5px 0;
+    color: #ffffff; 
+}
+
+body.dark-mode .business-info a {
+    color: #ffffff;
+}
+
+/* Forecast section text styles for dark mode */
+body.dark-mode .forecast-body p,
+body.dark-mode #location-name {
+    color: #ffffff;
+}
+
+
+
+
+/* List View Table ==================================================================*/
+.list-view table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    margin-top: -15px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.list-view th, .list-view td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.list-view th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.list-view td a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive styling for mobile view */
+@media (max-width: 768px) {
+    .list-view table {
+        width: 100%;
+        border-collapse: collapse;
+        text-align: left;
+    }
+
+    /* Make the URL text responsive and stack */
+    .list-view td a {
+        word-wrap: break-word;
+        word-break: break-all; 
+    }
+
+    .list-view th, .list-view td {
+        font-size: 14px;
+        padding: 6px; 
+    }
+}
+
+/* Zebra striping for the table */
+.list-view tbody tr:nth-child(odd) {
+    background-color: #f9f9f9; 
+}
+
+.list-view tbody tr:nth-child(even) {
+    background-color: #e6e6e6; 
+}
+
+.list-view th {
+    background-color: rgb(5, 173, 239);
+    color: #ffffff; 
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* General styling for the table */
+.list-view th, .list-view td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.list-view td a {
+    color: #055e9a;
+    text-decoration: none;
+}
+
+.list-view td a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+
+/* Toggle Icons ======================================================================*/
+.center-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;        
+    padding: 10px 0;    
+    box-sizing: border-box;
+    margin-top: 2px;
+    margin-bottom: -15px;
+}
+
+.center-icon .container {
+    display: flex;
+    justify-content: center; 
+    align-items: center;   
+    flex-direction: column;  
+    width: 100%;           
+    padding: 0;             
+    margin: 0 auto;         
+}
+
+.center-icon img {
+    max-width: 100px;   
+    height: auto;       
+    margin: 0;          
+}
+
+@media (max-width: 768px) {
+    .center-icon img {
+        max-width: 80px; 
+    }
+}
+
+#grid-list-toggle {
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+}
+
+.list-icon {
+    width: 40px !important;
+    height: 45px !important;
+    margin-top: -10px !important;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}

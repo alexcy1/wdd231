@@ -2,7 +2,7 @@
 // Function to fetch businesses from JSON
 async function fetchBusinesses() {
     try {
-        const response = await fetch('./data/members.json'); 
+        const response = await fetch('./data/members.json');
         const businesses = await response.json();
         return businesses;
     } catch (error) {
@@ -14,7 +14,7 @@ async function fetchBusinesses() {
 // Function to display spotlight members (Gold & Silver)
 export function displaySpotlightMembers(businesses) {
     const cardContainer = document.getElementById('membership-cards'); // Reusing membership-cards container
-    cardContainer.innerHTML = ''; 
+    cardContainer.innerHTML = '';
 
     // Filter businesses by Gold and Silver membership
     const spotlightMembers = businesses.filter(business => business.membership_level === 2 || business.membership_level === 3);
@@ -38,9 +38,9 @@ export function displaySpotlightMembers(businesses) {
                 <div class="business-info">
                     <div><strong>Membership Level:</strong> ${business.membership_level === 3 ? 'Gold' : 'Silver'}</div>
                     <div><strong>Phone:</strong> ${business.phone}</div>
-                    <div><strong>Adress:</strong> ${business.location}</div>
+                    <div><strong>Address:</strong> ${business.location}</div>
                     <div><strong>Email:</strong> ${business.email}</div>
-                    <div><strong>URL:</strong> <a href="${business.website}" target="_blank">${business.website}</a></div>
+                    <div><strong>URL:</strong> <a href="${business.website}" target="_blank" class="business-link">${business.website}</a></div>
                 </div>
             </div>
         `;
