@@ -43,14 +43,13 @@
 
     <link rel="stylesheet" href="styles/chamber.css">
     <script src="scripts/main.js" defer></script>
-    <script type="module" src="scripts/home.js" defer></script>
 
 </head>
 <body>
 
     <nav class="custom-navbar">
         <div class="container">
-            <section class="navbar-brand" href="#">
+            <section class="navbar-brand">
                 <div class="logo-container"></div>
             </section>
     
@@ -112,6 +111,7 @@
 
    <!-- EVENTS -->
 <section class="events-container">
+    <h2 class="visually-hidden">Events Container</h2>
     <div class="events-section">
         <!-- Events Card -->
         <section class="events-col">
@@ -132,7 +132,7 @@
                     Current Weather
                 </div>
                 <div class="events-card-body weather-body">
-                    <img id="weather-icon" class="weather-icon" alt="Weather Icon">
+                    <img id="weather-icon" src=".." class="weather-icon" alt="Weather Icon">
                     <div class="weather-details">
                         <p id="current-temp"></p>
                         <p id="current-condition"></p>
@@ -148,6 +148,7 @@
 
         <!-- Weather Forecast Card -->
         <section class="events-col">
+            <h2 class="visually-hidden">Events Section</h2>
             <div class="card events-card">
                 <div class="events-card-header">
                     Weather Forecast
@@ -156,7 +157,7 @@
                     <p id="forecast-day1"></p>
                     <p id="forecast-day2"></p>
                     <p id="forecast-day3"></p>
-                    <p id="location-name" style="font-weight: bold;"></p>
+                    <p id="location-name"></p>
                 </div>
             </div>
         </section>
@@ -201,6 +202,7 @@
     </div>
 </footer>
 
+<script type="module" src="scripts/home.js"></script>
    
 </body>
 </html>

@@ -65,9 +65,9 @@ export async function fetchWeatherData(latitude, longitude) {
         document.getElementById('forecast-day3').innerHTML = forecastDay2;
 
         // Update the location name in the DOM
-        const locationName = `${data.location.name}, ${data.location.region}, ${data.location.country}`;
-        document.getElementById('location-name').textContent = `Location: ${locationName}`;
-
+        // Update the location name in the DOM
+        const locationName = `<strong>${data.location.name}, ${data.location.region}, ${data.location.country}</strong>`;
+        document.getElementById('location-name').innerHTML = `Location: ${locationName}`;
     } catch (error) {
         console.error('Error fetching weather data:', error);
     }
