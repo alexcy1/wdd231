@@ -1,8 +1,9 @@
+// weather.js
 
 // Function to fetch weather data using async/await
 export async function fetchWeatherData() {
     const apiUrl = 'https://weatherapi-com.p.rapidapi.com/forecast.json';
-    const query = '6.5530,3.3510'; // Coordinates for Ikeja
+    const query = '6.6088,3.7039'; // Coordinates for Magodo, Lagos, Nigeria
     const apiKey = 'e2f2a0785bmsh99c39524ed0016ep12963ejsn3b96e13a4f74';
 
     const options = {
@@ -16,6 +17,8 @@ export async function fetchWeatherData() {
     try {
         const response = await fetch(`${apiUrl}?q=${query}&days=3`, options);
         const data = await response.json();
+
+        console.log(data); // Log the response to check the location details
 
         // Extract current weather details
         const currentTemp = `<strong>${data.current.temp_f}°F</strong>`;
@@ -59,7 +62,7 @@ export async function fetchWeatherData() {
         document.getElementById('forecast-day2').innerHTML = forecastDay1;
         document.getElementById('forecast-day3').innerHTML = forecastDay2;
 
-        // Update the location name in the DOM
+        // Update the location name in the DOM dynamically from the API response
         const locationName = `<strong>${data.location.name}, ${data.location.region}, ${data.location.country}</strong>`;
         document.getElementById('location-name').innerHTML = `Location: ${locationName}`;
 
