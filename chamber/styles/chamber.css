@@ -940,7 +940,7 @@ body {
 /* Dark Mode Styling */
 body.dark-mode {
     background-color: #000000; 
-    color: #ffffff;         
+    /* color: #ffffff;          */
 }
 
 body.dark-mode .title-section h1 {
@@ -1161,3 +1161,547 @@ body.dark-mode #location-name {
     clip: rect(0, 0, 0, 0);
     border: 0;
 }
+
+
+
+
+/* MEMBERSHIP FORM =================================================================*/
+.membership-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+    width: 90%;
+    max-width: 1100px; 
+    margin: 0 auto; 
+}
+
+.membership-form {
+    flex: 1;
+    min-width: 300px;
+    margin-right: 20px; 
+    padding: 20px; 
+    padding-right: 45px;
+    padding-left: 23px;
+    background-color: #f4f3f3; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); 
+    margin-top: 140px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
+}
+
+.membership-form h2, .membership-levels h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.membership-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.membership-form input, 
+.membership-form select, 
+.membership-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s; 
+}
+
+.membership-form input:focus, 
+.membership-form select:focus, 
+.membership-form textarea:focus {
+    border-color: #007bff; 
+}
+
+.membership-form button {
+    padding: 12px 15px;
+    background-color: #333333; 
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s; 
+}
+
+.membership-form button:hover {
+    background-color: #0056b3; 
+}
+
+
+
+/* MEMBERSHIP CARDS ==============================================================*/
+.membership-levels {
+    flex: 1;
+    min-width: 300px;
+    margin-left: 20px;
+    margin-top: 118px;
+    text-align: left;
+    cursor: pointer;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.membership-levels .card {
+    background-color: #ecf3ff;
+    padding: 15px;
+    margin-bottom: 25px;
+    margin-top: 15px; 
+    border-radius: 0px 60px 0px 60px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s; 
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.membership-levels .card h3 {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.membership-levels .learn-more-btn {
+    background-color: #333333;
+    color: #fff;
+    padding: 12px;
+    border: none;
+    border-radius: 45px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s; 
+}
+
+.membership-levels .learn-more-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .membership-section {
+        flex-direction: column;
+        width: 89%; 
+    }
+
+    .membership-form {
+        margin-right: 0; 
+        margin-bottom: 20px; 
+    }
+
+    .membership-levels {
+        margin-left: 0; 
+        margin-top: 20px; 
+    }
+
+    .membership-levels .card {
+        margin-left: 0; 
+        margin-right: 0; 
+        margin-bottom: 20px; 
+    }
+
+    /* Reduce padding and font sizes for smaller screens */
+    .membership-form {
+        padding: 15px; 
+    }
+
+    .membership-form h2 {
+        font-size: 20px; 
+    }
+
+    .membership-form input, 
+    .membership-form select, 
+    .membership-form textarea {
+        font-size: 14px; 
+    }
+
+    .membership-form button {
+        font-size: 14px; 
+    }
+
+    .membership-levels .card h3 {
+        font-size: 18px; 
+    }
+
+
+    .membership-form {
+        background-color: #f4f3f3; 
+        margin-top: 130px;
+    }
+
+    .membership-form input, 
+    .membership-form select, 
+    .membership-form textarea {
+        width: 92.8%;
+    }
+}
+
+
+/* Membership Card Animation */
+/* Membership Card Animation =====================================================*/
+.membership-levels .card {
+    transform: translateY(100px); 
+    opacity: 0; 
+    animation: slideUp 2s ease-out forwards, changeColor 4s ease-in-out infinite;
+    transition: transform 0.3s ease; 
+}
+
+/* Keyframes for the slide-up animation */
+@keyframes slideUp {
+    0% {
+        transform: translateY(200px); 
+        opacity: 0; 
+    }
+    100% {
+        transform: translateY(0); 
+        opacity: 1; 
+    }
+}
+
+/* Keyframes for changing colors */
+@keyframes changeColor {
+    0% {
+        background-color: #f7f9fc; 
+    }
+    10% {
+        background-color: #d9e3f0; 
+    }
+    20% {
+        background-color: #b3c7e0; 
+    }
+    30% {
+        background-color: #e683ff;
+    }
+    40% {
+        background-color: #f065d7; 
+    }
+    50% {
+        background-color: #f28b4b;
+    }
+    60% {
+        background-color: #f4153a; 
+    }
+    70% {
+        background-color: #cd0022;  
+    }
+    80% {
+        background-color: #0095c8; 
+    }
+    90% {
+        background-color: #00b0e1; 
+    }
+    100% {
+        background-color: #6bd4f2; 
+    }
+}
+
+/* Hover effect with dynamic border-radius change */
+.membership-levels .card:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    border-radius: 100px 0px 0px 100px; 
+    transition: box-shadow 0.3s ease, border-radius 0.9s ease; 
+}
+
+
+
+
+/* MEMBERSHIP HEADING ==================================================================*/
+.members-section {
+    width: 90%; 
+    max-width: 1100px; 
+    margin: 0 auto; 
+    padding: 25px 0;
+    text-align: left; 
+    margin-top: 60px;
+    margin-bottom: -160px;
+}
+
+/* members text styling */
+.members-section h1 {
+    font-size: 1.7rem;
+    font-family: "Lato", sans-serif;
+    margin: 0;
+    padding: 0;
+    /* background-color: #f4f3f3; */
+    padding: 15px;
+    border-radius: 10px;
+    color: #333333;
+}
+
+
+
+
+/* Modal container ===================================================================*/
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0, 0, 0, 0.6); 
+    justify-content: center;
+    align-items: center; 
+}
+
+/* Modal content */
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%; 
+    max-width: 500px; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
+    text-align: center;
+    position: relative;
+}
+
+/* Close button (X) */
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-modal:hover {
+    color: #007bff; 
+}
+
+/* Modal content text */
+.modal-content p {
+    font-size: 16px;
+    color: #555;
+    margin: 20px 0;
+}
+
+.modal-content .modal-heading {
+    font-size: 28px;
+    font-weight: bold; 
+    color: #333333
+    /* #4ea2fc;  */
+}
+
+.modal-content p{
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Responsive for smaller screens */
+@media screen and (max-width: 768px) {
+    .modal-content {
+        width: 95%; 
+        padding: 15px; 
+    }
+}
+
+
+
+
+/* Thank You Section ===============================================================*/
+/* General Styles for thankyou-page */
+.thankyou-page {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* background-color: #f4f4f4; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+/* Thank You Section */
+.thankyou-page .thankyou-section {
+    background-color: #004d00;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 30px 0;
+    margin-top: 110px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1.5s ease-out forwards;
+}
+
+.thankyou-page .thankyou-section h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.thankyou-page .thankyou-section p {
+    font-size: 1.2em;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Member's Details Section */
+.thankyou-page .details-section {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    max-width: 1000px;
+    width: 70vw;
+    align-items: center !important;
+    animation: slideIn 1s ease-out forwards;
+    margin-bottom: 30px;
+}
+
+.thankyou-page .details-section h2 {
+    text-align: center;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Detail Items */
+.thankyou-page .detail-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #e0e0e0;
+    font-size: 1.1em;
+}
+
+.thankyou-page .detail-item:last-child {
+    border-bottom: none;
+}
+
+.thankyou-page .detail-item .label {
+    font-weight: bold;
+    color: #555;
+}
+
+/* Slide In Animation */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .thankyou-page .thankyou-section {
+        padding: 15px;
+    }
+
+    .thankyou-page .thankyou-section h1 {
+        font-size: 1.8em;
+    }
+
+    .thankyou-page .thankyou-section p {
+        font-size: 1em;
+    }
+
+    .thankyou-page .details-section {
+        padding: 15px;
+    }
+
+    .thankyou-page .detail-item {
+        font-size: 1em;
+    }
+}
+
+#timestamp {
+    color: rgb(144, 0, 0);
+}
+
+@media (max-width: 768px) {
+    .thankyou-page .thankyou-section {
+        padding: 10px;
+    }
+
+    .thankyou-page .thankyou-section h1 {
+        font-size: 1.6em;
+    }
+
+    .thankyou-page .thankyou-section p {
+        font-size: 0.9em;
+    }
+
+    .thankyou-page .details-section {
+        padding: 10px;
+    }
+
+    .thankyou-page .detail-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .thankyou-page .detail-item .label {
+        margin-bottom: 5px;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .thankyou-page .thankyou-section {
+        padding: 10px;
+    }
+
+    .thankyou-page .thankyou-section h1 {
+        font-size: 1.6em;
+    }
+
+    .thankyou-page .thankyou-section p {
+        font-size: 0.9em;
+    }
+
+    .thankyou-page .details-section {
+        padding: 10px;
+    }
+
+    .thankyou-page .detail-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .thankyou-page .detail-item .label {
+        margin-bottom: 5px;
+    }
+
+    .thankyou-page .details-section {
+
+        max-width: 1100px;
+        width: 84vw;
+        align-items: center !important;
+        animation: slideIn 1s ease-out forwards;
+        margin-bottom: 30px;
+    }
+}
+
+/* Apply dark theme to the membership-levels section */
+body.dark-mode .membership-levels h2 {
+    color: #ffffff;
+}
+
+/* Apply dark theme to the members-section section */
+body.dark-mode .members-section h1 {
+    color: #ffffff;
+}
+

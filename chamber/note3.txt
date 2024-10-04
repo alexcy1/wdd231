@@ -1,0 +1,206 @@
+
+/* MEMBERSHIP CARDS ==============================================================*/
+.membership-levels {
+    flex: 1;
+    min-width: 300px;
+    margin-left: 20px; /* Add margin for spacing */
+    margin-top: 130px;
+    text-align: center;
+    cursor: pointer;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.membership-levels .card {
+    background-color: #ecf3ff;
+    padding: 15px;
+    margin-bottom: 25px;
+    margin-top: 15px; /* Add margin for spacing between cards */
+    border-radius: 8px; /* Rounded corners for cards */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s; /* Smooth transition for hover effect */
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.membership-levels .card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+}
+
+.membership-levels .card h3 {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.membership-levels .learn-more-btn {
+    background-color: #333333;
+    color: #fff;
+    padding: 12px;
+    border: none;
+    border-radius: 45px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s; /* Smooth transition for button */
+}
+
+.membership-levels .learn-more-btn:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .membership-section {
+        flex-direction: column;
+        width: 89%; /* Use full width on mobile */
+    }
+
+    .membership-form {
+        margin-right: 0; /* Remove right margin */
+        margin-bottom: 20px; /* Add bottom margin to create space */
+    }
+
+    .membership-levels {
+        margin-left: 0; /* Remove left margin on mobile */
+        margin-top: 20px; /* Add margin for spacing above the cards */
+    }
+
+    .membership-levels .card {
+        margin-left: 0; /* Remove left margin on mobile */
+        margin-right: 0; /* Remove right margin on mobile */
+        margin-bottom: 20px; /* Ensure space between cards */
+    }
+
+    /* Reduce padding and font sizes for smaller screens */
+    .membership-form {
+        padding: 15px; /* Decrease padding on mobile */
+    }
+
+    .membership-form h2 {
+        font-size: 20px; /* Smaller font size for headings */
+    }
+
+    .membership-form input, 
+    .membership-form select, 
+    .membership-form textarea {
+        font-size: 14px; /* Smaller font size for inputs */
+    }
+
+    .membership-form button {
+        font-size: 14px; /* Smaller font size for button */
+    }
+
+    .membership-levels .card h3 {
+        font-size: 18px; /* Smaller font size for card titles */
+    }
+
+
+    .membership-form {
+        background-color: #f4f3f3; 
+        margin-top: 130px;
+    }
+
+    .membership-form input, 
+    .membership-form select, 
+    .membership-form textarea {
+        width: 92.8%;
+    }
+
+}
+
+/* MEMBERSHIP HEADING ==================================================================*/
+.members-section {
+    width: 90%; 
+    max-width: 1100px; 
+    margin: 0 auto; 
+    padding: 25px 0;
+    text-align: center; 
+    margin-top: 80px;
+    margin-bottom: -140px;
+}
+
+/* members text styling */
+.members-section h1 {
+    font-size: 1.7rem;
+    font-family: "Lato", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f3f3;
+    padding: 15px;
+    border-radius: 10px;
+    color: #333333;
+}
+
+
+
+
+
+
+
+
+
+<!-- Main Content -->
+<main>
+
+     <!-- Title Section -->
+     <section class="members-section">
+        <h1>Membership Form</h1>
+    </section>
+
+    <section class="membership-section">
+        <!-- Membership Application Form -->
+        <form action="thankyou.html" method="GET" class="membership-form">
+            <h2>Membership Application Form</h2>
+            <label for="first-name">First Name</label>
+            <input type="text" id="first-name" name="first-name" title="First Name" required autocomplete="given-name">
+
+            <label for="last-name">Last Name</label>
+            <input type="text" id="last-name" name="last-name" title="Last Name" required autocomplete="family-name">
+
+            <label for="org-title">Title</label>
+            <input type="text" id="org-title" name="organization-title" title="Title in Organization" pattern="[A-Za-z\s\-]{7,}" autocomplete="organization-title" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" title="Email Address" placeholder="example@domain.com" required autocomplete="email">
+
+            <label for="phone">Cell Phone</label>
+            <input type="tel" id="phone" name="phone" title="Mobile Phone" required autocomplete="tel">
+
+            <label for="organization">Organization Name</label>
+            <input type="text" id="organization" name="organization" title="Organization Name" required autocomplete="organization">
+
+            <label for="membership-level">Membership Level</label>
+            <select id="membership-level" name="membership-level" title="Membership Level" required>
+                <option value="NP Membership">NP Membership</option>
+                <option value="Bronze Membership">Bronze Membership</option>
+                <option value="Silver Membership">Silver Membership</option>
+                <option value="Gold Membership">Gold Membership</option>
+            </select>
+
+            <label for="description">Organization Description</label>
+            <textarea id="description" name="description" title="Organization Description" rows="4"></textarea>
+
+            <input type="hidden" id="timestamp" name="timestamp">
+
+            <button type="submit">Submit Application</button>
+        </form>
+
+        <!-- Membership Level Cards -->
+        <div class="membership-levels">
+            <h2>Membership Levels</h2>
+            <div class="card np-card">
+                <h3>Non Profit Membership Level</h3>
+                <a href="#modal-np" class="learn-more-btn">Learn More</a>
+            </div>
+            <div class="card bronze-card">
+                <h3>Bronze Membership Level</h3>
+                <a href="#modal-bronze" class="learn-more-btn">Learn More</a>
+            </div>
+            <div class="card silver-card">
+                <h3>Silver Membership Level</h3>
+                <a href="#modal-silver" class="learn-more-btn">Learn More</a>
+            </div>
+            <div class="card gold-card">
+                <h3>Gold Membership Level</h3>
+                <a href="#modal-gold" class="learn-more-btn">Learn More</a>
+            </div>
+        </div>
+    </section>
+</main>

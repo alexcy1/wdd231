@@ -1,900 +1,119 @@
+NOT WORKING. LET START AFRESH: let begin today by building a form page for membership, membership levels, and a thank you page. Overview
+The purpose of this page is for a prospective member to apply to join the chamber of commerce through a membership application form. The instructions provide the specific form input and functional requirements. Setup
+Create a new file named join.html in your chamber folder that uses your chamber template. The header, navigation, and footer will be common to all pages of the site.
+Requirements
+The form page must contain the following form elements, types, and attributes. Both the "title" and "label" attributes are helpful for assistive technology.
 
-body {
-    padding-top: 70px; 
-}
+Use a form with a get method and action that points to a confirmation page named "thankyou.html".
+Form fields:
+applicant's first name, text type, required, name, title, and correct autocomplete value so this field autofills with the first name
+applicant's last name, text type, required, name, title, and correct autocomplete value so this field autofills with the last name
+applicant's organizational title within their organization, text type, name, title, autocomplete value of "organization-title", and pattern to only accept alpha characters, hyphens, and spaces with a minimum of seven characters using a regular expression
+an email address, email type, required, name, title, correct autocomplete value, and placeholder which contains an example email input.
+a mobile phone number, telephone type, required, name, title, and correct autocomplete value
+the business/organization's name, text type, required, name, title, and correct autocomplete value of "organization".
+a membership level selection using an appropriate form field of your choosing to allow the user to select a membership level. There are four membership levels.
+NP Membership is for non profit organizations and there is no fee.
+Bronze Membership
+Silver Membership
+Gold Membership
+a business/organization's description, text area, title, and name
+the timestamp, hidden type, name, and id. This field contains the current date and time that the form was loaded by the user.
+A form submission button using input of type submit that is properly labeled in the text node of the button.
+Each field element, including the textarea, should be encased in a label tag to support accessibility.
+Build 4 different cards to display the membership level titles and a link to get additional information. On small screens these are displayed below the form and on larger screens these are displayed to the right of the form.
+Use four HTML modals to display the benefits of each membership level. The modals should display when the user clicks the link on each card (example small screen - example large screen).
+These membership levels have increasing costs as well as increased benefits per level. Benefits might include special events, training, advertising (like spotlight positions on the home page), event discounts, etc.
+Ensure that the design meets standards such as favorable eye tracking and proper keyboard progression (tabs) for accessibility. 📃 Designing more Efficient Forms
+Incorporate animation/transition into the initial display of 4 different membership level cards or buttons. (This is different than using a transition on mouse hover.) For example, you could change the color over time, change the opacity, change the margin, etc. Try to draw attention to these membership cards without being overly distracting. Example of animation on initial page load
+Create a new page named "thankyou.html" that expresses gratitude for filling out the form. This page should load when the user has successfully submitted the form. The design should follow your site pattern.
+On the "thankyou.html" page, you will display the form information entered by the user for all "required" form fields (first name, last name, email, mobile number, business name, and current date timestamp from the hidden field). Style and display the information as you practiced when you completed the "Advanced Forms" learning activity. join.html existing HTML: <body> 
 
-/* Navbar Container */
-.custom-navbar {
-    background: #E6E6E6;
-    position: fixed; 
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    z-index: 1000;
-    display: flex;
-    justify-content: center; 
-    align-items: center;
-    padding: 0.2rem;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
+    <nav class="custom-navbar">
+        <div class="container">
+            <section class="navbar-brand">
+                <div class="logo-container"></div>
+            </section>
+    
+            <div class="navbar-menu" id="navbarNav">
+                <ul class="navbar-items">
+                    <li class="navbar-item">
+                        <a class="navbar-link" href="index.html">Home</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a class="navbar-link" href="directory.html">Directory</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a class="navbar-link active" href="join.html">Join</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a class="navbar-link" href="#">Discover</a>
+                    </li>
+                </ul>
+            </div>
 
-/* Navbar Inner Container */
-.container {
-    display: flex;
-    justify-content: space-between; 
-    align-items: center;
-    width: 90%;
-    max-width: 1100px; 
-    margin: 0 auto; 
-}
+            <div class="navbar-icons">
+                <img src="images/theme.webp" alt="Theme Toggle" id="theme-toggle" class="nav-icon" width="40" height="40">
+                
+                <!-- Hamburger Menu -->
+                <button class="navbar-toggler" id="navbar-toggler" aria-label="Toggle navigation">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </button>
+            </div>
 
-/* Navbar Brand (Logo) */
-.navbar-brand {
-    display: flex;
-    align-items: center;
-}
+        </div>
+    </nav>
+    
+    
+<!-- Main Content -->
+<main>
+    
+    <!-- Membership Form -->
+    <section>
 
-/* Adjust logo container size */
-.logo-container {
-    width: 60px; 
-    height: auto;
-    margin-right: 10px;
-}
-
-.logo-container img {
-    max-width: 100%;
-    height: auto; 
-}
-
-/* Navbar Menu and Links */
-.navbar-menu {
-    display: flex;
-    align-items: center;
-}
-
-.navbar-items {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
-
-.navbar-item {
-    margin-left: 20px;
-}
-
-
-
-
-
-.navbar-link {
-    font-size: 17px;
-    color: #000;
-    text-decoration: none;
-}
-
-.navbar-link:hover {
-    text-decoration: underline;
-    color: #333;
-}
-
-.navbar-link.active {
-    text-decoration: underline;
-    color: #333;
-}
-
-/* Icons Section (e.g., Theme Toggle, Hamburger Menu) */
-.navbar-icons {
-    display: flex;
-    align-items: center;
-    margin-left: auto; 
-}
-
-.nav-icon {
-    margin-right: 10px;
-    width: 25px;
-    height: 25px;
-    cursor: pointer;
-}
-
-/* Hamburger Menu Button */
-.navbar-toggler {
-    background: none;
-    border: none;
-    cursor: pointer;
-    display: none; 
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 0;
-}
-
-/* Toggler Line Styles */
-.navbar-toggler .line {
-    display: block;
-    width: 30px;
-    height: 3px;
-    margin: 5px 0;
-    background-color: #000;
-    transition: all 0.3s ease-in-out;
-}
-
-/* Toggler Animation (for open/close effect) */
-.navbar-toggler.open .line:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-}
-
-.navbar-toggler.open .line:nth-child(2) {
-    opacity: 0;
-}
-
-.navbar-toggler.open .line:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
-}
-
-/* Show Hamburger Toggler on Mobile Only */
-@media (max-width: 992px) {
-    .navbar-toggler {
-        display: flex; 
-        margin-right: 10px; 
-    }
-
-    .navbar-menu {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 100%; 
-        left: 0;
-        right: 0;
-        background-color: #333;
-        z-index: 1000;
-    }
-
-    .navbar-menu.show {
-        display: flex;
-    }
-
-    .navbar-items {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .navbar-item {
-        margin: 10px 0;
-    }
-
-    .navbar-link {
-        color: #fff;
-    }
-
-    .navbar-link.active {
-        color: #dfdcdc;
-    }
-
-    .container {
-        display: flex;
-        justify-content: space-between; 
-        align-items: center;
-        width: 100%;
-        /* max-width: 380px;  */
-        margin: 0 auto; 
-        }
-    }
-
-@media (max-width: 576px) {
-    .container {
-        display: flex;
-        justify-content: space-between; 
-        align-items: center;
-        width: 100%;
-        max-width: 550px; 
-        margin: 0 auto; 
-    }
-}
-
-/* Styling for 'Lagos' (upper text) */
-.company-name-top {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
-    font-size: 1.5rem;
-    text-transform: uppercase; 
-    text-decoration: none;
-    letter-spacing: 0.2em; 
-    color: #333; 
-    margin-bottom: 0.2rem;
-    line-height: normal; 
-}
-
-/* Styling for 'Chamber of Commerce' (lower text) */
-.company-name-bottom {
-    font-family: "Lato", sans-serif;
-    font-size: 0.8rem;
-    color: #333333;
-    text-decoration: none; 
-    margin-top: 0.0rem; 
-    line-height: normal; 
-}
-
-/* Additional styling for the container */
-.company-name {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; 
-}
-
-/* Ensuring no underline for any links within the company name */
-.company-name a {
-    text-decoration: none; 
-}
+    </section>
 
 
+</main>
 
 
+<!-- Footer -->
+<footer class="footer">
+    <br>
+    <div class="footer-container">
+        <!-- Left Section -->
+        <div class="footer-left">
+            <p><b>Lagos Chamber of Commerce</b></p>
+            <p>103, CMD Road, Magodo</p>
+            <p>Ikeja, Lagos</p>
+            <p><a href="mailto:info@lagoscc.org">info@lagoscc.org</a></p>
+            <p>(234) 902-216-2214</p>
+        </div>
 
+        <!-- Center Section (Social Icons) -->
+        <div class="footer-center">
+            <a href="#"><img src="images/youtube.webp" alt="YouTube" class="social-icon"></a>
+            <a href="#"><img src="images/twitter.webp" alt="Twitter" class="social-icon"></a>
+            <a href="#"><img src="images/linkedin.webp" alt="LinkedIn" class="social-icon"></a>
+        </div>
 
-/* Footer =====================================================================*/
-.footer {
-    background-color: #E6E6E6; 
-    color: #000;
-    padding: 20px 0;
-    width: 100%; 
-    position: relative; 
-    left: 0;
-    right: 0; 
-    margin-top: 30px;
-}
-
-/* Footer container */
-.footer-container {
+        <!-- Right Section -->
+        <div class="footer-right">
+            <p>WDD231 Class Project</p>
+            <p>Alexander Cyril</p>
+            <p>© <span id="year"></span> Lagos Chamber of Commerce</p>
+            <p>Last modified: <span id="lastModified"></span></p>
+        </div>
+    </div>
+</footer>
+   
+</body>FURTHER INSTRUCTION. BUILD THIS FORM AND THE MEMBERSHIPS CARDS WITH CSS NOT BOOTSTRAP. MAKE THE FORM AND THE MEMBERS LEVEL CARDS VERY BEAUTIFUL, AND RESPONSIVE ON ALL SCREEN SIZES INCLUDING MOBILE AND TABLES, ADD ALL PROFESSIONAL FORM RULS, REMEMBER TO IMPLEMENT A SIMILAR STYLE LIKE THIS FOR EXAMAPLE .footer-container {
     display: flex; 
     justify-content: space-between; 
     align-items: flex-start; 
     width: 90%; 
     max-width: 1100px; 
     margin: 0 auto; 
-}
-
-/* Left Section */
-.footer-left {
-    text-align: left;
-    font-size: 15px;
-    font-family: Arial, Helvetica, sans-serif; 
-}
-
-.footer-left p {
-    margin: 5px 0;
-}
-
-/* Center Section (Social Icons) */
-.footer-center {
-    text-align: center;
-    display: flex; 
-    justify-content: center;
-}
-
-.social-icon {
-    width: 40px; 
-    height: 40px; 
-    margin: 0 10px; 
-    margin-top: 20px;
-}
-
-/* Right Section */
-.footer-right {
-    text-align: left;
-    font-size: 15px;
-    font-family: Arial, Helvetica, sans-serif; 
-}
-
-.footer-right p {
-    margin: 5px 0;
-}
-
-.footer a {
-    text-decoration: none;
-    color: inherit; 
-}
-
-.footer a:hover {
-    text-decoration: underline;
-}
-
-/* Responsive Design for Mobile */
-@media (max-width: 992px) {
-    .footer-container {
-        flex-direction: column; 
-        align-items: flex-start; 
-        text-align: left; 
-    }
-
-    .footer-left,
-    .footer-right {
-        margin-bottom: 20px; 
-        width: 100%; 
-    }
-
-    .footer-center {
-        width: 100%;
-        text-align: center; 
-        margin-bottom: 25px; 
-    }
-
-    .footer-left p,
-    .footer-right p {
-        text-align: left; 
-    }
-
-    .footer-center {
-        margin-left: 0; 
-    }
-}
-
-
-
-
-/* Hero Banner ===============================================================*/
-.hero-banner {
-    position: relative;
-    width: 90%; 
-    max-width: 1100px; 
-    height: auto;
-    margin: 0 auto; 
-    overflow: hidden; 
-    margin-top: -7px;
-}
-
-/* Hero Image */
-.hero-image {
-    object-fit: cover; 
-    width: 100%; 
-    height: 420px; 
-    margin-top: 0px; 
-}
-
-/* Card Overlay */
-.card-img-overlay {
-    background: rgba(0, 0, 0, 0.4); 
-    position: absolute; 
-    top: 0;
-    left: 0;
-    width: 100%; 
-    height: 100%; 
-    display: flex;
-    flex-direction: column;
-    justify-content: center; 
-    align-items: center; 
-    text-align: center; 
-}
-
-/* Text Styles */
-.card-title {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #fff;
-    margin-top: 80px; 
-    font-family: "Lato", sans-serif;
-}
-
-.card-text {
-    font-size: 1.25rem;
-    color: #fff;
-    margin-top: -10px; 
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-
-/* Button Styles */
-.btn {
-    padding: 12px 30px;
-    font-size: 18px;
-    font-weight: bold;
-    border: none; 
-    background-color: #e4edf7; 
-    color: #000;
-    text-decoration: none;
-    font-family: "Lato", sans-serif;
-    margin-top: 20px;
-}
-
-.btn:hover {
-    background-color: #000;
-    color: #fff;
-    border: none; 
-    transition: 0.7s;
-}
-
-/* Media Queries for responsiveness */
-@media (max-width: 992px) {
-    .hero-image {
-        height: 350px; 
-        object-fit: cover;
-        width: 100vw; 
-        margin: 0; 
-    }
-
-    .hero-banner {
-        width: 100vw; 
-        margin: 0; 
-        padding: 0; 
-    }
-
-    .card-title {
-        font-size: 2.5rem;
-    }
-
-    .card-text {
-        font-size: 1.25rem;
-    }
-}
-
-@media (max-width: 576px) {
-    .hero-image {
-        height: 350px; 
-        object-fit: cover; 
-        width: 100vw;
-        margin: 0; 
-    }
-
-    .hero-banner {
-        width: 100vw;
-        margin: 0; 
-        padding: 0; 
-    }
-
-    .card-title {
-        font-size: 2.0rem; /* Adjusted font size */
-    }
-
-    .card-text {
-        font-size: 1.1rem; /* Adjusted font size */
-    }
-}
-
-
-
-
-
-
-/* HOME ========================================================================*/
-.title-section {
-    width: 90%; 
-    max-width: 1100px; 
-    margin: 0 auto; 
-    padding: 25px 0;
-    text-align: center; 
-}
-
-/* Title text styling */
-.title-section h1 {
-    font-size: 1.5rem;
-    font-family: "Lato", sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-/* Media Queries for responsiveness */
-@media (max-width: 992px) {
-    .title-section {
-        width: 100%;
-        padding: 15px 0; 
-    }
-
-    .title-section h1 {
-        font-size: 2rem; 
-    }
-}
-
-@media (max-width: 576px) {
-    .title-section {
-        width: 100%; 
-        padding: 10px 0;
-    }
-
-    .title-section h1 {
-        font-size: 1.5rem;
-    }
-}
-
-
-
-
-
-
-
-
-/* EVENTS ===========================================================================*/
-/* Container styling */
-.events-container {
-    max-width: 1100px;
-    margin: 0 auto; 
-    padding: 0 15px;
-}
-
-/* Layout for cards with equal alignment */
-.events-section {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: 20px;
-    width: 100%;
-}
-
-/* Card layout */
-.events-col {
-    margin-bottom: 20px;
-}
-
-/* Card styling */
-.events-card {
-    background-color: #f0f0f0;
-    color: #333;
-    border: none;
-    min-height: 340px;
-    padding: 0; 
-    display: flex;
-    flex-direction: column; 
-}
-
-/* Full-width header with padding adjustments */
-.events-card-header {
-    background-color: #333;
-    color: #fff;
-    font-size: 1.5rem;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    padding: 10px 20px; 
-    text-align: center;
-    width: 100%; 
-    box-sizing: border-box; 
-}
-
-/* Body content spacing */
-.events-card-body {
-    background-color: #f0f0f0;
-    color: #333;
-    padding: 20px;
-    flex-grow: 1;
-    border-top: 3px solid #333;
-}
-
-/* Weather-specific styles */
-.weather-body {
-    display: flex;
-    align-items: center;
-    padding-top: 20px; 
-}
-
-.weather-icon {
-    width: 70px;
-    height: 70px;
-    margin-right: 10px;
-    margin-left: -10px;
-    margin-top: -150px;
-
-}
-
-.weather-details p {
-    margin: 5px 0;
-}
-
-.weather-details{
-    margin-top: -20px;
-    font-size: 1.05rem;
-    font-family: "Lato", sans-serif;
-}
-
-.forecast-body {
-    font-size: 1.05rem;
-    font-family: "Lato", sans-serif;
-}
-
-/* Responsive adjustments for smaller screens */
-@media (max-width: 1200px) {
-    .events-section {
-        display: grid;
-        gap: 20px;
-        width: 100%; 
-        max-width: 1050px;
-        margin: 0 auto; 
-    }
-}
-
-@media (max-width: 1180px) {
-    .events-section {
-        display: grid;
-        gap: 20px;
-        width: 100%; 
-        max-width: 1030px;
-        margin: 0 auto; 
-    }
-}
-
-@media (max-width: 1160px) {
-    .events-section {
-        display: grid;
-        gap: 20px;
-        width: 100%; 
-        max-width: 1022px;
-        margin: 0 auto; 
-    }
-}
-
-@media (max-width: 1140px) {
-    .events-section {
-        display: grid;
-        gap: 20px;
-        width: 100%; 
-        max-width: 1012px;
-        margin: 0 auto; 
-    }
-}
-
-@media (max-width: 1120px) {
-    .events-section {
-        display: grid;
-        gap: 20px;
-        width: 100%; 
-        max-width: 990px;
-        margin: 0 auto; 
-    }
-}
-
-@media (max-width: 1100px) {
-    .events-section {
-        display: grid;
-        gap: 20px;
-        width: 100%; 
-        max-width: 972px;
-        margin: 0 auto; 
-    }
-}
-
-@media (max-width: 1080px) {
-    .events-section {
-        display: grid;
-        gap: 20px;
-        width: 100%; 
-        max-width: 945px;
-        margin: 0 auto; 
-    }
-}
-
-@media (max-width: 1070px) {
-    .events-section {
-        display: grid;
-        gap: 20px;
-        width: 100%; 
-        max-width: 940px;
-        margin: 0 auto; 
-    }
-}
-
-@media (max-width: 1060px) {
-    .events-section {
-        display: grid;
-        gap: 20px;
-        width: 100%; 
-        max-width: 940px;
-        margin: 0 auto; 
-    }
-}
-
-@media (max-width: 1055px) {
-    .events-section {
-        display: grid;
-        gap: 20px;
-        width: 100%; 
-        max-width: 930px;
-        margin: 0 auto; 
-    }
-}
-
-@media (max-width: 1050px) {
-    .events-section {
-        display: grid;
-        gap: 20px;
-        width: 100%; 
-        max-width: 925px;
-        margin: 0 auto; 
-    }
-}
-
-@media (max-width: 1040px) {
-    .events-section {
-        display: grid;
-        gap: 20px;
-        width: 100%; 
-        max-width: 920px;
-        margin: 0 auto; 
-    }
-}
-
-@media (max-width: 1030px) {
-    .events-section {
-        display: grid;
-        gap: 20px;
-        width: 100%; 
-        max-width: 910px;
-        margin: 0 auto; 
-    }
-}
-
-@media (max-width: 1020px) {
-    .events-section {
-        display: grid;
-        gap: 20px;
-        width: 100%; 
-        max-width: 900px;
-        margin: 0 auto; 
-    }
-}
-
-
-@media (max-width: 1010px) {
-    .events-section {
-        display: grid;
-        gap: 20px;
-        width: 100%; 
-        max-width: 890px;
-        margin: 0 auto; 
-    }
-}
-
-@media (max-width: 992px) {
-    .events-section {
-        grid-template-columns: 1fr;
-    }
-}
-
-
-
-
-
-
-/* SPOTLIGHT ========================================================================*/
-/* MEMBERSHIP CARD CONTAINER */
-.card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between; 
-    width: 90%;
-    max-width: 1100px; 
-    margin: 0 auto;
-    align-items: stretch;
-    box-sizing: border-box;
-    margin-top: 30px;
-}
-
-.business-card {
-    background-color: #F5F5F5;
-    border-radius: 8px;
-    padding: 15px;
-    width: 31.7%; 
-    margin-bottom: 20px; 
-    margin-right: 1%; 
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-height: 100px;
-    box-sizing: border-box;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.business-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    cursor: pointer;
-}
-
-/* Business Name */
-.business-name {
-    font-size: 1.5em;
-    text-align: center;
-    margin-bottom: 8px;
-    font-family: "Lato", sans-serif;
-}
-
-/* Business Tagline */
-.business-tagline {
-    font-size: 0.85em;
-    text-align: center;
-    color: #777;
-    margin-top: -8px;
-    margin-bottom: 8px;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-/* Business Info Section */
-.card-content {
-    display: flex;
-    align-items: center;
-    font-family: "Lato", sans-serif;
-}
-
-.business-logo {
-    width: 80px;
-    height: 80px;
-    border-radius: 8px;
-    margin-right: 15px;
-    border: 2px solid #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.business-info {
-    flex-grow: 1;
-    font-size: 0.9em;
-    color: #333;
-}
-
-.business-info div {
-    margin-bottom: 6px;
-}
-
-/* Business Website Link */
-.business-link {
-    text-decoration: none;
-    color: #000;
-}
-
-.business-link:hover {
-    text-decoration: underline;
-    color: rgb(5, 173, 239);
-}
-
-/* Horizontal Line */
-hr {
-    border: 0; 
-    border-top: 1px solid rgb(199, 199, 199);
-    width: calc(100% + 30px); 
-    margin-left: -15px;
-    margin-top: 10px; 
-    margin-bottom: 10px; 
-}
-
-/* Responsive Design */
-@media (max-width: 992px) {
-    .business-card {
-        width: 48%; 
-        margin-right: 0; 
-    }
-
-    .business-logo {
-        width: 100px;
-        height: 100px;
-    }
-}
-
-@media (max-width: 768px) {
-    .business-card {
-        width: 100%; 
-        margin-bottom: 25px; 
-    }
-
-    .business-logo {
-        width: 200px;
-        height: 150px;
-    }
-}
-
-@media (max-width: 576px) {
-    .business-card {
-        width: 100%;
-    }
-
-    .business-logo {
-        width: 70px;
-        height: 70px;
-    }
-}
-
-
-
-
-/* Ensure body has no margin and hide overflow */
-body {
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-}
-
-
-
+} TO ALLOW ALL ITEMS ON THE PAGE STAYS THIS SAME SIZE. THE MEMBERS CARDS MUST STACK VERTICALLY TO THE RIGHT OF THE FORM ONE EACH BEFORE THE OTHER UNDER FOR PC VIEW. ON MOBILE THE FORM WILL BE FULL WIDTH WHILE THE CARDS WILL STACK VERTICALL UNDER THE FORM ONE AFTER THE OTHER. USE THE IMAGE AS A GUIDE TO WHAT IS REQUIRED
