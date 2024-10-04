@@ -47,10 +47,11 @@
 
 </head>
 <body>
-
+    <header>
     <nav class="custom-navbar">
         <div class="container">
             <section class="navbar-brand">
+                <h2 class="visually-hidden">Navigation Bar Brand</h2>
                 <div class="logo-container"></div>
             </section>
     
@@ -84,6 +85,7 @@
 
         </div>
     </nav>
+</header>
 
 <!-- Main Content -->
 <main>
@@ -118,11 +120,13 @@
 
             <label for="membership-level">Membership Level</label>
             <select id="membership-level" name="membership-level" title="Membership Level" required>
+                <option value="" disabled selected>Select Membership Level</option> <!-- Placeholder option -->
                 <option value="NP Membership">NP Membership</option>
                 <option value="Bronze Membership">Bronze Membership</option>
                 <option value="Silver Membership">Silver Membership</option>
                 <option value="Gold Membership">Gold Membership</option>
             </select>
+            
 
             <label for="description">Organization Description</label>
             <textarea id="description" name="description" title="Organization Description" rows="4"></textarea>
