@@ -1243,9 +1243,13 @@ body.dark-mode #location-name {
     min-width: 300px;
     margin-left: 20px;
     margin-top: 118px;
-    text-align: left;
+    text-align: center;
     cursor: pointer;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.membership-levels h2{
+    text-align: left;
 }
 
 .membership-levels .card {
