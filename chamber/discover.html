@@ -29,7 +29,7 @@
     <meta name="twitter:description" content="Welcome to the Chamber of Commerce of Nigeria, showcasing local businesses and community development.">
 
     <!-- Title -->
-    <title>Lagos Chamber of Commerce</title>
+    <title>Discover Lagos Chamber of Commerce</title>
 
     <!-- Favicon -->
     <link rel="icon" href="images/favicon_io/apple-touch-icon.png" sizes="180x180">
@@ -43,20 +43,22 @@
 
     <link rel="stylesheet" href="styles/chamber.css">
     <script src="scripts/main.js" defer></script>
+    <script src="scripts/form.js" defer></script>
 
 </head>
 <body>
-
+    <header>
     <nav class="custom-navbar">
         <div class="container">
             <section class="navbar-brand">
+                <h2 class="visually-hidden">Navigation Bar Brand</h2>
                 <div class="logo-container"></div>
             </section>
     
             <div class="navbar-menu" id="navbarNav">
                 <ul class="navbar-items">
                     <li class="navbar-item">
-                        <a class="navbar-link active" href="index.html">Home</a>
+                        <a class="navbar-link" href="index.html">Home</a>
                     </li>
                     <li class="navbar-item">
                         <a class="navbar-link" href="directory.html">Directory</a>
@@ -65,7 +67,7 @@
                         <a class="navbar-link" href="join.html">Join</a>
                     </li>
                     <li class="navbar-item">
-                        <a class="navbar-link" href="discover.html">Discover</a>
+                        <a class="navbar-link active" href="discover.html">Discover</a>
                     </li>
                 </ul>
             </div>
@@ -83,91 +85,14 @@
 
         </div>
     </nav>
-    
-    
+</header>
+
 <!-- Main Content -->
 <main>
-    
-    <!-- Hero Image -->
-    <section class="hero-banner">
-        <div class="hero-container text-center">
-            <div class="card bg-dark text-white border-0">
-                <img src="images/banner.webp" class="card-img hero-image" alt="Commerce Image">
-                <div class="card-img-overlay d-flex flex-column justify-content-center align-items-center">
-                    <h1 class="card-title">Welcome to Lagos <br>Chamber of Commerce</h1>
-                    <h3 class="card-text">Fostering business growth and opportunities</h3>
-                    <a href="#contact" class="btn btn-primary mt-4">Join Us Now</a>
-                </div>
-            </div>
-        </div>
+     <!-- Title Section -->
+     <section class="discover-section">
+        <h1>Discover</h1>
     </section>
-
-    <!-- Title Section -->
-    <section class="title-section">
-        <h1>Home</h1>
-    </section>
-
-    
-
-   <!-- EVENTS -->
-<section class="events-container">
-    <h2 class="visually-hidden">Events Container</h2>
-    <div class="events-section">
-        <!-- Events Card -->
-        <section class="events-col">
-            <div class="card events-card">
-                <div class="events-card-header">
-                    Events
-                </div>
-                <div class="events-card-body">
-                    <!-- Event details -->
-                </div>
-            </div>
-        </section>
-
-        <!-- Current Weather Card -->
-        <section class="events-col">
-            <div class="card events-card">
-                <div class="events-card-header">
-                    Current Weather
-                </div>
-                <div class="events-card-body weather-body">
-                    <img id="weather-icon" src="./images/weather-icon.webp" class="weather-icon" alt="Weather Icon">
-                    <div class="weather-details">
-                        <p id="current-temp"></p>
-                        <p id="current-condition"></p>
-                        <p id="current-high"></p>
-                        <p id="current-low"></p>
-                        <p id="current-humidity"></p>
-                        <p id="current-sunrise"></p>
-                        <p id="current-sunset"></p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Weather Forecast Card -->
-        <section class="events-col">
-            <h2 class="visually-hidden">Events Section</h2>
-            <div class="card events-card">
-                <div class="events-card-header">
-                    Weather Forecast
-                </div>
-                <div class="events-card-body forecast-body">
-                    <p id="forecast-day1"></p>
-                    <p id="forecast-day2"></p>
-                    <p id="forecast-day3"></p>
-                    <p id="location-name"></p>
-                </div>
-            </div>
-        </section>
-    </div>
-</section>
-
-<!-- SPOTLIGHT -->
-<section id="membership-cards" class="card-container spotlight">
-    <h2 class="visually-hidden">Membership Cards</h2> 
-</section>
 
 </main>
 
@@ -201,8 +126,6 @@
         </div>
     </div>
 </footer>
-
-<script type="module" src="scripts/home.js"></script>
    
 </body>
 </html>
