@@ -394,14 +394,14 @@ body {
     font-size: 2.5rem;
     font-weight: bold;
     color: #fff;
-    margin-top: 80px; 
+    margin-top: 70px; 
     font-family: "Lato", sans-serif;
 }
 
 .card-text {
     font-size: 1.25rem;
     color: #fff;
-    margin-top: 30px; 
+    margin-top: 20px; 
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
@@ -416,7 +416,7 @@ body {
     color: #000;
     text-decoration: none;
     font-family: "Lato", sans-serif;
-    margin-top: 20px;
+    margin-top: 40px;
 }
 
 .btn:hover {
@@ -450,7 +450,7 @@ body {
     }
 
     .btn {
-        margin-top: 0px;
+        margin-top: 30px;
     }
 }
 
