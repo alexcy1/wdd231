@@ -1175,7 +1175,7 @@ body.dark-mode #location-name {
     justify-content: space-between;
     padding: 20px;
     width: 90%;
-    max-width: 1100px; 
+    max-width: 1150px; 
     margin: 0 auto; 
 }
 
@@ -1184,7 +1184,7 @@ body.dark-mode #location-name {
     min-width: 300px;
     margin-right: 20px; 
     padding: 20px; 
-    padding-right: 45px;
+    padding-right: 22px;
     padding-left: 23px;
     background-color: #f4f3f3; 
     border-radius: 8px; 
@@ -1375,7 +1375,11 @@ body.dark-mode #location-name {
     .membership-form input, 
     .membership-form select, 
     .membership-form textarea {
-        width: 92.8%;
+        width: 100%;
+    }
+
+    .membership-levels {
+        margin-top: 55px;
     }
 }
 
@@ -1601,7 +1605,7 @@ body.dark-mode #location-name {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    max-width: 1000px;
+    max-width: 100px;
     width: 70vw;
     align-items: center !important;
     animation: slideIn 1s ease-out forwards;
@@ -1672,6 +1676,20 @@ body.dark-mode #location-name {
     color: rgb(144, 0, 0);
 }
 
+@media (max-width: 3500px) {
+    .thankyou-page .thankyou-section {
+        padding: 10px;
+    }
+
+    .thankyou-page .details-section {
+        max-width: 1100px;
+        width: 90vw;
+        align-items: center !important;
+        animation: slideIn 1s ease-out forwards;
+        margin-bottom: 30px;
+    }
+}
+
 @media (max-width: 768px) {
     .thankyou-page .thankyou-section {
         padding: 10px;
@@ -1724,15 +1742,6 @@ body.dark-mode #location-name {
 
     .thankyou-page .detail-item .label {
         margin-bottom: 5px;
-    }
-
-    .thankyou-page .details-section {
-
-        max-width: 1100px;
-        width: 84vw;
-        align-items: center !important;
-        animation: slideIn 1s ease-out forwards;
-        margin-bottom: 30px;
     }
 }
 

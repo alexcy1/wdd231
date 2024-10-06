@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", function () {
     const lazyImages = document.querySelectorAll('.lazy-load');
 
@@ -39,6 +40,7 @@ document.querySelector('.local-section').classList.add('selected');
 
 
 
+// Visitor message based on last visit ===================================================
 // Visitor message based on last visit
 document.addEventListener('DOMContentLoaded', () => {
     const lastVisit = localStorage.getItem('last-visit');
@@ -47,21 +49,33 @@ document.addEventListener('DOMContentLoaded', () => {
     let message = '';
 
     if (lastVisit) {
-        const daysSinceLastVisit = Math.floor((now - lastVisit) / oneDay);
+        const lastVisitTime = parseInt(lastVisit); // Convert the last visit to a number
+        const timeDifference = now - lastVisitTime;
+        const daysSinceLastVisit = Math.floor(timeDifference / oneDay);
 
-        if (daysSinceLastVisit < 1) {
+        // If less than a day has passed
+        if (timeDifference < oneDay) {
             message = 'Back so soon! Awesome!';
-        } else if (daysSinceLastVisit === 1) {
+        } 
+        // If exactly one day has passed
+        else if (daysSinceLastVisit === 1) {
             message = 'You last visited 1 day ago.';
-        } else {
+        } 
+        // More than one day has passed
+        else {
             message = `You last visited ${daysSinceLastVisit} days ago.`;
         }
-    } else {
+    } 
+    // First-time visit
+    else {
         message = 'Welcome! Let us know if you have any questions.';
     }
 
+    // Display the message
     document.getElementById('visitor-message').textContent = message;
-    localStorage.setItem('last-visit', now); // Update the last visit time
+
+    // Update the last visit time
+    localStorage.setItem('last-visit', now);
 });
 
 
