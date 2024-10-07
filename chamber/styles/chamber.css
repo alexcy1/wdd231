@@ -1539,6 +1539,34 @@ body.dark-mode #location-name {
     line-height: 1.6;
 }
 
+.cost {
+    background-color: #f9f9f9; 
+    padding: 20px; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
+    text-align: center; 
+    margin-top: 20px;
+}
+
+.cost h4 {
+    font-size: 1.5rem;
+    font-weight: 600; 
+    color: #333; 
+    margin-bottom: 10px; 
+}
+
+.cost p {
+    font-size: 1.2rem; 
+    font-weight: 500; 
+    color: #790000;
+    margin: 0;
+}
+
+.cost p:before {
+    content: "💸 "; 
+}
+
+
 /* Responsive for smaller screens */
 @media screen and (max-width: 768px) {
     .modal-content {
