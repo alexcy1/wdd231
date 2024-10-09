@@ -1,0 +1,394 @@
+
+/* MENU ===================================================================*/
+.custom-navbar {
+    background: #333333;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    padding: 0.2rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Navbar Inner Container */
+.container {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    width: 100%;
+    max-width: 1200px; 
+    margin: 0 auto; 
+}
+
+/* Navbar Brand (Logo) */
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    flex-grow: 1; 
+}
+
+/* Adjust logo container size */
+.logo-container {
+    width: 30px; 
+    height: auto;
+    margin-right: 5px;
+}
+
+.logo-container img {
+    max-width: 100%;
+    height: auto; 
+}
+
+/* Navbar Menu and Links */
+.navbar-menu {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: flex-end;
+}
+
+.navbar-items {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar-item {
+    margin-left: 20px;
+}
+
+.navbar-link {
+    font-size: 16px;
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 0.7rem;
+}
+
+.navbar-link:hover {
+    text-decoration: none;
+    color: #000;
+    background-color: #FFCC00;
+    transition: 0.6s;
+    padding: 0.5rem 0.7rem;
+    border-radius: 5px;
+}
+
+.navbar-link.active {
+    text-decoration: none;
+    color: #000;
+    background-color: #FFCC00;
+    border-radius: 5px;
+}
+
+.navbar-icons {
+    display: flex;
+    align-items: center;
+    margin-left: auto; 
+}
+
+/* Hamburger Menu Button */
+.navbar-toggler {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: none; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+/* Toggler Line Styles */
+.navbar-toggler .line {
+    display: block;
+    width: 30px;
+    height: 3px;
+    margin: 3.3px 0;
+    background-color: #fff;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Toggler Animation (for open/close effect) */
+.navbar-toggler.open .line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.navbar-toggler.open .line:nth-child(2) {
+    opacity: 0;
+}
+
+.navbar-toggler.open .line:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Show Hamburger Toggler on Mobile Only */
+@media (max-width: 880px) {
+    .navbar-toggler {
+        display: flex; 
+        margin-right: 10px; 
+    }
+
+    .navbar-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%; 
+        left: 0;
+        right: 0;
+        background-color: #333333;
+        z-index: 1000;
+    }
+
+    .navbar-menu.show {
+        display: flex;
+    }
+
+    .navbar-items {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar-item {
+        margin: 10px 0;
+    }
+
+    .navbar-link {
+        color: #fff;
+    }
+
+    .navbar-link.active {
+        color: #000;
+    }
+
+    .navbar-items {
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 1220px) {
+    .logo-container {
+        margin-left: 3px;
+    }
+}
+
+/* Styling for 'Lagos' (upper text) */
+.company-name-top {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    /* font-weight: bold; */
+    font-size: 1.6rem;
+    text-transform: uppercase; 
+    text-decoration: none;
+    letter-spacing: 0.2em; 
+    color: #fff; 
+    line-height: normal; 
+}
+
+/* Additional styling for the container */
+.company-name {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+}
+
+/* Ensuring no underline for any links within the company name */
+.company-name a {
+    text-decoration: none; 
+}
+
+
+
+
+/* FOOTER STYLE ====================================================================*/
+body {
+    margin: 0;
+    padding: 0;
+    background: rgb(238, 238, 238);
+    min-height: 100vh;  
+    display: flex;
+    flex-direction: column;  
+}
+
+/* MAIN CONTENT STYLES */
+main {
+    flex: 1;  /* Ensures the footer is pushed down if the content is short */
+}
+
+/* FOOTER STYLES ====================================================================*/
+.footer {
+    background-color: #333; 
+    color: #fff;
+    width: 100vw;
+    position: fixed;  
+    bottom: 0;        
+    left: 0;
+    margin: 0;
+    padding: 20px 0; 
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Footer container */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Sections */
+.footer-left, .footer-center, .footer-right {
+    flex: 1;
+}
+
+/* Headings and Paragraphs */
+.footer-left h4, .footer-center h4, .footer-right h4 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px; 
+}
+
+.footer-left p, .footer-right p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+/* Links */
+.footer-left a, .footer-links li a {
+    color: #FFCC00;
+    text-decoration: none;
+    padding: 0.5rem 0.3rem;
+    line-height: 1.7;
+}
+
+.footer-left a:hover, .footer-links li a:hover {
+    text-decoration: none;
+    color: #fff;
+    transition: 0.6s;
+}
+
+/* Footer Links */
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 5px; /* Reduced margin */
+}
+
+.footer-links li a:hover {
+    background-color: #000;
+    padding: 0.5rem 0.3rem;
+}
+
+footer .active {
+    background-color: #000;
+    padding: 0.5rem 0.3rem;
+    color: #ffffff !important;
+}
+
+/* Social Icons */
+.social-icons {
+    display: flex;
+    gap: 10px; /* Reduced gap */
+    margin-bottom: 10px; /* Reduced margin */
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+}
+
+/* Newsletter Section */
+.footer-extras {
+    display: flex;
+    justify-content: space-between;
+    /* padding: 20px; */
+    margin-top: 10px; 
+    color: #fff;
+}
+
+.newsletter {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+     
+}
+
+.newsletter h4 {
+    margin-bottom: 10px;
+}
+
+.newsletter form {
+    display: flex;
+    flex-direction: column; 
+    align-items: stretch; 
+}
+
+.newsletter input[type="email"] {
+    padding: 10px;
+    margin-bottom: 10px; 
+    border: none;
+    border-radius: 5px;
+    width: 250px;
+}
+
+.newsletter button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #FFCC00;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%; 
+}
+
+.newsletter button:hover {
+    background-color: #FFD700; 
+}
+
+#lastModified {
+    color: #FFD700;
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 992px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-left, .footer-center, .footer-right {
+        margin-bottom: 20px; /* Reduced margin */
+        width: 100%;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+
+    .footer-extras {
+        flex-direction: column; /* Stack newsletter and card vertically */
+        align-items: center;
+        margin-top: 10px; /* Adjust margin */
+    }
+
+    .newsletter {
+        margin-bottom: 20px; /* Space below newsletter */
+        align-items: center; /* Center align for smaller screens */
+    }
+
+}
+
+
