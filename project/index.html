@@ -99,19 +99,54 @@
     
     
 <!-- Main Content -->
-<main>
+<main class="main-content-wrapper">
 
-    <section></section>
+    <!-- SLIDER ===================================================================-->
+    <section class="slider">
+        <div class="slider-container" id="slider">
+            <!-- Article cards will be dynamically inserted here -->
+        </div>
+        <button class="arrow left" id="prev">❮</button>
+        <button class="arrow right" id="next">❯</button>
+    </section>
+    
+
+<!-- ARTICLES/NEWS ============================================================-->
+<div class="article-wrapper"> <!-- Added class div wrapper -->
+    <section class="trending-sections">
+    </section>
+
+    <section class="articles-container">
+    </section>
+
+    <button id="load-more" class="load-more-button">Load More</button>
+
+    <div id="article-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2 id="modal-title"></h2>
+            <p id="modal-abstract"></p>
+            <img id="modal-image" src="." alt="">
+            <p id="modal-date"></p>
+            <!-- <button id="view-article" class="view-article-button">View Full Article</button> -->
+        </div>
+    </div>
+</div>
+
+
+
+
+
 
 </main>
 
 
 
 <!-- Footer -->
-<!-- Footer -->
 <footer class="footer">
     <div class="footer-container">
         <!-- Left Section -->
+        <img src="images/logo.png" alt="Erruki Logo" class="footer-logo">
         <div class="footer-left">
             <h4>Erruki News</h4>
             <p>103, CMD Road, Magodo</p>
@@ -140,31 +175,36 @@
                 <a href="#"><img src="images/twitter.webp" alt="Twitter" class="social-icon"></a>
                 <a href="#"><img src="images/linkedin.webp" alt="LinkedIn" class="social-icon"></a>
             </div>
-            <p>WDD231 Class Project</p>
+            <p>WDD231 Semester Project</p>
             <p>Alexander Cyril</p>
             <p>© <span id="year"></span> Erruki News</p>
             <p>Last modified: <span id="lastModified"></span></p>
         </div>
 
-    <!-- Additional Row for Newsletter and Featured Card -->
-    <div class="footer-extras">
-        <!-- Newsletter Section -->
-        <div class="newsletter">
-            <h4>Subscribe to Our Newsletter</h4>
-            <form id="newsletter-form">
-                <input type="email" id="email" placeholder="Enter your email" required>
-                <button type="submit">Subscribe</button>
-            </form>
-            <p class="newsletter-message"></p>
+        <!-- Additional Row for Newsletter and Featured Card -->
+        <div class="footer-extras">
+            <!-- Newsletter Section -->
+            <div class="newsletter">
+                <h4>Subscribe to Our Newsletter</h4>
+                <form id="newsletter-form">
+                    <input type="email" id="email" placeholder="Enter your email" autocomplete="email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+                <p class="newsletter-message"></p>
+
+                <!-- Success Modal -->
+                <div id="successModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <p id="successMessage"></p>
+                    </div>
+                </div>
+            </div>
         </div>
-        
-    </div>
     </div>
 </footer>
 
-
-
-<!-- <script type="module" src="scripts/home.js"></script> -->
+<script type="module" src="scripts/home.js"></script>
    
 </body>
 </html>

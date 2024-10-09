@@ -83,3 +83,39 @@ document.addEventListener('DOMContentLoaded', function () {
         lastModifiedSpan.textContent = document.lastModified;
     }
 });
+
+
+
+
+// NEWS LETTER =============================================================================
+
+document.getElementById('newsletter-form').addEventListener('submit', function(e) {
+    e.preventDefault(); // Prevent default form submission
+    
+    const emailInput = document.getElementById('email');
+    const email = emailInput.value; // Get the submitted email
+    
+    // Display success message in the modal
+    const successMessage = `Congratulations! You've successfully subscribed with the email: ${email}`;
+    document.getElementById('successMessage').textContent = successMessage;
+    
+    // Show the modal
+    const modal = document.getElementById('successModal');
+    modal.style.display = 'block';
+    
+    // Close the modal when the "x" is clicked
+    const closeButton = document.getElementsByClassName('close')[0];
+    closeButton.onclick = function() {
+        modal.style.display = 'none';
+    };
+    
+    // Close the modal when clicking outside the modal content
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    };
+    
+    // Clear the form input after submission
+    emailInput.value = '';
+});
