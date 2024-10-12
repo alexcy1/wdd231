@@ -29,7 +29,10 @@
     <meta name="twitter:description" content="Welcome to the Erruki News Aggregator">
 
     <!-- Title -->
-    <title>Erruki News</title>
+    <title>Signup Erruki News</title>
+    
+    <!-- Font Awesome Link -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
 
     <!-- Favicon -->
     <link rel="icon" href="images/favicon_io/apple-touch-icon.png" sizes="180x180">
@@ -40,9 +43,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
-
+    
     <link rel="stylesheet" href="styles/main.css">
     <script src="scripts/util.js" defer></script>
+    <script src="scripts/signup.js" defer></script>
 
 </head>
 <body>
@@ -57,7 +61,7 @@
             <div class="navbar-menu" id="navbarNav">
                 <ul class="navbar-items">
                     <li class="navbar-item">
-                        <a class="navbar-link active" href="index.html">Home</a>
+                        <a class="navbar-link" href="index.html">Home</a>
                     </li>
                     <li class="navbar-item">
                         <a class="navbar-link" href="about.html">About</a>
@@ -91,8 +95,6 @@
             </div>
 
             <div class="navbar-icons">
-                <!-- <img src="images/theme.webp" alt="Theme Toggle" id="theme-toggle" class="nav-icon" width="40" height="40"> -->
-                
                 <!-- Hamburger Menu -->
                 <button class="navbar-toggler" id="navbar-toggler" aria-label="Toggle navigation">
                     <span class="line"></span>
@@ -109,41 +111,32 @@
 <!-- Main Content -->
 <main class="main-content-wrapper">
 
-    <!-- SLIDER ===================================================================-->
-    <section class="slider">
-        <div class="slider-container" id="slider">
-            <!-- Article cards will be dynamically inserted here -->
+    <section class="signup-wrapper">
+        <div class="signup-container">
+            <form class="signup-form" id="signup-form">
+                <h2>Sign Up</h2>
+                <div class="form-group">
+                    <label for="username-signup">Username</label>
+                    <input type="text" id="username-signup" placeholder="Enter your username" autocomplete="on" required>
+                </div>
+                <div class="form-group">
+                    <label for="email-signup">Email</label>
+                    <input type="email" id="email-signup" placeholder="Enter your email" autocomplete="on" required>
+                </div>
+                <div class="form-group">
+                    <label for="password-signup">Password</label>
+                    <input type="password" id="password-signup" placeholder="Enter your password" autocomplete="on" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" placeholder="Confirm your password" required>
+                </div>
+                <button type="submit" class="submit-btn">Sign Up</button>
+            </form>
         </div>
-        <button class="arrow left" id="prev">❮</button>
-        <button class="arrow right" id="next">❯</button>
     </section>
     
-
-<!-- ARTICLES/NEWS ============================================================-->
-<div class="article-wrapper"> <!-- Added class div wrapper -->
-    <section class="trending-sections">
-    </section>
-
-    <section class="articles-container">
-    </section>
-
-    <button id="load-more" class="load-more-button">Load More</button>
-
-    <div id="article-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-button">&times;</span>
-            <h2 id="modal-title"></h2>
-            <p id="modal-abstract"></p>
-            <img id="modal-image" src="." alt="">
-            <p id="modal-date"></p>
-            <button id="view-article" class="view-article-button">View Full Article</button>
-        </div>
-    </div>
-</div>
-
-
 </main>
-
 
 
 <!-- Footer -->
@@ -208,7 +201,7 @@
     </div>
 </footer>
 
-<script type="module" src="scripts/home.js"></script>
+<!-- <script type="module" src="scripts/home.js"></script> -->
    
 </body>
 </html>

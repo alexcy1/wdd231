@@ -29,7 +29,7 @@
     <meta name="twitter:description" content="Welcome to the Erruki News Aggregator">
 
     <!-- Title -->
-    <title>Erruki News</title>
+    <title>Update Profile Erruki News</title>
 
     <!-- Favicon -->
     <link rel="icon" href="images/favicon_io/apple-touch-icon.png" sizes="180x180">
@@ -42,7 +42,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="styles/main.css">
-    <script src="scripts/util.js" defer></script>
+    <script src="scripts/util.js" defer></script> 
+    <script src="scripts/update-profile.js" defer></script> 
 
 </head>
 <body>
@@ -57,7 +58,7 @@
             <div class="navbar-menu" id="navbarNav">
                 <ul class="navbar-items">
                     <li class="navbar-item">
-                        <a class="navbar-link active" href="index.html">Home</a>
+                        <a class="navbar-link" href="index.html">Home</a>
                     </li>
                     <li class="navbar-item">
                         <a class="navbar-link" href="about.html">About</a>
@@ -90,9 +91,7 @@
                 </ul>
             </div>
 
-            <div class="navbar-icons">
-                <!-- <img src="images/theme.webp" alt="Theme Toggle" id="theme-toggle" class="nav-icon" width="40" height="40"> -->
-                
+            <div class="navbar-icons">                
                 <!-- Hamburger Menu -->
                 <button class="navbar-toggler" id="navbar-toggler" aria-label="Toggle navigation">
                     <span class="line"></span>
@@ -109,41 +108,54 @@
 <!-- Main Content -->
 <main class="main-content-wrapper">
 
-    <!-- SLIDER ===================================================================-->
-    <section class="slider">
-        <div class="slider-container" id="slider">
-            <!-- Article cards will be dynamically inserted here -->
+    <section class="profile-wrapper">
+        <div class="profile-container">
+            <form class="profile-form" id="profile-form">
+                <h2>Update Profile</h2>
+                <div class="form-group">
+                    <label for="username-signup">Username</label>
+                    <input type="text" id="username-signup" placeholder="Not editable" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="email-signup">Email</label>
+                    <input type="email" id="email-signup" placeholder="Not editable" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="first-name">First Name</label>
+                    <input type="text" id="first-name" placeholder="Enter your first name" autocomplete="given-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="last-name">Last Name</label>
+                    <input type="text" id="last-name" placeholder="Enter your last name" autocomplete="family-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" placeholder="Enter your phone number" autocomplete="tel" required>
+                </div>
+                <div class="form-group">
+                    <label for="profession">Profession</label>
+                    <input type="text" id="profession" placeholder="Enter your profession" autocomplete="organization-title" required>
+                </div>
+                <div class="form-group">
+                    <label for="company">Company</label>
+                    <input type="text" id="company" placeholder="Enter your company name" autocomplete="organization" required>
+                </div>
+                <div class="form-group">
+                    <label for="about-me">About Me</label>
+                    <textarea id="about-me" placeholder="Tell us about yourself" rows="4" autocomplete="off" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="profile-image">Profile Image</label>
+                    <input type="file" id="profile-image" accept="image/*">
+                    <img id="existing-profile-image" src="." alt="Existing Profile Image" style="display:none; width: 100px; height: auto; margin-top: 10px;">
+                </div>
+                <button type="submit" class="submit-btn">Update Profile</button>
+            </form>
         </div>
-        <button class="arrow left" id="prev">❮</button>
-        <button class="arrow right" id="next">❯</button>
     </section>
     
-
-<!-- ARTICLES/NEWS ============================================================-->
-<div class="article-wrapper"> <!-- Added class div wrapper -->
-    <section class="trending-sections">
-    </section>
-
-    <section class="articles-container">
-    </section>
-
-    <button id="load-more" class="load-more-button">Load More</button>
-
-    <div id="article-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-button">&times;</span>
-            <h2 id="modal-title"></h2>
-            <p id="modal-abstract"></p>
-            <img id="modal-image" src="." alt="">
-            <p id="modal-date"></p>
-            <button id="view-article" class="view-article-button">View Full Article</button>
-        </div>
-    </div>
-</div>
-
-
+    
 </main>
-
 
 
 <!-- Footer -->
@@ -208,7 +220,7 @@
     </div>
 </footer>
 
-<script type="module" src="scripts/home.js"></script>
+<!-- <script type="module" src="scripts/home.js"></script> -->
    
 </body>
 </html>

@@ -29,7 +29,10 @@
     <meta name="twitter:description" content="Welcome to the Erruki News Aggregator">
 
     <!-- Title -->
-    <title>Erruki News</title>
+    <title>Favourites Erruki News</title>
+    
+    <!-- Font Awesome Link -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
 
     <!-- Favicon -->
     <link rel="icon" href="images/favicon_io/apple-touch-icon.png" sizes="180x180">
@@ -40,9 +43,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
-
+    
     <link rel="stylesheet" href="styles/main.css">
     <script src="scripts/util.js" defer></script>
+    <script src="scripts/favourite.js" defer></script>
 
 </head>
 <body>
@@ -57,7 +61,7 @@
             <div class="navbar-menu" id="navbarNav">
                 <ul class="navbar-items">
                     <li class="navbar-item">
-                        <a class="navbar-link active" href="index.html">Home</a>
+                        <a class="navbar-link" href="index.html">Home</a>
                     </li>
                     <li class="navbar-item">
                         <a class="navbar-link" href="about.html">About</a>
@@ -66,7 +70,7 @@
                         <a class="navbar-link" href="services.html">Services</a>
                     </li>
                     <li class="navbar-item">
-                        <a class="navbar-link" href="favourites.html">Favourites</a>
+                        <a class="navbar-link active" href="favourites.html">Favourites</a>
                     </li>
                     <li class="navbar-item">
                         <a class="navbar-link" href="Contact.html">Contact</a>
@@ -91,8 +95,6 @@
             </div>
 
             <div class="navbar-icons">
-                <!-- <img src="images/theme.webp" alt="Theme Toggle" id="theme-toggle" class="nav-icon" width="40" height="40"> -->
-                
                 <!-- Hamburger Menu -->
                 <button class="navbar-toggler" id="navbar-toggler" aria-label="Toggle navigation">
                     <span class="line"></span>
@@ -109,41 +111,36 @@
 <!-- Main Content -->
 <main class="main-content-wrapper">
 
-    <!-- SLIDER ===================================================================-->
-    <section class="slider">
-        <div class="slider-container" id="slider">
-            <!-- Article cards will be dynamically inserted here -->
-        </div>
-        <button class="arrow left" id="prev">❮</button>
-        <button class="arrow right" id="next">❯</button>
-    </section>
+    <div class="favourites-info-card">
+        <h2>Manage Your Favourites</h2>
+        <p>Welcome to your favourites page! Here you can easily manage your favorite articles:</p>
+        <ul>
+            <li><strong>Adding Articles:</strong> Click the <span class="highlight">"Add to Favourites"</span> button on any article card to save it to your favourites.</li>
+            <li><strong>Removing Articles:</strong> If you wish to remove an article, simply click the <span class="highlight">"Delete Favourite"</span> button on the article you want to remove.</li>
+            <li>Enjoy a curated collection of articles tailored to your interests!</li>
+        </ul>
+    </div>
     
+    
+    <!-- FAVOURITE ARTICLES ============================================================-->
+    <div class="article-wrapper"> 
+        <section class="articles-container">
+            <!-- Articles will be dynamically injected here -->
+        </section>
 
-<!-- ARTICLES/NEWS ============================================================-->
-<div class="article-wrapper"> <!-- Added class div wrapper -->
-    <section class="trending-sections">
-    </section>
-
-    <section class="articles-container">
-    </section>
-
-    <button id="load-more" class="load-more-button">Load More</button>
-
-    <div id="article-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-button">&times;</span>
-            <h2 id="modal-title"></h2>
-            <p id="modal-abstract"></p>
-            <img id="modal-image" src="." alt="">
-            <p id="modal-date"></p>
-            <button id="view-article" class="view-article-button">View Full Article</button>
+        <div id="article-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <h2 id="modal-title"></h2>
+                <p id="modal-abstract"></p>
+                <img id="modal-image" src="." alt="">
+                <p id="modal-date"></p>
+                <button id="view-article" class="view-article-button">View Full Article</button>
+            </div>
         </div>
     </div>
-</div>
-
 
 </main>
-
 
 
 <!-- Footer -->
@@ -207,8 +204,6 @@
         </div>
     </div>
 </footer>
-
-<script type="module" src="scripts/home.js"></script>
    
 </body>
 </html>

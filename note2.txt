@@ -1,114 +1,202 @@
-<!-- Full Name Banner -->
-    <header class="top-banner py-3">
-        <div class="container text-center">
-            <h1 class="display-4">Alexander Cyril</h1>
-        </div>
-    </header>
+// SLIDER ==============================================================================
+import { fetchArticles } from './api.js'; 
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    
-        <div class="container">
-            <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-           
-            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Chamber</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://github.com/alexcy1" target="_blank">GitHub Profile</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://www.linkedin.com/in/alexander-cyril-603a2528a/" target="_blank">LinkedIn</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+let articles = [];
+const sliderContainer = document.getElementById('slider');
+let autoSlideInterval;
 
- 
-    
-<!-- Main Content -->
-<main role="main" class="container mt-4">
+// Display random articles for the slider
+function displayRandomArticles() {
+    const shuffledArticles = articles.sort(() => 0.5 - Math.random()); // Shuffle articles array
+    const randomArticles = shuffledArticles.slice(0, 3); // Get the first 3 randomized articles
+    displayArticlesOnSlider(randomArticles); // Pass the randomized articles to the slider display function
+}
 
-    <section id="courseWorkSection">
-        <div class="row">
-            
-            <!-- Course Work Card -->
-            <div class="col-lg-8 col-md-12 mb-4">
-                <div class="card h-100">
-                    <div class="card-header bg-purple text-white">
-                        <h5 class="mb-0">Course Work</h5>
-                    </div>
-                    <div class="card-body">
-                        <ul>
-                            <li>&nbsp;</li>
-                            <li>&nbsp;</li>
-                            <li>&nbsp;</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Lagos, Nigeria Card -->
-            <div class="col-lg-4 col-md-12 mb-4">
-                <div class="card h-100">
-                    <div class="card-header bg-purple text-white">
-                        <h5 class="mb-0">Lagos, Nigeria</h5>
-                    </div>
-                    <div class="card-body">
-                        <img src="images/lagos.webp" class="img-fluid img-custom" alt="Alexander">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+function displayArticlesOnSlider(articlesToDisplay) {
+    sliderContainer.innerHTML = ''; // Clear existing articles
+    articlesToDisplay.forEach((article, index) => {
+        const card = document.createElement('div');
+        card.className = `article-card ${index === 0 ? 'large' : ''}`;
+        card.innerHTML = `
+            <img src="${article.multimedia[0]?.url || 'default-image-url.jpg'}" alt="${article.title}">
+            <h2>${article.title}</h2>
+            <p><a href="${article.url}" target="_blank">Read more</a></p>
+        `;
+        sliderContainer.appendChild(card);
+    });
+}
 
-    <section id="webProgrammingSection">
-        <div class="col-12 mb-4">
-            <div class="card h-100 card-single">
-                <div class="card-header bg-purple text-white">
-                    <h5 class="mb-0">Web and Computer Programming Certificate</h5>
-                </div>
-                <div class="card-body text-center mcard">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="btn-group d-flex justify-content-center">
-                                <button class="btn btn-dark btn-wide" id="showAll">ALL</button>
-                                <button class="btn btn-dark btn-wide" id="showCSE">CSE</button>
-                                <button class="btn btn-dark btn-wide" id="showWDD">WDD</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Courses Buttons Section -->
-                <div class="card-footer">
-                    <div class="btn-group course-code" id="courseButtons">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+// Swap the current article for a new random article with a smooth transition
+function swapArticle() {
+    const randomArticleIndex = Math.floor(Math.random() * articles.length);
+    const article = articles[randomArticleIndex];
 
-    <section id="creditsSection">
-        <div class="col-12 mb-4">
-            <!-- Total Credits Card -->
-            <div class="card my-0">
-                <div class="card-body text-center">
-                    <h5 class="card-title">
-                        <strong>Total Number of Credits: </strong>
-                        <span id="totalCredits">0</span> <!-- Placeholder for total credits -->
-                    </h5>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-</main>
+    const newCard = document.createElement('div');
+    newCard.className = 'article-card large';
+    newCard.innerHTML = `
+        <img src="${article.multimedia[0]?.url || 'default-image-url.jpg'}" alt="${article.title}">
+        <h2>${article.title}</h2>
+        <p><a href="${article.url}" target="_blank">Read more</a></p>
+    `;
 
+    const existingCards = sliderContainer.children;
+    if (existingCards.length > 0) {
+        existingCards[0].classList.add('fade-out');
+        setTimeout(() => {
+            sliderContainer.replaceChild(newCard, existingCards[0]);
+            newCard.classList.add('fade-in');
+        }, 500);
+    } else {
+        sliderContainer.appendChild(newCard);
+        newCard.classList.add('fade-in');
+    }
+}
+
+// Move to the next article on button click
+document.getElementById('next').addEventListener('click', swapArticle);
+document.getElementById('prev').addEventListener('click', swapArticle);
+
+// Start automatic sliding of articles
+function startAutoSlide() {
+    autoSlideInterval = setInterval(swapArticle, 5000); // Change slide every 5 seconds
+}
+
+// Stop auto sliding on hover
+const slider = document.querySelector('.slider');
+slider.addEventListener('mouseover', () => clearInterval(autoSlideInterval));
+slider.addEventListener('mouseout', startAutoSlide);
+
+// Fetch articles when the page loads
+fetchArticles().then(fetchedArticles => {
+    articles = fetchedArticles;
+    displayRandomArticles();
+    startAutoSlide();
+});
+
+
+
+
+
+// ARTICLES =============================================================================
+
+// let currentPage = 0;
+// const articlesPerPage = 12;
+// let filteredArticles = []; // Store filtered articles based on section
+// let activeSectionElement = null; // Track the currently active section element
+
+// // Display trending sections
+// function displayTrendingSections() {
+//     const trendingSections = document.querySelector('.trending-sections');
+//     const sections = [...new Set(articles.map(article => article.section))];
+
+//    // Create the HTML for trending sections
+//     trendingSections.innerHTML = `
+//     <h3>Trending News:</h3>
+//     ${sections.map(section => `
+//         <span class="trending-section" data-section="${section}">${section}</span>
+//     `).join(', ')}
+//     <button class="show-all">Show All</button> <!-- Show All button -->
+//     <a href="index.html" class="reload-button">Reload</a> <!-- Reload button with link to index.html -->
+//     `;
+
+//     // Event delegation for trending sections and "Show All" button
+//     trendingSections.addEventListener('click', (event) => {
+//         const target = event.target;
+
+//         // If a section is clicked
+//         if (target.classList.contains('trending-section')) {
+//             const selectedSection = target.getAttribute('data-section');
+//             filterArticlesBySection(selectedSection);
+
+//             // Manage active state
+//             if (activeSectionElement) {
+//                 activeSectionElement.classList.remove('active');
+//             }
+//             target.classList.add('active');
+//             activeSectionElement = target;
+//         }
+
+//         // If "Show All" button is clicked
+//         if (target.classList.contains('show-all')) {
+//             filteredArticles = []; // Reset filtered articles
+//             displayArticles(); // Display all articles
+
+//             if (activeSectionElement) {
+//                 activeSectionElement.classList.remove('active');
+//                 activeSectionElement = null;
+//             }
+//         }
+//     });
+// }
+
+// // Filter articles by section
+// function filterArticlesBySection(section) {
+//     filteredArticles = articles.filter(article => article.section === section); // Filter articles
+//     currentPage = 0; // Reset current page
+//     displayArticles(); // Display filtered articles
+// }
+
+// // Display articles with lazy loading for images
+// function displayArticles() {
+//     const articlesContainer = document.querySelector('.articles-container');
+//     const articlesToDisplay = filteredArticles.length ? filteredArticles : articles;
+//     const startIndex = currentPage * articlesPerPage;
+//     const endIndex = startIndex + articlesPerPage;
+//     const paginatedArticles = articlesToDisplay.slice(startIndex, endIndex);
+
+//     articlesContainer.innerHTML = ''; // Clear the container
+
+//     paginatedArticles.forEach(article => {
+//         const articleCard = document.createElement('div');
+//         articleCard.classList.add('articles-card');
+//         articleCard.innerHTML = `
+//             <img 
+//                 src="${article.multimedia[0]?.url || 'default-image-url.jpg'}" 
+//                 alt="${article.title}" 
+//                 class="article-image" 
+//                 loading="lazy"
+//             />
+//             <h2 class="article-headline">${article.title}</h2>
+//             <p class="article-date">${new Date(article.published_date).toLocaleDateString()}</p>
+//             <button class="details-button" data-article='${JSON.stringify(article)}'>Details</button>
+//             <a href="${article.url}" target="_blank" class="view-button">View</a>
+//         `;
+//         articlesContainer.appendChild(articleCard);
+//     });
+
+//     // Event delegation for "Details" buttons
+//     articlesContainer.addEventListener('click', (event) => {
+//         const target = event.target;
+//         if (target.classList.contains('details-button')) {
+//             const article = JSON.parse(target.dataset.article);
+//             openModal(article);
+//         }
+//     });
+// }
+
+// // Open the modal with article details
+// function openModal(article) {
+//     document.getElementById('modal-title').innerText = article.title;
+//     document.getElementById('modal-abstract').innerText = article.abstract;
+//     document.getElementById('modal-image').src = article.multimedia[0]?.url || 'default-image-url.jpg';
+//     document.getElementById('modal-date').innerText = new Date(article.published_date).toLocaleDateString();
+//     document.getElementById('article-modal').style.display = 'block';
+// }
+
+// // Close the modal
+// document.querySelector('.close-button').addEventListener('click', () => {
+//     document.getElementById('article-modal').style.display = 'none';
+// });
+
+// // Load more articles on button click
+// document.getElementById('load-more').addEventListener('click', () => {
+//     currentPage++;
+//     displayArticles();
+// });
+
+// // Fetch articles when the page loads
+// fetchArticles().then(fetchedArticles => {
+//     articles = fetchedArticles;
+//     displayTrendingSections();
+//     displayArticles();
+// });
