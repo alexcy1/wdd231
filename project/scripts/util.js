@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 // LOGO ------------------------------------------------------------------------
+// LOGO ------------------------------------------------------------------------
 document.addEventListener('DOMContentLoaded', function() {
     function addLogoAndCompanyName() {
         const logoData = {
@@ -24,38 +25,54 @@ document.addEventListener('DOMContentLoaded', function() {
             alt: 'Logo',
             class: 'navbar-brand-img',
             width: 225, 
-            height: 225 
+            height: 225,
+            url: 'index.html' 
         };
 
         const companyNameData = {
             nameTop: 'rruki',
+            url: 'index.html' // Added URL property for the company name
         };
+
+        // Create the anchor element for the logo link
+        const logoLink = document.createElement('a');
+        logoLink.href = logoData.url; 
 
         // Create the image element for the logo
         const image = document.createElement('img');
         image.src = logoData.src;
         image.alt = logoData.alt;
         image.className = logoData.class;
-        image.width = logoData.width; // Set width
-        image.height = logoData.height; // Set height
+        image.width = logoData.width; 
+        image.height = logoData.height; 
 
-        // Find the logo container and inject the logo
+        // Append the image to the anchor
+        logoLink.appendChild(image);
+
+        // Find the logo container and inject the logo link
         const logoContainer = document.querySelector('.logo-container');
         if (logoContainer) {
             logoContainer.innerHTML = ''; 
-            logoContainer.appendChild(image); 
+            logoContainer.appendChild(logoLink); 
         }
 
         // Create company name elements
         const companyNameContainer = document.createElement('div');
         companyNameContainer.classList.add('company-name', 'ms-2');
         
+        // Create the anchor element for the company name link
+        const companyNameLink = document.createElement('a');
+        companyNameLink.href = companyNameData.url; // Set the URL for the company name link
+
         const nameTop = document.createElement('span');
         nameTop.classList.add('company-name-top');
         nameTop.textContent = companyNameData.nameTop;
 
-        // Append nameTop and nameBottom to the container
-        companyNameContainer.appendChild(nameTop);
+        // Append nameTop to the company name link
+        companyNameLink.appendChild(nameTop);
+
+        // Append the link to the company name container
+        companyNameContainer.appendChild(companyNameLink);
 
         // Inject the company name next to the logo
         const navbarBrand = document.querySelector('.navbar-brand');
@@ -64,8 +81,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    addLogoAndCompanyName(); // Call the function when DOM content is loaded
+    addLogoAndCompanyName(); 
 });
+
 
 
 
@@ -222,18 +240,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (userData) {
             // If the user is logged in, display their image and username
-            userNameDisplay.textContent = userData.username || "User"; // Set default name
+            userNameDisplay.textContent = userData.username || "User"; 
             if (userData.profileImage) {
                 profileMenuImage.setAttribute('src', userData.profileImage);
             }
 
             // Show the user dropdown and hide the sign-in button
-            userDropdown.style.display = 'block'; // Show dropdown
-            signInBtn.style.display = 'none'; // Hide sign-in button
+            userDropdown.style.display = 'block'; 
+            signInBtn.style.display = 'none'; 
         } else {
             // If no user is logged in, hide the user dropdown and show the sign-in button
-            userDropdown.style.display = 'none'; // Hide dropdown
-            signInBtn.style.display = 'block'; // Show sign-in button
+            userDropdown.style.display = 'none'; 
+            signInBtn.style.display = 'block'; 
         }
     }
 
@@ -243,38 +261,38 @@ document.addEventListener('DOMContentLoaded', function () {
     // Add event listener to toggle dropdown visibility when the user clicks the profile image
     profileMenuImage.addEventListener('click', function (event) {
         event.preventDefault();
-        dropdownMenu.classList.toggle('show'); // Toggle dropdown visibility
+        dropdownMenu.classList.toggle('show'); 
         event.stopPropagation();
     });
 
     // Close the dropdown when clicking anywhere outside the dropdown menu
     document.addEventListener('click', function (event) {
         if (!dropdownMenu.contains(event.target) && !profileMenuImage.contains(event.target)) {
-            dropdownMenu.classList.remove('show'); // Hide dropdown if clicking outside
+            dropdownMenu.classList.remove('show'); 
         }
     });
 
     // Profile link functionality - Redirect to profile page
     profileLink.addEventListener('click', function (event) {
-        event.preventDefault(); // Prevent default link behavior
-        window.location.href = 'profile.html'; // Redirect to profile page
+        event.preventDefault(); 
+        window.location.href = 'profile.html'; 
     });
 
     // Update profile link functionality - Redirect to update profile page
     updateProfileLink.addEventListener('click', function (event) {
-        event.preventDefault(); // Prevent default link behavior
-        window.location.href = 'update-profile.html'; // Redirect to update profile page
+        event.preventDefault(); 
+        window.location.href = 'update-profile.html'; 
     });
 
     // Delete user functionality
     deleteUserLink.addEventListener('click', function (event) {
-        event.preventDefault(); // Prevent default link behavior
+        event.preventDefault(); 
 
         // Remove user data from local storage
         localStorage.removeItem('user');
 
         // Update UI to reflect deletion
-        updateUI(); // Update UI based on new user data (which is now null)
+        updateUI(); 
 
         // Redirect to sign-up page
         window.location.href = 'signup.html';
