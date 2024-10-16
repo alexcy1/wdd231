@@ -1838,11 +1838,6 @@ body.dark-mode .members-section h1 {
     margin-top: 2px;
 }
 
-.spacing {
-    margin: 20px 0; 
-}
-
-
 /* Card style for each section */
 .sidebar .local-section,
 .sidebar .calendar-section,
@@ -1955,7 +1950,7 @@ body.dark-mode .members-section h1 {
 }
 
 .calendar {
-    margin-bottom: -135px;
+    margin-bottom: -120px;
 }
 
 .advertisement p{
