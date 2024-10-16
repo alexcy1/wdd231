@@ -1822,7 +1822,9 @@ body.dark-mode .members-section h1 {
     border-radius: 8px;
     width: 100%; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-    font-family:Arial, Helvetica, sans-serif
+    font-family:Arial, Helvetica, sans-serif;
+    display: grid;
+    grid-template-columns: 1fr;
 }
 
 /* Full-width HR line inside the sidebar */
@@ -1832,6 +1834,8 @@ body.dark-mode .members-section h1 {
     background-color: #cecece;
     margin: 20px 0;
     width: 100%;
+    margin-bottom: 50px;
+    margin-top: 2px;
 }
 
 /* Card style for each section */
@@ -1842,6 +1846,7 @@ body.dark-mode .members-section h1 {
     background-color: #fff;
     padding: 20px;
     margin-bottom: 20px;
+    margin-top: -140px;
     border-radius: 12px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); 
     transition: transform 0.3s ease, box-shadow 0.3s ease; 
@@ -1912,6 +1917,19 @@ body.dark-mode .members-section h1 {
     justify-content: center;
 }
 
+#visitor-message {
+    max-height: 1px;
+    margin-bottom: -100px;
+}
+
+.firstseparator{
+    margin-top: 15px;
+}
+
+.local-section{
+    margin-top: -160px !important;
+}
+
 .visitor-message-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
@@ -1927,11 +1945,70 @@ body.dark-mode .members-section h1 {
     background: linear-gradient(135deg, #f0f4ff, #d6e1ff);
 }
 
+.local-attractions-card {
+    margin-bottom: -110px;
+}
+
+.calendar {
+    margin-bottom: -135px;
+}
+
+.advertisement p{
+    margin-bottom: -110px;
+}
+
+.highlight-card {
+    margin-bottom: -110px !important;
+}
+
+#calendar {
+    margin-bottom: -110px;
+}
+
 /* Responsive design for mobile */
 @media (max-width: 992px) {
     .sidebar {
         width: 100%; 
     }
+
+    .local-attractions-card {
+        margin-bottom: 5px;
+    }
+    
+    .calendar {
+        margin-bottom: 5px;
+    }
+    
+    .advertisement p{
+        margin-bottom: 5px;
+    }
+    
+    .highlight-card {
+        margin-bottom: 5px !important;
+    }
+    
+    #calendar {
+        margin-bottom: 5px;
+    }
+
+    .sidebar .local-section,
+    .sidebar .calendar-section,
+    .sidebar .advertisement,
+    .sidebar .business-highlight {
+        margin-bottom: 20px;
+        margin-top: 0px;
+    }
+
+    #visitor-message {
+        max-height: 0px;
+        margin-bottom: 180px;
+    }
+
+    .sidebar-separator {
+        margin-bottom: 20px;
+        margin-top: 2px;
+    }
+
 }
 
 

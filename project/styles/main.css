@@ -1129,18 +1129,18 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 60vh;
-    background-color: #f4f4f4; 
+    /* background-color: #f4f4f4;  */
 }
 
 .signup-container {
     background-color: #ffffff;
     padding: 30px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     max-width: 500px;
     width: 100%;
-    margin-top: 150px;
-    margin-bottom: 100px;
+    margin-top: 90px;
+    margin-bottom: -10px;
 }
 
 .signup-form h2 {
@@ -1213,6 +1213,11 @@ body {
         margin-top: -60px;
         margin-bottom: -60px;
     }
+
+    .signup-container {
+        margin-top: 110px;
+        margin-bottom: 10px;
+    }
 }
 
 
@@ -1231,7 +1236,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #f4f4f4;
+    /* background-color: #f4f4f4; */
     min-height: 60vh;
     padding-top: 40px;
 }
@@ -1241,11 +1246,11 @@ body {
     background-color: #ffffff;
     padding: 30px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     max-width: 700px;
     width: 100%;
-    margin-top: 50px;
-    margin-bottom: 70px;
+    margin-top: 45px;
+    margin-bottom: -10px;
 }
 
 /* Form header */
@@ -1323,6 +1328,10 @@ body {
     .profile-wrapper {
         margin-bottom: -30px;
     }
+
+    .profile-container {
+        margin-top: 20px;
+    }
 }
 
 
@@ -1341,20 +1350,20 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 60vh;
-    background-color: #f4f4f4;
+    /* background-color: #f4f4f4; */
     margin-bottom: -50px;
 }
 
 .profile-card {
     background-color: #ffffff;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     max-width: 800px;
     width: 100%;
     overflow: hidden;
     margin: 20px;
-    margin-top: 120px;
-    margin-bottom: 70px;
+    margin-top: 60px;
+    margin-bottom: 10px;
 }
 
 .profile-header {
@@ -1612,20 +1621,6 @@ body {
 
 /* SERVICES PAGE ====================================================*/
 
-/* * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    
-} */
-
-/* body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    line-height: 1.6;
-} */
-
 .hero-banner {
     background-color: #FFCC00;
     color: #000;
@@ -1646,7 +1641,7 @@ body {
 .services-section {
     padding: 40px 20px;
     background-color: #fff;
-    margin-bottom: -50px;
+    margin-bottom: -100px;
 }
 
 .services-container {
@@ -1802,6 +1797,10 @@ body {
 
     .about-text p {
         font-size: 1.1rem;
+    }
+
+    .main-content-wrapper {
+        padding: 40px 5px;
     }
 }
 

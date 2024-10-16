@@ -94,7 +94,7 @@ function lazyLoadImages() {
                 const image = entry.target;
                 image.src = image.getAttribute('data-src');
                 image.classList.add('loaded');
-                observer.unobserve(image); // Stop observing once the image is loaded
+                observer.unobserve(image); 
             }
         });
     });

@@ -51,7 +51,7 @@ function displayFavourites() {
 function removeFavourite(index) {
     const favouriteArticles = JSON.parse(localStorage.getItem('favourites')) || [];
     favouriteArticles.splice(index, 1); // Remove article at the specific index
-    localStorage.setItem('favourites', JSON.stringify(favouriteArticles)); // Save updated list
+    localStorage.setItem('favourites', JSON.stringify(favouriteArticles)); 
     displayFavourites(); // Refresh the display
 }
 

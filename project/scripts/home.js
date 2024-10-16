@@ -58,7 +58,7 @@ document.getElementById('prev').addEventListener('click', swapArticle);
 
 // Start automatic sliding of articles
 function startAutoSlide() {
-    autoSlideInterval = setInterval(swapArticle, 5000); // Change slide every 5 seconds
+    autoSlideInterval = setInterval(swapArticle, 5000);
 }
 
 // Stop auto sliding on hover
@@ -76,140 +76,13 @@ fetchArticles().then(fetchedArticles => {
 
 
 
+
 // ARTICLES =============================================================================
-
-// let currentPage = 0;
-// const articlesPerPage = 12;
-// let filteredArticles = []; // Store filtered articles based on section
-// let activeSectionElement = null; // Track the currently active section element
-
-// // Display trending sections
-// function displayTrendingSections() {
-//     const trendingSections = document.querySelector('.trending-sections');
-//     const sections = [...new Set(articles.map(article => article.section))];
-
-//    // Create the HTML for trending sections
-//     trendingSections.innerHTML = `
-//     <h3>Trending News:</h3>
-//     ${sections.map(section => `
-//         <span class="trending-section" data-section="${section}">${section}</span>
-//     `).join(', ')}
-//     <button class="show-all">Show All</button> <!-- Show All button -->
-//     <a href="index.html" class="reload-button">Reload</a> <!-- Reload button with link to index.html -->
-//     `;
-
-//     // Event delegation for trending sections and "Show All" button
-//     trendingSections.addEventListener('click', (event) => {
-//         const target = event.target;
-
-//         // If a section is clicked
-//         if (target.classList.contains('trending-section')) {
-//             const selectedSection = target.getAttribute('data-section');
-//             filterArticlesBySection(selectedSection);
-
-//             // Manage active state
-//             if (activeSectionElement) {
-//                 activeSectionElement.classList.remove('active');
-//             }
-//             target.classList.add('active');
-//             activeSectionElement = target;
-//         }
-
-//         // If "Show All" button is clicked
-//         if (target.classList.contains('show-all')) {
-//             filteredArticles = []; // Reset filtered articles
-//             displayArticles(); // Display all articles
-
-//             if (activeSectionElement) {
-//                 activeSectionElement.classList.remove('active');
-//                 activeSectionElement = null;
-//             }
-//         }
-//     });
-// }
-
-// // Filter articles by section
-// function filterArticlesBySection(section) {
-//     filteredArticles = articles.filter(article => article.section === section); // Filter articles
-//     currentPage = 0; // Reset current page
-//     displayArticles(); // Display filtered articles
-// }
-
-// // Display articles with lazy loading for images
-// function displayArticles() {
-//     const articlesContainer = document.querySelector('.articles-container');
-//     const articlesToDisplay = filteredArticles.length ? filteredArticles : articles;
-//     const startIndex = currentPage * articlesPerPage;
-//     const endIndex = startIndex + articlesPerPage;
-//     const paginatedArticles = articlesToDisplay.slice(startIndex, endIndex);
-
-//     articlesContainer.innerHTML = ''; // Clear the container
-
-//     paginatedArticles.forEach(article => {
-//         const articleCard = document.createElement('div');
-//         articleCard.classList.add('articles-card');
-//         articleCard.innerHTML = `
-//             <img 
-//                 src="${article.multimedia[0]?.url || 'default-image-url.jpg'}" 
-//                 alt="${article.title}" 
-//                 class="article-image" 
-//                 loading="lazy"
-//             />
-//             <h2 class="article-headline">${article.title}</h2>
-//             <p class="article-date">${new Date(article.published_date).toLocaleDateString()}</p>
-//             <button class="details-button" data-article='${JSON.stringify(article)}'>Details</button>
-//             <a href="${article.url}" target="_blank" class="view-button">View</a>
-//         `;
-//         articlesContainer.appendChild(articleCard);
-//     });
-
-//     // Event delegation for "Details" buttons
-//     articlesContainer.addEventListener('click', (event) => {
-//         const target = event.target;
-//         if (target.classList.contains('details-button')) {
-//             const article = JSON.parse(target.dataset.article);
-//             openModal(article);
-//         }
-//     });
-// }
-
-// // Open the modal with article details
-// function openModal(article) {
-//     document.getElementById('modal-title').innerText = article.title;
-//     document.getElementById('modal-abstract').innerText = article.abstract;
-//     document.getElementById('modal-image').src = article.multimedia[0]?.url || 'default-image-url.jpg';
-//     document.getElementById('modal-date').innerText = new Date(article.published_date).toLocaleDateString();
-//     document.getElementById('article-modal').style.display = 'block';
-// }
-
-// // Close the modal
-// document.querySelector('.close-button').addEventListener('click', () => {
-//     document.getElementById('article-modal').style.display = 'none';
-// });
-
-// // Load more articles on button click
-// document.getElementById('load-more').addEventListener('click', () => {
-//     currentPage++;
-//     displayArticles();
-// });
-
-// // Fetch articles when the page loads
-// fetchArticles().then(fetchedArticles => {
-//     articles = fetchedArticles;
-//     displayTrendingSections();
-//     displayArticles();
-// });
-
-
-
-
-
-
 
 let currentPage = 0;
 const articlesPerPage = 12;
-let filteredArticles = []; // Store filtered articles based on section
-let activeSectionElement = null; // Track the currently active section element
+let filteredArticles = []; 
+let activeSectionElement = null; 
 
 // Display trending sections
 function displayTrendingSections() {
@@ -245,8 +118,8 @@ function displayTrendingSections() {
 
         // If "Show All" button is clicked
         if (target.classList.contains('show-all')) {
-            filteredArticles = []; // Reset filtered articles
-            displayArticles(); // Display all articles
+            filteredArticles = []; 
+            displayArticles(); 
 
             if (activeSectionElement) {
                 activeSectionElement.classList.remove('active');
@@ -258,9 +131,9 @@ function displayTrendingSections() {
 
 // Filter articles by section
 function filterArticlesBySection(section) {
-    filteredArticles = articles.filter(article => article.section === section); // Filter articles
-    currentPage = 0; // Reset current page
-    displayArticles(); // Display filtered articles
+    filteredArticles = articles.filter(article => article.section === section); 
+    currentPage = 0; 
+    displayArticles(); 
 }
 
 // Display articles with lazy loading for images
@@ -271,7 +144,7 @@ function displayArticles() {
     const endIndex = startIndex + articlesPerPage;
     const paginatedArticles = articlesToDisplay.slice(startIndex, endIndex);
 
-    articlesContainer.innerHTML = ''; // Clear the container
+    articlesContainer.innerHTML = '';
 
     paginatedArticles.forEach(article => {
         const articleCard = document.createElement('div');
@@ -306,7 +179,7 @@ function displayArticles() {
         // Handle adding to favourites
         if (target.classList.contains('favourite-button')) {
             const article = JSON.parse(target.dataset.article);
-            addToFavourites(article); // Add article to favourites
+            addToFavourites(article); 
         }
     });
 }
@@ -390,10 +263,8 @@ document.querySelector('.articles-container').addEventListener('click', (event) 
         const isAlreadyFavourite = favouriteArticles.some(fav => fav.title === article.title);
 
         if (!isAlreadyFavourite) {
-            // If not already in favourites, add it
             addToFavourites(article);
         } else {
-            // If already in favourites, show the "already added" alert
             handleAlreadyAdded(article);
         }
     }
@@ -416,7 +287,7 @@ function hideFavouriteButtonsIfNotLoggedIn() {
 
     if (!userData) {
         favouriteButtons.forEach(button => {
-            button.style.display = 'none'; // Hide the button if user is not logged in
+            button.style.display = 'none';
         });
     }
 }

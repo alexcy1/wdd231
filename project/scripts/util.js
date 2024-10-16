@@ -1,14 +1,11 @@
+
 // Toggle Menu without Bootstrap
 document.addEventListener("DOMContentLoaded", function() {
     const toggler = document.querySelector(".navbar-toggler");
     const navCollapse = document.querySelector("#navbarNav");
 
-    // Add event listener for toggler button click
     toggler.addEventListener("click", function() {
-        // Toggle 'open' class on the button when clicked (for hamburger icon animation)
         toggler.classList.toggle("open");
-
-        // Toggle 'show' class on the navbar menu to show/hide it
         navCollapse.classList.toggle("show");
     });
 });
@@ -16,7 +13,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-// LOGO ------------------------------------------------------------------------
 // LOGO ------------------------------------------------------------------------
 document.addEventListener('DOMContentLoaded', function() {
     function addLogoAndCompanyName() {
@@ -31,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const companyNameData = {
             nameTop: 'rruki',
-            url: 'index.html' // Added URL property for the company name
+            url: 'index.html' 
         };
 
         // Create the anchor element for the logo link
@@ -62,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Create the anchor element for the company name link
         const companyNameLink = document.createElement('a');
-        companyNameLink.href = companyNameData.url; // Set the URL for the company name link
+        companyNameLink.href = companyNameData.url; 
 
         const nameTop = document.createElement('span');
         nameTop.classList.add('company-name-top');
@@ -108,10 +104,10 @@ document.addEventListener('DOMContentLoaded', function () {
 // NEWSLETTER =============================================================================
 
 document.getElementById('newsletter-form').addEventListener('submit', function(e) {
-    e.preventDefault(); // Prevent default form submission
+    e.preventDefault();
     
     const emailInput = document.getElementById('email');
-    const email = emailInput.value; // Get the submitted email
+    const email = emailInput.value;
     
     // Display success message in the modal
     const successMessage = `Congratulations! You've successfully subscribed with the email: ${email}`;
@@ -142,84 +138,8 @@ document.getElementById('newsletter-form').addEventListener('submit', function(e
 
 
 
-
-
-
-
 // USERNAME, IMAGE AND DROP DOWN MENU ON NAVBAR ========================================
-// document.addEventListener('DOMContentLoaded', function () {
-//     // Get DOM elements
-//     const profileMenuImage = document.querySelector('.profile-menu-image');
-//     const userNameDisplay = document.querySelector('.user-name');
-//     const signInBtn = document.querySelector('.sign-in-btn');
-//     const userDropdown = document.querySelector('.user-dropdown');
-//     const dropdownMenu = document.querySelector('.dropdown-menu');
-//     const profileLink = dropdownMenu.querySelector('.dropdown-link'); // Select the profile link
 
-//     // Function to update UI based on login status
-//     function updateUI() {
-//         const userData = JSON.parse(localStorage.getItem('user')); // Retrieve user data
-
-//         if (userData) {
-//             // If the user is logged in, display their image and username
-//             userNameDisplay.textContent = userData.username;
-//             if (userData.profileImage) {
-//                 profileMenuImage.setAttribute('src', userData.profileImage);
-//             }
-
-//             // Show the user dropdown and hide the sign-in button
-//             userDropdown.style.display = 'block'; // Show dropdown
-//             signInBtn.style.display = 'none'; // Hide sign-in button
-//         } else {
-//             // If no user is logged in, hide the user dropdown and show the sign-in button
-//             userDropdown.style.display = 'none'; // Hide dropdown
-//             signInBtn.style.display = 'block'; // Show sign-in button
-//         }
-//     }
-
-//     // Initial UI update
-//     updateUI();
-
-//     // Add event listener to toggle dropdown visibility when the user clicks the profile link
-//     const userLink = document.querySelector('.user-link');
-//     userLink.addEventListener('click', function (event) {
-//         event.preventDefault();
-//         dropdownMenu.classList.toggle('show'); // Toggle dropdown visibility
-//         event.stopPropagation();
-//     });
-
-//     // Close the dropdown when clicking anywhere outside the dropdown menu
-//     document.addEventListener('click', function (event) {
-//         if (!dropdownMenu.contains(event.target) && !userLink.contains(event.target)) {
-//             dropdownMenu.classList.remove('show'); // Hide dropdown if clicking outside
-//         }
-//     });
-
-//     // Profile link functionality
-//     profileLink.addEventListener('click', function (event) {
-//         event.preventDefault(); // Prevent default link behavior
-//         window.location.href = 'profile.html'; // Redirect to profile page
-//     });
-
-//     // Delete user functionality
-//     const deleteUserLink = dropdownMenu.querySelectorAll('.dropdown-link')[1]; // Select the "Delete User" link
-//     deleteUserLink.addEventListener('click', function () {
-//         // Remove user data from local storage
-//         localStorage.removeItem('user');
-
-//         // Update UI to reflect deletion
-//         updateUI(); // Update UI based on new user data (which is now null)
-
-//         // Redirect to sign-up page
-//         window.location.href = 'signup.html';
-//     });
-// });
-
-
-
-
-
-// CURRENT WORKING CODE
 document.addEventListener('DOMContentLoaded', function () {
     // Get DOM elements
     const profileMenuImage = document.querySelector('.profile-menu-image');
@@ -229,14 +149,14 @@ document.addEventListener('DOMContentLoaded', function () {
     const dropdownMenu = document.querySelector('.dropdown-menu');
     
     // Select the correct links for profile, delete user, and update profile actions
-    const profileLink = dropdownMenu.querySelectorAll('.dropdown-link')[0]; // Profile link
-    const deleteUserLink = dropdownMenu.querySelectorAll('.dropdown-link')[1]; // Delete User link
-    const updateProfileLink = dropdownMenu.querySelectorAll('.dropdown-link')[2]; // Update Profile link
+    const profileLink = dropdownMenu.querySelectorAll('.dropdown-link')[0]; 
+    const deleteUserLink = dropdownMenu.querySelectorAll('.dropdown-link')[1]; 
+    const updateProfileLink = dropdownMenu.querySelectorAll('.dropdown-link')[2]; 
 
     // Function to update UI based on login status
     function updateUI() {
-        const userData = JSON.parse(localStorage.getItem('user')); // Retrieve user data
-        console.log('User data:', userData); // Log for debugging
+        const userData = JSON.parse(localStorage.getItem('user')); 
+        console.log('User data:', userData); 
 
         if (userData) {
             // If the user is logged in, display their image and username

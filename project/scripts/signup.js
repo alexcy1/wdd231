@@ -19,12 +19,12 @@ document.querySelector('.signup-form').addEventListener('submit', function (e) {
     const userData = {
         username: username,
         email: email,
-        password: password // Avoid saving plain text password in real apps!
+        password: password 
     };
 
     // Store userData object as JSON string in local storage
     localStorage.setItem('user', JSON.stringify(userData));
 
     // Redirect to "Create Profile" page
-    window.location.href = 'create-profile.html'; // Assuming you have this file
+    window.location.href = 'create-profile.html'; 
 });

@@ -41,7 +41,6 @@ document.querySelector('.local-section').classList.add('selected');
 
 
 // Visitor message based on last visit ===================================================
-// Visitor message based on last visit
 document.addEventListener('DOMContentLoaded', () => {
     const lastVisit = localStorage.getItem('last-visit');
     const now = Date.now();

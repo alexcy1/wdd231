@@ -14,7 +14,6 @@ function getBase64(file, callback) {
 document.querySelector('.profile-form').addEventListener('submit', function (e) {
     e.preventDefault();
 
-    // Get form values
     const firstName = document.getElementById('first-name').value;
     const lastName = document.getElementById('last-name').value;
     const phone = document.getElementById('phone').value;
@@ -24,28 +23,26 @@ document.querySelector('.profile-form').addEventListener('submit', function (e) 
     const profileImage = document.getElementById('profile-image').files[0];
 
     // Retrieve the user data from local storage or create a new object if null
-    let userData = JSON.parse(localStorage.getItem('user')) || {}; // Use an empty object if no user data found
+    let userData = JSON.parse(localStorage.getItem('user')) || {};
 
     // Convert the image to base64 before saving
     if (profileImage) {
         getBase64(profileImage, function (base64Image) {
             // Update user data with additional profile details and base64 image
             userData = {
-                ...userData, // Spread the existing userData, if any
+                ...userData, 
                 firstName,
                 lastName,
                 phone,
                 profession,
                 company,
                 aboutMe,
-                profileImage: base64Image // Save base64 image string
+                profileImage: base64Image 
             };
 
             // Save the updated data back to local storage
             localStorage.setItem('user', JSON.stringify(userData));
-
-            // Redirect to "Profile" page
-            window.location.href = 'profile.html'; // Assuming you have this file
+            window.location.href = 'profile.html'; 
         });
     } else {
         // Handle case where no image is provided
@@ -57,13 +54,11 @@ document.querySelector('.profile-form').addEventListener('submit', function (e) 
             profession,
             company,
             aboutMe,
-            profileImage: null // Set to null if no image is uploaded
+            profileImage: null 
         };
 
         // Save the updated data back to local storage
         localStorage.setItem('user', JSON.stringify(userData));
-
-        // Redirect to "Profile" page
-        window.location.href = 'profile.html'; // Assuming you have this file
+        window.location.href = 'profile.html';
     }
 });

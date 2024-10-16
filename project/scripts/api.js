@@ -9,9 +9,9 @@ export async function fetchArticles() {
             throw new Error('Network response was not ok');
         }
         const data = await response.json();
-        return data.results; // Return the fetched articles
+        return data.results; 
     } catch (error) {
         console.error('Error fetching articles:', error);
-        return []; // Return an empty array on error
+        return [];
     }
 }
