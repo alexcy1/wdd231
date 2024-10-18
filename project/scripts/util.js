@@ -41,6 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
         image.className = logoData.class;
         image.width = logoData.width; 
         image.height = logoData.height; 
+        image.loading = 'lazy';
 
         // Append the image to the anchor
         logoLink.appendChild(image);

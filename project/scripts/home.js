@@ -18,7 +18,7 @@ function displayArticlesOnSlider(articlesToDisplay) {
         const card = document.createElement('div');
         card.className = `article-card ${index === 0 ? 'large' : ''}`;
         card.innerHTML = `
-            <img src="${article.multimedia[0]?.url || 'default-image-url.jpg'}" alt="${article.title}">
+            <img src="${article.multimedia[0]?.url || 'default-image-url.jpg'}" alt="${article.title}" loading="lazy">
             <h2>${article.title}</h2>
             <p><a href="${article.url}" target="_blank">Read more</a></p>
         `;
@@ -34,7 +34,7 @@ function swapArticle() {
     const newCard = document.createElement('div');
     newCard.className = 'article-card large';
     newCard.innerHTML = `
-        <img src="${article.multimedia[0]?.url || 'default-image-url.jpg'}" alt="${article.title}">
+        <img src="${article.multimedia[0]?.url || 'default-image-url.jpg'}" alt="${article.title}" loading="lazy">
         <h2>${article.title}</h2>
         <p><a href="${article.url}" target="_blank">Read more</a></p>
     `;
