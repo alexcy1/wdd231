@@ -224,6 +224,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
+// CHECK FOR USER =================================================================
+function checkUserSignedUp() {
+    const userData = JSON.parse(localStorage.getItem('user')); // Retrieve user data from local storage
+
+    // Check if user data exists
+    if (userData) {
+        // Check the current page
+        const currentPage = window.location.pathname.split('/').pop(); // Get the current page name
+
+        // Redirect if on signup or create profile pages
+        if (currentPage === 'signup.html' || currentPage === 'create-profile.html') {
+            window.location.href = 'profile.html'; 
+        }
+    }
+}
+// Call the function when the page loads
+document.addEventListener('DOMContentLoaded', checkUserSignedUp);
 
 
 

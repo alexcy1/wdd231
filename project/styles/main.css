@@ -66,9 +66,9 @@
     font-size: 16px;
     color: #fff;
     text-decoration: none;
-    padding: 0.5rem 0.7rem; /* Adjusted padding for better alignment */
-    display: flex; /* Ensures proper alignment */
-    align-items: center; /* Center align text within the link */
+    padding: 0.5rem 0.7rem; 
+    display: flex; 
+    align-items: center; 
 }
 
 .navbar-link:hover {
@@ -540,7 +540,7 @@ footer .active {
     position: relative;
     width: 100%;
     overflow: hidden;
-    background-color: #f9f9f9; 
+    background-color: #fff; /* #f9f9f9 */
     border-radius: 8px; 
     /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);  */
 }
@@ -554,7 +554,7 @@ footer .active {
 }
 
 .article-card {
-    min-width: 300px; 
+    min-width: 250px; /* 200px */
     margin: 10px;
     border: 1px solid #ccc;
     border-radius: 8px;
@@ -1526,11 +1526,12 @@ body {
 /* General styling for the favourites info card */
 .favourites-info-card {
     max-width: 100%; 
-    margin-top: 72px; 
-    padding: 20px;
-    background-color: #fff; 
+    margin-top: 55px;
+    margin-bottom: 20px; 
+    padding: 40px;
+    background-color: #F9F9F9; 
     border-radius: 10px; 
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); 
     text-align: center; 
     font-family: 'Arial', sans-serif;
     color: #333; 
@@ -1574,6 +1575,7 @@ body {
     .favourites-info-card {
         padding: 15px; 
         font-size: 14px;
+        padding: 40px;
     }
 
     .favourites-info-card h2 {
