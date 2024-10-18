@@ -101,3 +101,55 @@ if (!userData) {
     // If user does not exist, redirect to signup page
     window.location.href = 'signup.html';
 }
+
+
+
+
+
+// LAST VISITED ===========================================================================
+function displayLastVisited() {
+    // Get the last visited date from local storage
+    const lastVisitedString = localStorage.getItem('lastVisited');
+    const now = new Date();
+
+    // If there is no last visited date, set it to now and return
+    if (!lastVisitedString) {
+        localStorage.setItem('lastVisited', now.toISOString());
+        document.getElementById('lastVisited').textContent = 'Last visited: Just now';
+        return;
+    }
+
+    // Parse the last visited date from local storage
+    const lastVisitedDate = new Date(lastVisitedString);
+    const timeDiff = now - lastVisitedDate;
+
+    const seconds = Math.floor(timeDiff / 1000);
+    const minutes = Math.floor(seconds / 60);
+    const hours = Math.floor(minutes / 60);
+    const days = Math.floor(hours / 24);
+
+    let timeString = '';
+
+    if (days > 0) {
+        timeString = `${days} day${days > 1 ? 's' : ''} ago`;
+    } else if (hours > 0) {
+        // Convert to 12-hour format
+        const hours12 = hours % 12 === 0 ? 12 : hours % 12; 
+        const ampm = hours >= 12 ? 'PM' : 'AM';
+        timeString = `${hours12} hour${hours12 > 1 ? 's' : ''} ${ampm} ago`;
+    } else if (minutes > 0) {
+        timeString = `${minutes} minute${minutes > 1 ? 's' : ''} ago`;
+    } else {
+        timeString = 'Just now';
+    }
+
+    // Update the display with the last visited time
+    const lastVisitedElement = document.getElementById('lastVisited');
+    lastVisitedElement.innerHTML = `<strong>Last visited:</strong> ${timeString}`;
+
+    // Update the last visited date in local storage to now
+    localStorage.setItem('lastVisited', now.toISOString());
+}
+
+// Call the function to display the last visited time
+displayLastVisited();
