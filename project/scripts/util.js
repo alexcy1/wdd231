@@ -234,7 +234,7 @@ function checkUserSignedUp() {
         const currentPage = window.location.pathname.split('/').pop(); // Get the current page name
 
         // Redirect if on signup or create profile pages
-        if (currentPage === 'signup.html' || currentPage === 'create-profile.html') {
+        if (currentPage === 'signup.html') {
             window.location.href = 'profile.html'; 
         }
     }
