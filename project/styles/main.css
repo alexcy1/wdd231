@@ -1461,11 +1461,11 @@ body {
         margin-top: 10px;
     }
 
-    #email-info {
+    .user-info p.email {
         font-size: 14px;
         word-wrap: break-word;
         overflow-wrap: break-word;
-        width: 100%; 
+        width: 100%;
     }
 }
 
