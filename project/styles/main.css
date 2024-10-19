@@ -1461,7 +1461,7 @@ body {
         margin-top: 10px;
     }
 
-    .user-info .email {
+    .user-info p.email {
         font-size: 14px;
         word-wrap: break-word;
         overflow-wrap: break-word;
