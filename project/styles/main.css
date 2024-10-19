@@ -1423,7 +1423,7 @@ body {
     color: #555555;
 }
 
-.user-info .email {
+.user-info p.email {
     color:#000;
 }
 
