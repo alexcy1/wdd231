@@ -1759,7 +1759,7 @@ body {
 /* About Image */
 .about-image {
     width: 45%;
-    height: 600px; 
+    height: 500px; 
     object-fit: cover;
     border-radius: 10px;
     transition: transform 0.3s ease-in-out;

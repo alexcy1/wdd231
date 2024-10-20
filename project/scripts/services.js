@@ -70,6 +70,7 @@ function displayServices() {
                 data-src="images/${category.image}" 
                 alt="${category.name}" 
                 class="lazy-load"
+                loading="lazy"
             />
             <div class="service-card-content">
                 <h3>${category.name}</h3>
