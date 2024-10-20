@@ -1056,7 +1056,7 @@ body {
         text-align: center; 
         background-color: #000; 
         color: #fff; 
-        pointer-events: none; 
+        pointer-events: auto; 
     }
 
     .show-all:hover {
@@ -1102,7 +1102,7 @@ body {
         text-align: center; 
         background-color: #a5d9fb;
         color: #000; 
-        pointer-events: none; 
+        pointer-events: auto; 
     }
 
     .reload-button:hover {
